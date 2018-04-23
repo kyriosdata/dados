@@ -28,13 +28,13 @@
     <packaging>jar</packaging>
     <version>1.0.0</version>
 
-    <name>com.github.kyriosdata:exemplo</name>
+    <name>com.github.kyriosdata:gerador</name>
 
     <description>
-        Projeto de referência (exemplo) inicial de desenvolvimento em Java com uso de JUnit.
+        Geração de bases de dados para teste em saúde.
     </description>
 
-    <url>https://github.com/kyriosdata/exemplo</url>
+    <url>https://github.com/kyriosdata/dados</url>
 
     <organization>
         <name>Instituto de Informática (UFG) - Fábrica de Software</name>
@@ -64,9 +64,9 @@
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/kyriosdata/exemplo.git</connection>
-        <developerConnection>scm:git:https://github.com/kyriosdata/exemplo.git</developerConnection>
-        <url>https://github.com/kyriosdata/exemplo</url>
+        <connection>scm:git:https://github.com/kyriosdata/dados.git</connection>
+        <developerConnection>scm:git:https://github.com/kyriosdata/dados.git</developerConnection>
+        <url>https://github.com/kyriosdata/dados</url>
     </scm>
 
     <properties>
@@ -280,7 +280,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
-                        <version>3.0.1</version>
+                        <version>LATEST</version>
                         <executions>
                             <execution>
                                 <id>package-sources</id>
@@ -295,7 +295,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
-                        <version>2.10.4</version>
+                        <version>LATEST</version>
                         <executions>
                             <execution>
                                 <id>package-javadoc</id>
