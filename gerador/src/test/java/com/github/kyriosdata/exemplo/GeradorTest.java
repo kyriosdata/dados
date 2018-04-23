@@ -23,7 +23,7 @@ public class GeradorTest {
     public void verificaData() {
         String data = new Gerador().getDataAsString();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        
+
         // Gera exceção se formato for inválido.
         // TODO não verifica bissexto!?
         LocalDate.parse(data, dtf);
