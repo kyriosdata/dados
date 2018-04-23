@@ -1,5 +1,5 @@
-# exemplo
-Projeto de referência (exemplo) básico em Java. Inicie por aqui.
+# dados
+Gerador de bases de dados para testes com foco em informações em saúde.
 
 
 ## Lembretes...
