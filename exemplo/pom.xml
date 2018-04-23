@@ -24,7 +24,7 @@
     -->
 
     <groupId>com.github.kyriosdata</groupId>
-    <artifactId>exemplo</artifactId>
+    <artifactId>gerador</artifactId>
     <packaging>jar</packaging>
     <version>1.0.0</version>
 
