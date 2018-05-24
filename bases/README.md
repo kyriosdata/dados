@@ -10,3 +10,4 @@ As bases abaixo foram obtidas do [Portal Brasileiro de Dados Abertos](http://dad
 - Conforme descrito em [título eleitor](https://pt.wikipedia.org/wiki/T%C3%ADtulo_eleitoral) há uma regra para verificação dos títulos de eleitor, o que é suficiente para a geração de números "válidos".
 - Conforme a descrição do [CPF](https://pt.wikipedia.org/wiki/Cadastro_de_pessoas_f%C3%ADsicas), também é viável a geração de CPFs "válidos".
 - Conforme a descrição do [CNPJ](https://pt.wikipedia.org/wiki/Cadastro_Nacional_da_Pessoa_Jur%C3%ADdica) também é factível a geração de CNPJs "válidos".
+- Conforme a descrição da fórmula [LUHN](https://en.wikipedia.org/wiki/Luhn_algorithm) também é possível gerar números "válidos" de cartões de crédito.
