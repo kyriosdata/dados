@@ -1,2 +1,5 @@
 ## BASES NAO PROCESSADAS
-- **ubs.csv** arquivo csv que identifica as dezenas de milhares de unidades básicas de saúde no páis. A partir dessa base é possível extrair códigos CNES, nomes dos estabelecimentos, endereço (inclusive bairro) por município. Esta base foi obtida de [dados](http://dados.gov.br/dataset/unidades-basicas-de-saude-ubs). Adicionalmente, conforme a [resolução](http://wiki.dados.gov.br/GetFile.aspx?File=%2fComiteGestor%2fResolu%C3%A7%C3%B5es%2fresolucao-cginda-2-24-3-2017%2cpdf.pdf) pertinente, o presente uso é legítimo. Resolução número 2 de 24/03/2017 (anexo 1).
+As bases abaixo foram obtidas do [Portal Brasileiro de Dados Abertos](http://dados.gov.br/). Em consequência, conforme o Anexo I da Resolução número 2 de 24/03/2017 ([aqui](http://wiki.dados.gov.br/GetFile.aspx?File=%2fComiteGestor%2fResolu%C3%A7%C3%B5es%2fresolucao-cginda-2-24-3-2017%2cpdf.pdf)), podem ser usadas para o presente propósito deste projeto. 
+
+- **ubs.csv** arquivo csv que identifica as dezenas de milhares de unidades básicas de saúde no páis.
+- **codigos-nacionais.csv** contém códigos dos municípios do Brasil, 5570, além do estado correspondente.
