@@ -7,3 +7,6 @@ As bases abaixo foram obtidas do [Portal Brasileiro de Dados Abertos](http://dad
 
 ## Outros dados
 - Conforme descrito em [CEP](https://pt.wikipedia.org/wiki/C%C3%B3digo_de_Endere%C3%A7amento_Postal), pode-se gerar CEP "válido" por estado, o que acredito ser suficiente para as nossas pretensões. Ou seja, não é necessário obter uma base de CEPs. 
+- Conforme descrito em [título eleitor](https://pt.wikipedia.org/wiki/T%C3%ADtulo_eleitoral) há uma regra para verificação dos títulos de eleitor, o que é suficiente para a geração de números "válidos".
+- Conforme a descrição do [CPF](https://pt.wikipedia.org/wiki/Cadastro_de_pessoas_f%C3%ADsicas), também é viável a geração de CPFs "válidos".
+- Conforme a descrição do [CNPJ](https://pt.wikipedia.org/wiki/Cadastro_Nacional_da_Pessoa_Jur%C3%ADdica) também é factível a geração de CNPJs "válidos".
