@@ -4,7 +4,7 @@ As bases abaixo foram obtidas do [Portal Brasileiro de Dados Abertos](http://dad
 - **ubs.csv** arquivo csv que identifica as dezenas de milhares de unidades básicas de saúde no páis.
 - **codigos-nacionais.csv** contém códigos dos municípios do Brasil, 5570, além do estado correspondente.
 - Filiados a partidos políticos. No portal dos dados abertos há extensa lista dos brasileiros filiados a partidos políticos, o que inclui o nome, o município, endereço, bairro, telefone. Por exemplo, só para o estado do ACRE, os filiados ao DEM superam os 4300 brasileiros. Após tratados é possível atingir milhões de nomes e de endereços, bem como telefones sintaticamente válidos por município. Dada a extensão deste conjunto de dados, sugere-se uso direto a partir do portal brasileiro de dados abertos ([aqui](http://dados.gov.br/dataset/filiados-partidos-politicos)).
-- **gitNome e gitSobrenome** são respectivamente listas compostas por nomes e sobrenomes no formato CSV, extraindo de dados.gov.br, em Lista de Eleitores Filiados aos Partidos Políticos.
+- **Nome e Sobrenome** são respectivamente listas compostas por nomes e sobrenomes no formato CSV, extraindo de dados.gov.br, em Lista de Eleitores Filiados aos Partidos Políticos.
 - **Codigo_Nacional_Atualizado.csv** contém códigos dos 5570 municípios do Brasil, com o estado correspondente, município, Código do unicípio;Código nacional e faixa com início e fim do CEP correspondente a cada município.
 
 ## Outros dados
