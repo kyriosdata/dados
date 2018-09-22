@@ -385,6 +385,61 @@ public final class Gerador {
         
         return cnpj ;
     }
-
     
+    /**
+    * Multiplico os 8 primeiros digitos por 2 3 4 5 6 7 8 9 encontro o DV1
+    * O digito do estado é desmembrado em unidades, por exemplo ESTADO = 05, logo DV2 = (0*7 + 5*8 + DV1*9) modulo por 11
+    * ESTADO recebe um desses valores de forma aleátoria : 
+    * 01-SP, 02-MG, 03-RJ, 04-RS, 05-BA, 06-PR, 07-CE, 08-PE, 09-SC, 10-GO, 11-MA, 12-PB, 13-PA, 14-ES, 15-PI, 16-RN, 17-AL, 18-MT, 19-MS, 20-DF, 21-SE, 22-AM, 23-RO, 24-AC, 25-AP, 26-RR, 27-TO e 28-Exterior(ZZ)
+    */
+    public String TituloEleitoral() {
+    int N1 = (gerador.nextInt(10));
+    int N2 = (gerador.nextInt(10));
+    int N3 = (gerador.nextInt(10));
+    int N4 = (gerador.nextInt(10));
+    int N5 = (gerador.nextInt(10));
+    int N6 = (gerador.nextInt(10));
+    int N7 = (gerador.nextInt(10));
+    int N8 = (gerador.nextInt(10));
+    int ESTADO = (int) (1+ Math.random()*28);
+    int aux1, aux2;
+    int DV1, DV2;
+    if(ESTADO <= 9){
+        aux1 = 0;
+        aux2 = ESTADO;
+    }
+    else{
+        aux1 = ESTADO / 10;
+        aux2 = ESTADO % 10;
+    }
+    System.out.println("ESTADO: " + ESTADO);
+    System.out.println("aux1: " + aux1);
+    System.out.println("aux2: " + aux2);
+   
+    DV1 = (N1*2 + N2*3 + N3*4 + N4*5 + N5*6 + N6*7 + N7*8 + N8*9) % 11 ;
+    if(DV1 >= 10){
+        DV1 = 0;
+    }
+   
+    DV2 = (aux1*7 + aux2*8 + DV1*9) % 11 ;
+    if(DV2 >= 10){
+        DV2 = 0;
+    }
+            String titulo =
+                Integer.toString(N1) +
+                Integer.toString(N2) +
+                Integer.toString(N3) +
+                Integer.toString(N4) +
+                Integer.toString(N5) +
+                Integer.toString(N6) +
+                Integer.toString(N7) +
+                Integer.toString(N8) +
+                Integer.toString(aux1) +
+                Integer.toString(aux2) +
+                Integer.toString(DV1)  +
+                Integer.toString(DV2);
+       
+        return(titulo);
+    }
+
 }
