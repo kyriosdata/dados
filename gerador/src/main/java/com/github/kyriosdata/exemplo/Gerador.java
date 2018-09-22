@@ -1,4 +1,4 @@
-/*
+﻿/*
  * Copyright (c) 2016.
  * Fábrica de Software - Instituto de Informática (UFG)
  * Creative Commons Attribution 4.0 International License.
@@ -299,6 +299,92 @@ public final class Gerador {
             buff.close();
       }
         return 0;
-    }    
+    }   
 
+    /**
+     * Usa de uma fórmula específica para criação de CPF's válidos, a partir de 9 digitos aleátorios, conclui 2 digitos verificadores
+     * 
+     * @return cpf, retorna o CPF com os 11 digitos
+     */
+    Random gerador = new Random();
+    public String CPF(){
+   
+    int N1 = (gerador.nextInt(10));
+    int N2 = (gerador.nextInt(10));
+    int N3 = (gerador.nextInt(10));
+    int N4 = (gerador.nextInt(10));
+    int N5 = (gerador.nextInt(10));
+    int N6 = (gerador.nextInt(10));
+    int N7 = (gerador.nextInt(10));
+    int N8 = (gerador.nextInt(10));
+    int N9 = (gerador.nextInt(10));
+    
+    int DV1 = (N1*1 + N2*2 + N3*3 + N4*4 + N5*5 + N6*6 + N7*7 + N8*8 + N9*9) % 11 ;
+    int DV2 = (N1*0 + N2*1 + N3*2 + N4*3 + N5*4 + N6*5 + N7*6 + N8*7 + N9*8 + DV1*9) % 11 ;
+    
+        String cpf = 
+                Integer.toString(N1) +
+                Integer.toString(N2) +
+                Integer.toString(N3) + 
+                "." +
+                Integer.toString(N4) +
+                Integer.toString(N5) +
+                Integer.toString(N6) +
+                "." +
+                Integer.toString(N7) +
+                Integer.toString(N8) +
+                Integer.toString(N9) +
+                "-" +
+                Integer.toString(DV1) +
+                Integer.toString(DV2);
+        
+        return cpf;
+    }
+        /**
+     * Usa de uma fórmula específica para criação de CNPJ's válidos, a partir de 9 digitos aleátorios, conclui 2 digitos verificadores
+     * 
+     * @return cpf, retorna o CNPJ com os 14 digitos
+     */
+    public String CNPJ() {
+
+    int N1 = (gerador.nextInt(10));
+    int N2 = (gerador.nextInt(10));
+    int N3 = (gerador.nextInt(10));
+    int N4 = (gerador.nextInt(10));
+    int N5 = (gerador.nextInt(10));
+    int N6 = (gerador.nextInt(10));
+    int N7 = (gerador.nextInt(10));
+    int N8 = (gerador.nextInt(10));
+    int N9  = 0;
+    int N10 = 0;
+    int N11 = 0;
+    int N12 = 1;
+    
+    int DV1 = (N1*6 + N2*7 + N3*8 + N4*9 + N5*2 + N6*3 + N7*4 + N8*5 + N12*9) % 11 ;
+    int DV2 = (N1*5 + N2*6 + N3*7 + N4*8 + N5*9 + N6*2 + N7*3 + N8*4 + N12*8 + DV1*9) % 11 ;
+    
+        String cnpj = 
+                Integer.toString(N1) +
+                Integer.toString(N2) +
+                "." +
+                Integer.toString(N3) + 
+                Integer.toString(N4) +
+                Integer.toString(N5) +
+                 "." +
+                Integer.toString(N6) +
+                Integer.toString(N7) +
+                Integer.toString(N8) +
+                "/" +
+                Integer.toString(N9) +
+                Integer.toString(N10) +
+                Integer.toString(N11) +
+                Integer.toString(N12) +
+                "-" +
+                Integer.toString(DV1) +
+                Integer.toString(DV2);
+        
+        return cnpj ;
+    }
+
+    
 }
