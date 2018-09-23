@@ -302,9 +302,8 @@ public final class Gerador {
     }   
 
     /**
-     * Usa de uma fórmula específica para criação de CPF's válidos, a partir de 9 digitos aleátorios, conclui 2 digitos verificadores
-     * 
-     * @return cpf, retorna o CPF com os 11 digitos
+     * Usa de uma fórmula específica para criação de CPF's válidos, a partir de 9 digitos aleátorios, conclui 2 dígitos verificadores
+     * @return cpf, retorna o CPF com os 11 dígitos
      */
     Random gerador = new Random();
     public String CPF(){
@@ -340,10 +339,9 @@ public final class Gerador {
         
         return cpf;
     }
-        /**
-     * Usa de uma fórmula específica para criação de CNPJ's válidos, a partir de 9 digitos aleátorios, conclui 2 digitos verificadores
-     * 
-     * @return cpf, retorna o CNPJ com os 14 digitos
+             /**
+     * Usa de uma fórmula específica para criação de CNPJ's válidos, a partir de 8 dígitos aleátorios, conclui 2 dígitos verificadores
+     * @return cpf, retorna o CNPJ com os 14 dígitos válidos
      */
     public String CNPJ() {
 
@@ -391,6 +389,7 @@ public final class Gerador {
     * O digito do estado é desmembrado em unidades, por exemplo ESTADO = 05, logo DV2 = (0*7 + 5*8 + DV1*9) modulo por 11
     * ESTADO recebe um desses valores de forma aleátoria : 
     * 01-SP, 02-MG, 03-RJ, 04-RS, 05-BA, 06-PR, 07-CE, 08-PE, 09-SC, 10-GO, 11-MA, 12-PB, 13-PA, 14-ES, 15-PI, 16-RN, 17-AL, 18-MT, 19-MS, 20-DF, 21-SE, 22-AM, 23-RO, 24-AC, 25-AP, 26-RR, 27-TO e 28-Exterior(ZZ)
+    * @return titulo, retornará o título composto por 12 digitos
     */
     public String TituloEleitoral() {
     int N1 = (gerador.nextInt(10));
@@ -401,7 +400,7 @@ public final class Gerador {
     int N6 = (gerador.nextInt(10));
     int N7 = (gerador.nextInt(10));
     int N8 = (gerador.nextInt(10));
-    int ESTADO = (int) (1+ Math.random()*28);
+    int ESTADO = (int) (1+ Math.random()*27);
     int aux1, aux2;
     int DV1, DV2;
     if(ESTADO <= 9){
@@ -412,9 +411,6 @@ public final class Gerador {
         aux1 = ESTADO / 10;
         aux2 = ESTADO % 10;
     }
-    System.out.println("ESTADO: " + ESTADO);
-    System.out.println("aux1: " + aux1);
-    System.out.println("aux2: " + aux2);
    
     DV1 = (N1*2 + N2*3 + N3*4 + N4*5 + N5*6 + N6*7 + N7*8 + N8*9) % 11 ;
     if(DV1 >= 10){
@@ -425,6 +421,7 @@ public final class Gerador {
     if(DV2 >= 10){
         DV2 = 0;
     }
+ 
             String titulo =
                 Integer.toString(N1) +
                 Integer.toString(N2) +
@@ -441,5 +438,75 @@ public final class Gerador {
        
         return(titulo);
     }
+    
+    /**
+    *De forma aleátoria cria o primeiro digito sendo 4 para VISA e 5 para Mastercard
+    *Cria-se um vetor de 14 posições, e a partir do primeiro digito + o digitos[14], encontra o digito verificador que do cartão
+    *@return NumeroCartao, retorna cartão de crédito válido(VISA ou Mastercard) com 16 digitos
+    */
+    public String LUHN() {
 
+        int digitos[] = new int[14];
+        int multiplicadores[] = {1,2,1,2,1,2,1,2,1,2,1,2,1,2};
+        int Num[] = new int[14];
+        int i = 0;
+        int j = 0;
+        int D1=0,DV, Daux = 0, aux, sum= 0;
+        int OP = gerador.nextInt(2);
+            switch(OP){
+            case 0:
+                D1 = 4; 
+                Daux = 8;
+            break;
+            case 1:
+                D1 = 5;  
+                Daux = 1;
+            break;
+            }
+
+            for(i=0; i<14;i++){
+            int x = (int)Math.round(Math.random()*9);
+            digitos[i] = x;
+            }
+
+            for(j=0; j<multiplicadores.length; j++){
+            Num[j] = digitos[j] * multiplicadores[j];
+            if((digitos[j] * multiplicadores[j]) > 9){
+                Num[j]=Num[j] - 9;  
+            }       
+            sum +=Num[j];
+            }
+
+            aux = ((sum + Daux) % 10);
+            if(aux == 0){
+                DV = 0;
+            }
+            else {
+                DV = 10 - aux;
+            }
+
+            String NumeroCartao = 
+                    Integer.toString(D1)+
+                    Integer.toString(digitos[0])+
+                    Integer.toString(digitos[1])+
+                    Integer.toString(digitos[2])+
+                    " " +
+                    Integer.toString(digitos[3])+
+                    Integer.toString(digitos[4])+
+                    Integer.toString(digitos[5])+
+                    Integer.toString(digitos[6])+
+                    " " +
+                    Integer.toString(digitos[7])+
+                    Integer.toString(digitos[8])+
+                    Integer.toString(digitos[9])+
+                    Integer.toString(digitos[10])+
+                    " " +
+                    Integer.toString(digitos[11])+
+                    Integer.toString(digitos[12])+
+                    Integer.toString(digitos[13])+
+                    Integer.toString(DV);
+
+            return NumeroCartao;
+    }
+    
 }
