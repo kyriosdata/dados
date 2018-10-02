@@ -308,25 +308,39 @@ public final class Gerador {
     * Usa de uma fórmula específica para criação de CPF's válidos, a partir de 9 digitos aleátorios, conclui 2 dígitos verificadores
     * @return cpf, retorna o CPF válido com os 11 dígitos
     */
-    Random gerador = new Random();
     public String cpf(){
-    Random gerador = new Random();
+      	public static int aleatorio(int min, int max){
+        Random r = new Random();
+        return (min + r.nextInt(max - min + 1));
+   		}    
 
-    int digito1 = (gerador.nextInt(10));
-    int digito2 = (gerador.nextInt(10));
-    int digito3 = (gerador.nextInt(10));
-    int digito4 = (gerador.nextInt(10));
-    int digito5 = (gerador.nextInt(10));
-    int digito6 = (gerador.nextInt(10));
-    int digito7 = (gerador.nextInt(10));
-    int digito8 = (gerador.nextInt(10));
-    int digito9 = (gerador.nextInt(10));
+   		int[] digitos = new int[11];
+	    int somador1 =0,somador2=0;
+	    int verificador1=0, verificador2=0;
+	    StringBuilder cpf = new StringBuilder();
     
-   	 	int verificador1 = (digito1*1 + digito2*2 + digito3*3 + digito4*4 + digito5*5 + digito6*6 + digito7*7 + digito8*8 + digito9*9) % 11 ;
-    	int verificador2 = (digito1*0 + digito2*1 + digito3*2 + digito4*3 + digito5*4 + digito6*5 + digito7*6 + digito8*7 + digito9*8 + verificador1*9) % 11 ;
+       for(int i=0; i<digitos.length-2; i++){
+       digitos[i] = aleatorio(1,9);
+       cpf.append(digitos[i]);
+       } 
 
-        String cpf = String.format("%d%d%d%d%d%d%d%d%d%d%d",digito1,digito2,digito3,digito4,digito5,digito6,digito7,digito8,digito9,verificador1,verificador2);
-        return cpf;
+       for(int i=0; i<digitos.length-2 ; i++){
+        somador1 += digitos[i] *(i+1) ;
+       }
+       verificador1 = somador1 % 11;
+       
+       digitos[digitos.length-2] = verificador1;
+       for(int j=0; j<digitos.length-1 ; j++){
+       somador2 += digitos[j] *j ;
+       }
+
+       verificador2 = somador2 % 11;
+       digitos[digitos.length-1] = verificador2;
+       cpf.setLength(0);
+       for(int i = 0; i < digitos.length; i++) {
+       cpf.append(digitos[i]);
+   	   }
+       return cpf;
     }
 
     /**
@@ -358,120 +372,128 @@ public final class Gerador {
     
     /**
     * É realizado a multiplicação dos 8 primeiros digitos por 2 3 4 5 6 7 8 9 encontro o digito
-    * O digito do estado é desmembrado em unidades, por exemplo ESTADO = 05, logo DV2 = (0*7 + 5*8 + DV1*9) modulo por 11
-    * ESTADO recebe um desses valores de forma aleátoria : 
+    * O digito do estado é desmembrado em unidades, por exemplo estado = 05, logo verificador2 = (0*7 + 5*8 + DV1*9) modulo por 11
+    * estado recebe um desses valores de forma aleátoria : 
     * 01-SP, 02-MG, 03-RJ, 04-RS, 05-BA, 06-PR, 07-CE, 08-PE, 09-SC, 10-GO, 11-MA, 12-PB, 13-PA, 14-ES, 15-PI, 
     * 16-RN, 17-AL, 18-MT, 19-MS, 20-DF, 21-SE, 22-AM, 23-RO, 24-AC, 25-AP, 26-RR, 27-TO e 28-Exterior(ZZ)
     
     * @return titulo, retornará o título composto por 12 digitos
     */
     public String tituloEleitoral() {
-    Random gerador = new Random();
-    int digito1 = (gerador.nextInt(10));
-    int digito2 = (gerador.nextInt(10));
-    int digito3 = (gerador.nextInt(10));
-    int digito4 = (gerador.nextInt(10));
-    int digito5 = (gerador.nextInt(10));
-    int digito6 = (gerador.nextInt(10));
-    int digito7 = (gerador.nextInt(10));
-    int digito8 = (gerador.nextInt(10));
+    	public static int aleatorio(int min, int max){
+        Random r = new Random();
+        return (min + r.nextInt(max - min + 1));
+   		}    
+       int estado = aleatorio(1,28);
+       int[] digitos = new int[12];
+       int somador1=0;
+       StringBuilder titulo = new StringBuilder();
+       
+	    for(int i=0; i<digitos.length-4; i++){
+	    digitos[i] = aleatorio(1,9);
+	    titulo.append(digitos[i]);
+	    }
+       
+    	int digito1_estado, digito2_estado;
+    	int verificador1 = 0, verificador2 = 0;
     
-    int numEstado [] = {1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28};
-    int estado = gerador.nextInt(numEstado.length);
-            
-    int digito1_estado, digito2_estado;
-    int verificador1, verificador2;
-    
-    if(estado <= 9){
+    	if(estado <= 9){
         digito1_estado = 0;
         digito2_estado = estado;
-    }
-    else{
-        digito1_estado = estado / 10;
-        digito2_estado = estado % 10;
-    }
-   
-    verificador1 = (digito1*2 + digito2*3 + digito3*4 + digito4*5 + digito5*6 + digito6*7 + digito7*8 + digito8*9) % 11 ;
-    if(verificador1 >= 10){
-        verificador1 = 0;
-    }
-   
-    verificador2 = (digito1_estado*7 + digito2_estado*8 + verificador1*9) % 11 ;
-    if(verificador2 >= 10){
-        verificador2 = 0;
-    }
-   
-        String titulo = String.format("%d%d%d%d%d%d%d%d%d%d%d%d",digito1,digito2,digito3,digito4,digito5,digito6,digito7,digito8,digito1_estado,digito2_estado,verificador1,verificador2);
+    	}
+		    else{
+		        digito1_estado = estado / 10;
+		        digito2_estado = estado % 10;
+		    }
+    
+	    for(int j=0; j<digitos.length-4; j++){
+	        somador1 += digitos[j] * (j+2);
+	        verificador1 = somador1 % 11;
+	        
+	        if(verificador1 >= 10){
+	            verificador1 = 0;
+	        }
+	    }
+	    verificador2 = ((digito1_estado*7 + digito2_estado*8 + verificador1*9) % 11) ;
+	    if(verificador2 >= 10){
+	        verificador2 = 0;
+	    }
+    
+	    digitos[digitos.length-4] = digito1_estado;
+	    digitos[digitos.length-3] = digito2_estado;
+	    digitos[digitos.length-2] = verificador1;
+	    digitos[digitos.length-1] = verificador2;
+
+	    titulo.setLength(0);
+	    for(int i = 0; i < digitos.length; i++) {
+	        titulo.append(digitos[i]);
+	    }
 
         return titulo;
     }
     
 	/**
-	 *De forma aleátoria cria o primeiro digito sendo 4 para VISA e 5 para Mastercard
-	 *Cria-se um vetor de 14 posições, e a partir do primeiro digito + o digitos[13], encontra o digito verificador que do cartão
-	 *digitoInicial será o primero digito do cartão, JCB será sempre 3, VISA 4, Mastercard 5; 
-	 *digito2, será o segundo digito sendo JCB sendo sempre 5,mastercard indo no maximo até 5, e no caso de visa sem restrições;
+	 *De forma aleátoria cria o primeiro digito sendo 3 para JCB, 4 para VISA, 5 para Mastercard e 6 para Diners Club
+	 *Cria-se um vetor de 16 posições, a partir de operações sobre os 15 primeiros digitos encontra o digito verificador que do cartão
+	 *digito[0] será o primero digito do cartão 
+	 *digito[1], será o segundo digito sendo JCB sendo sempre 5,mastercard um valor aleatório(1 a 5), e no caso de visa sem restrições(0 a 9);
 	 *No caso do Diners Club, por padrão os 4 primeiros digitos já são pre-definidos 6011. 
 	 */
     public String luhn() {
-	Random gerador = new Random();
-    int digitos[] = new int[13];
-    int multiplicadores[] = {2,1,2,1,2,1,2,1,2,1,2,1,2};
-    int digitoMastercard [] = {1,2,3,4,5};
-    int Num[] = new int[13];
-    int i = 0, j = 0;
-    int digito2=0, digitoInicial=0,digitorVerificador, digitoAuxiliar = 0, resto10, somavetor = 0;
-    int randomCase = gerador.nextInt(4);
-        
-        switch(randomCase){
-        case 0:
-            digitoInicial = 3;  
-            digitoAuxiliar = 6;
-            digito2 = 5;
-	break;    
-        case 1:
-            digitoInicial = 4; 
-            digitoAuxiliar = 8;
-            digito2 = gerador.nextInt(10);
-	break;
-        case 2:
-            digitoInicial = 5;  
-            digitoAuxiliar = 1;
-            digito2 = gerador.nextInt(digitoMastercard.length+1);
-	break;
-        case 3:
-            digitoInicial = 6;  
-            digitoAuxiliar = 3;
-	break;
+    	public static int aleatorio(int min, int max){
+        Random r = new Random();
+        return (min + r.nextInt(max - min + 1));
+    	}
+        int[] digitos = new int[16];
+        StringBuilder numeroCartao = new StringBuilder();
+     
+        for(int i = 0; i < digitos.length-1; i++){
+            switch(i){
+                case 0:
+                    digitos[i] = aleatorio(3,6);
+                break;
+                case 1:
+                    digitos[1] = (
+                            digitos[0] == 4 ? aleatorio(0,9) :
+                            (digitos[0] == 5 ? aleatorio(1,5):
+                            (digitos[0] == 3 ? 5:
+                            (digitos[0] == 6 ? 0: 0))));  
+                break;
+                case 2:
+                case 3:
+                    if(digitos[0] == 6) {
+                        digitos[i] = 1;
+                    } else {
+                        digitos[i] = aleatorio(0,9);
+                    }
+                   
+                break;
+                default:
+                    digitos[i] = aleatorio(0,9);
+                break;
+            }
+            numeroCartao.append(digitos[i]);
         }
-        
-        for(i=0; i<13; i++){
-            int x = (int)Math.round(Math.random()*9);
-            digitos[i] = x;
+       
+        int somaDigitos = 0;
+        for(int i = 0; i < digitos.length; i++){
+            int digitoAtual = digitos[i];
+            if((i % 2) == 0) {
+                digitoAtual = digitos[i]*2;
+                if(digitoAtual > 9) {
+                    digitoAtual -= 9;
+                }
+            }
+            somaDigitos += digitoAtual;
         }
-        if(digitoInicial == 6){
-        digito2 = 0;
-        digitos[0] = 1;
-        digitos[1] = 1;
+       
+        int digitoVerificador = ((somaDigitos % 10) == 0) ? 0 :
+                                (10 - (somaDigitos % 10));
+        digitos[digitos.length-1] = digitoVerificador;
+        numeroCartao.setLength(0);
+        for(int i = 0; i < digitos.length; i++) {
+            numeroCartao.append(digitos[i]);
         }
-        
-        for(j=0; j<multiplicadores.length ; j++){
-            Num[j] = digitos[j] * multiplicadores[j];
-        if((digitos[j] * multiplicadores[j]) > 9){
-            Num[j]=Num[j] - 9;
-        }       
-        somavetor +=Num[j];
-        }
-        
-        resto10 = (( digitoAuxiliar + digito2 + somavetor ) % 10);
-        if(resto10 == 0){
-            digitorVerificador = 0;
-        }
-        else {
-            digitorVerificador = 10 - resto10;
-        }
-        
-        String numeroCartao = String.format("%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d%d",digitoInicial,digito2,digitos[0],digitos[1],digitos[2],digitos[3],digitos[4],digitos[5],digitos[6],digitos[7],digitos[8],digitos[9],digitos[10],digitos[11],digitos[12],digitorVerificador);
 
         return numeroCartao;
     }
