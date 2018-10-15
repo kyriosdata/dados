@@ -33,15 +33,31 @@ public final class Gerador {
     private static final String nome = "nomes.txt";
     private static final String sobrenome = "sobrenomes.txt";
     private static final DateTimeFormatter SDF = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    private static final String TEXTO = "Lorem.txt";
+    private static final String texto = "lorem.txt";
+    private static final String logradouro = "logradouros.txt";
+    private static final String cartorio = "cartorios.txt";
+    private static final String codigoNacional = "codigosNacionais.txt";
     public static final ThreadLocalRandom CURRENT = ThreadLocalRandom.current();
     public static final Random RANDOM = new Random();
 
     private final List<String> nomes;
     private final List<String> sobrenomes;
-    private final List<String> texto;
+    private final List<String> textos;
+    private final List<String> logradouros;
+    private final List<String> cartorios;
+    private final List<String> codigosNacionais;
     
-    
+    /**
+     * Gera um inteiro dentro da faixa indicada.
+     * @param min O menor valor que pode ser sorteado.
+     * @param max O maior valor que pode ser sorteado.
+     *
+     * @return Um inteiro entre a faixa fornecida.
+     */
+    public static int aleatorio(int min, int max) {
+    Random r = new Random();
+    return (min + r.nextInt(max - min + 1));
+    }    
     /**
      * Obtém instância de {@link File} para arquivo mantido no diretório
      * "resources".
@@ -51,10 +67,11 @@ public final class Gerador {
      * @return Instância de {@link File} para arquivo contido no diretório
      * "resources".
      */
-      private File getFileFromResources(String file) {
+    private File getFileFromResources(String file) {
         ClassLoader classLoader = this.getClass().getClassLoader();
         return new File(classLoader.getResource(file).getFile());
     }
+    
     /**
      * Carrega conteúdo do arquivo texto (linhas) em uma lista.
      *
@@ -78,7 +95,10 @@ public final class Gerador {
     public Gerador() {
         nomes = carregaLinhas(nome);
         sobrenomes = carregaLinhas(sobrenome);
-        texto = carregaLinhas(TEXTO);
+        textos = carregaLinhas(texto);
+        logradouros = carregaLinhas(logradouro);
+        cartorios = carregaLinhas(cartorio);
+        codigosNacionais = carregaLinhas(codigoNacional);
     }
     
     public List<String> getNomes() {
@@ -88,6 +108,18 @@ public final class Gerador {
     public List<String> getSobrenomes() {
         return sobrenomes;
     }
+    
+    public List<String> getTextos() {
+        return textos;
+    }
+    
+    public List<String> getLogradouro() {
+        return logradouros;
+    }
+    
+        public List<String> getCodigoNacional() {
+        return codigosNacionais;
+    }
 
     /**
      * Gera um inteiro dentro da faixa indicada.
@@ -96,16 +128,16 @@ public final class Gerador {
      *
      * @return Um inteiro entre a faixa fornecida, inclusive.
      */
-    public int getInteiro(int min, int max){
+    public int getInteiro(int min, int max) {
         return CURRENT.nextInt(min, max);
     }
 
     /**
-     * Gera um inteiro de 0 a 100.
-     * @return inteiro gerado, já com um valor limite definido, nesse caso até 100.
+     * Gera um inteiro de 0 a 1000.
+     * @return inteiro gerado, já com um valor limite definido, nesse caso até 1000.
      */
-    public int getInteiroUnico(){
-        return CURRENT.nextInt(100);
+    public int getInteiroUnico() {
+        return CURRENT.nextInt(1000);
     }
 
     /**
@@ -113,7 +145,7 @@ public final class Gerador {
      *
      * @return Uma data arbitrária no período de ?? até ??.
      */
-    public String getDataAsString(){
+    public String getDataAsString() {
         return SDF.format(getData());
     }
 
@@ -131,59 +163,35 @@ public final class Gerador {
      *
      * @return Um nome completo (nome e sobrenome).
      */
-    public String nomeCompleto(){
+    public String nomeCompleto() {
         int indexNome = getInteiro(0, nomes.size() - 1);
         int indexSobrenome = getInteiro(0, sobrenomes.size() - 1);
         return nomes.get(indexNome) + " " + sobrenomes.get(indexSobrenome);
     }
 
     /**
-     * Gera um numero flutuante aleatorio de valor maximo 100, e formata para pegar somente 2 casas após a virgula.
-     * @return um valor flutuante que foi armazenado na variavel Flut e posteriormente usado na AleatorioDouble.
-     * Essa seria uma opção viável, porém formando como se fosse String, pelo o fato de está usando DecimalFormat : 
-     *  
-     * public static String getAleatorioFlutuante(){
-            DecimalFormat df = new DecimalFormat("0.##");
-            double Flut = Math.random()*100;
-            String AleatorioDouble = df.format(Flut);
-            return AleatorioDouble;
-        }
-    /**
      * Gera um double de 0 a 100.
      * @return double gerado, já com um valor limite definido, nesse caso até 100.
      */
-    public double getDoubleUnico(){
+    public double getDoubleUnico() {
         return CURRENT.nextDouble(100);
     }
+    
     /**
-     * Gera um numero flutuante dentro da faixa de 5 a 15 quando o método for chamado, e formata para pegar somente 2 casas após a virgula.
-     * @return um valor flutuante que foi armazenado na variavel Flut e posteriormente usado na IntervaloDouble.
-     * Essa seria uma opção viável usando como o exemplo dito, sorteando valores entre 5 e 15 :
-     *  
-     *  public static String getIntervaloFlutuante(){
-            DecimalFormat df = new DecimalFormat ("0.##");
-            double Flut = 5+Math.random()*10;
-            String  IntervaloDouble= df.format(Flut);
-            return IntervaloDouble;
-        }
-        * Necessário importar as bibliotecas :
-            import java.text.DecimalFormat;
-            import java.text.SimpleDateFormat;
-        *   
-        * 
      * Gera um double dentro da faixa indicada.
      * @param min O menor valor que pode ser sorteado.
      * @param max O maior valor que pode ser sorteado.
      * @return Um double entre a faixa fornecida, inclusive.
      */
-    public double getDouble(double min, double max){
+    public double getDouble(double min, double max) {
         return CURRENT.nextDouble(min, max);
     }
+    
     /**
      * Gera uma data aleátoria entre o intervalo de 1900 ao ano 2100, tratando a diferença de dias de referente a cada mês
      * @return a data aleátoria usando a biblioteca LocalDate, no formato (ano/mes/dia)
      */
-    public LocalDate getData(){
+    public LocalDate getData() {
         int[] totalDias = {31,28,31,30,31,30,31,31,30,31,30,31};
 
         int mes = getInteiro(1,12);
@@ -192,18 +200,19 @@ public final class Gerador {
 
         return LocalDate.of(ano, mes, dia);
     }
+    
     /**
      * Gera uma data aleátoria entre o intervalo especificado nos parâmetros
      * dataInicio recebe uma data inicial(limite inferior)
      * dataFim recebe uma data final(limite superior)
      *
-     * @return a data a partir do intervalo especificado no método LocalDate.of
+     * @return a data a partir do intervalo especificado no método getData
      */
     public LocalDate getDataIntervalo(){
     LocalDate dataInicio = LocalDate.of(2010, 10, 10); 
 	long inicio = dataInicio.toEpochDay();
 
-	LocalDate dataFim    = LocalDate.of(2018, 12, 11); 
+	LocalDate dataFim = LocalDate.of(2018, 12, 11); 
 	long fim = dataFim.toEpochDay();
 
 	long dataQualquer = ThreadLocalRandom.current().longs(inicio, fim).findAny().getAsLong();
@@ -211,118 +220,72 @@ public final class Gerador {
     }
     
     /**
-     * Acessa um arquivo Lorem.txt, exibindo apenas a quantidade arbitrária de caracteres
-     * Usa o método read da biblioteca java.io.BufferedReader.read(char[] cbuf, int off, int len)
-     * cbuf cria buffer de destino
-     * off recebe o número do caracter inicial para leitura
-     * len recebe o número do caracter final(delimitação) para leitura
+     *Método criado para acessar e ler caracteres do arquivo Lorem.txt 
+     *@param min O menor valor que pode ser sorteado.
+     *@param max O maior valor que pode ser sorteado.
      * 
-     * "entrada" recebe o documento e abre com a finalidade de leitura
-     * "leitor" recebe a entrada, como sendo um novo leitor de entrada
-     * "buff" cria um novo leitor em buffer
-     * @return c retorna os caracteres do intervalo minimo 0 a 100 e maximo de 100 a 1000, para realizar a leitura do txt
+     *"inputStream" recebe o documento e abre com a finalidade de leitura
+     *"leitorTexto" recebe a entrada, como sendo um novo leitor de entrada
+     *"cBuffer" cria um novo leitor em buffer
+     *@return c retorna os caracteres do intervalo min e max, passados como parâmetro.
      */
-    public char getTexto() throws IOException{
-      InputStream entrada = null; 
-      InputStreamReader leitor = null;
-      BufferedReader buff = null;
-
-      	try {
-	        entrada = new FileInputStream("C:Lorem.txt");         
-	        leitor = new InputStreamReader(entrada);
-	        buff = new BufferedReader(leitor);
-
-	        char[] cbuf = new char[entrada.available()];
-
-	        int min = CURRENT.nextInt(100);
-	        int max = CURRENT.nextInt(100,1000);
-	        buff.read(cbuf, min, max);
-	         
-	        for (char c:cbuf) {
-	            if(c == (char)0) {
-	               c = ' ';
-	            } 
-	           //System.out.print(c);
-	           return c;
-	        }
-                  
-      	}
-        catch(Exception e){
-         e.printStackTrace();
-      	}
-      	finally {
-         if(entrada!=null)
-            entrada.close();
-         if(leitor!=null)
-            leitor.close();
-         if(buff!=null)
-            buff.close();
-      	}
-        return 0;
+    public char[] getTexto(int min, int max) throws IOException {
+        
+        char[] cBuffer;
+        BufferedReader leitorTexto = null;
+        FileInputStream inputStream = null;
+        try {
+            inputStream = new FileInputStream(texto);
+            leitorTexto = new BufferedReader(new InputStreamReader(inputStream));
+            cBuffer = new char[inputStream.available()];
+            leitorTexto.read(cBuffer,min,max);
+            return cBuffer;
+        } catch(IOException e){
+            e.printStackTrace();
+        } finally {
+            try {
+                leitorTexto.close();
+            } catch(IOException e){
+                e.printStackTrace();
+            }
+        }
+        return null;
     }
     
     /**
-     * Acessa um arquivo Lorem.txt, exibindo apenas a quantidade de caracteres especificado
+     * Acessa getTexto para realizar leitura do arquivo texto
      * 
-     * @return c retorna uma quantidade exata de caracteres passado no parâmetro com nome "totalCaracteres" 
+     * @return, retorna uma quantidade exata de caracteres passado no parâmetro de getTexto, nesse caso os 1000 primeiros caracteres 
      */
-    public char getString(int totalCaracteres) throws IOException{
-      InputStream entrada = null; 
-      InputStreamReader leitor = null;
-      BufferedReader buff = null;
-
-    try {
-         entrada = new FileInputStream("C:Lorem.txt");         
-         leitor = new InputStreamReader(entrada);
-         buff = new BufferedReader(leitor);
-
-         char[] cbuf = new char[entrada.available()];
-         
-         int  exatoCarac = CURRENT.nextInt(totalCaracteres);
-         buff.read(cbuf, 0, exatoCarac);
-         
-         for (char c:cbuf) {
-         
-            if(c == (char)0) {
-               c = ' ';
-            } 
-           // System.out.print(c);
-           return c;
-         }
-                  
-    }	
-    catch(Exception e) {
+    public char[] gettextoFixo() throws IOException{
+        return getTexto(0,1000);
     }
-     	finally {
-         if(entrada!=null)
-            entrada.close();
-         if(leitor!=null)
-            leitor.close();
-         if(buff!=null)
-            buff.close();
-      	}
-        return 0;
-    }   
-
+    
+    /**
+     * Acessa getTexto para realizar leitura do arquivo texto
+     * Acessa o método "aleatorio" para passar como parâmetro o limite de faixa, min e max.
+     * @return, retorna de forma aleatoria, um minimo e maximo de início e fim de leitura do arquivo. 
+     * Nesse caso, o min será aleátorio entre 0 e 99 e o max será de 100 a 1000.
+     */
+    public char[] gettextoIntervalo() throws IOException{
+        return getTexto(aleatorio(0, 99),aleatorio(100, 1000));
+    }
+    
     /**
     * Usa de uma fórmula específica para criação de CPF's válidos, a partir de 9 digitos aleátorios, conclui 2 dígitos verificadores
     * @return cpf, retorna o CPF válido com os 11 dígitos
     */
-    public String cpf(){
-      	public static int aleatorio(int min, int max){
-        Random r = new Random();
-        return (min + r.nextInt(max - min + 1));
-   		}    
-
-   		int[] digitos = new int[11];
-	    int somador1 =0,somador2=0;
-	    int verificador1=0, verificador2=0;
-	    StringBuilder cpf = new StringBuilder();
-    
-       for(int i=0; i<digitos.length-2; i++){
-       digitos[i] = aleatorio(1,9);
-       cpf.append(digitos[i]);
-       } 
+    public StringBuilder cpf() {
+                 
+   	int[] digitos = new int[11];
+        int somador1 =0,somador2=0;
+        int verificador1=0, verificador2=0;
+	StringBuilder cpf = new StringBuilder();
+        
+        for(int i=0; i<digitos.length-2; i++){
+        digitos[i] = aleatorio(1,9);
+        cpf.append(digitos[i]);
+        } 
 
        for(int i=0; i<digitos.length-2 ; i++){
         somador1 += digitos[i] *(i+1) ;
@@ -342,7 +305,7 @@ public final class Gerador {
    	   }
        return cpf;
     }
-
+    
     /**
     * Usa de uma fórmula específica para criação de CNPJ's válidos, a partir de 8 dígitos aleátorios, conclui 2 dígitos verificadores
     * @return cpf, retorna o CNPJ com os 14 dígitos válidos
@@ -379,11 +342,8 @@ public final class Gerador {
     
     * @return titulo, retornará o título composto por 12 digitos
     */
-    public String tituloEleitoral() {
-    	public static int aleatorio(int min, int max){
-        Random r = new Random();
-        return (min + r.nextInt(max - min + 1));
-   		}    
+    public StringBuilder tituloEleitoral() {
+    	  
        int estado = aleatorio(1,28);
        int[] digitos = new int[12];
        int somador1=0;
@@ -432,18 +392,16 @@ public final class Gerador {
         return titulo;
     }
     
-	/**
-	 *De forma aleátoria cria o primeiro digito sendo 3 para JCB, 4 para VISA, 5 para Mastercard e 6 para Diners Club
-	 *Cria-se um vetor de 16 posições, a partir de operações sobre os 15 primeiros digitos encontra o digito verificador que do cartão
-	 *digito[0] será o primero digito do cartão 
-	 *digito[1], será o segundo digito sendo JCB sendo sempre 5,mastercard um valor aleatório(1 a 5), e no caso de visa sem restrições(0 a 9);
-	 *No caso do Diners Club, por padrão os 4 primeiros digitos já são pre-definidos 6011. 
-	 */
-    public String luhn() {
-    	public static int aleatorio(int min, int max){
-        Random r = new Random();
-        return (min + r.nextInt(max - min + 1));
-    	}
+    /**
+    *De forma aleátoria cria o primeiro digito sendo 3 para JCB, 4 para VISA, 5 para Mastercard e 6 para Diners Club
+    *Cria-se um vetor de 16 posições, a partir de operações sobre os 15 primeiros digitos encontra o digito verificador que do cartão
+    *digito[0] será o primero digito do cartão 
+    *digito[1], será o segundo digito sendo JCB sendo sempre 5,mastercard um valor aleatório(1 a 5), e no caso de visa sem restrições(0 a 9);
+    *No caso do Diners Club, por padrão os 4 primeiros digitos já são pre-definidos 6011. 
+    *@return o número completo de um cartão de credito válido
+    */
+    public StringBuilder luhn() {
+    	
         int[] digitos = new int[16];
         StringBuilder numeroCartao = new StringBuilder();
      
@@ -498,4 +456,83 @@ public final class Gerador {
         return numeroCartao;
     }
     
+    /**
+    *String[] relacionamento são os possiveis vinculos de um indivíduo
+    * 
+    *@return, retorna de forma aleátoria um dos possiveis relacionamentos
+    */    
+    public String getRelacionamento(){
+        String[] relacionamento = {
+            "Avó materna",
+            "Avô materno",
+            "Cônjuge/companheiro(a)",
+            "Irmão",
+            "Irmã",
+            "Meio-irmão",
+            "Meio-irmã",
+            "Criança",
+            "Filha",
+            "Avó paterno",
+            "Avô paterno",
+            "Tio materno",
+            "Tio Paterno",
+            "Tia paterna",
+            "Tia materna",
+            "Recém nascido",
+            "Pais",
+            "Mãe adotiva",
+            "Pai adotivo",
+            "Responsável"
+        };
+        int vinculo = aleatorio(0,relacionamento.length);        
+        
+        return relacionamento[vinculo];
+    }
+    
+    /**
+    *String[] certidao são os três possíveis certidões
+    *
+    *@return, retorna de forma aleátoria uma certidão
+    */   
+    public String getCertidao(){
+        String[] certidao = {
+            "Certidão de nascimento",
+            "Certidão de casamento",
+            "Certidão de divórcio"
+        };
+        int tipo = aleatorio(0,certidao.length);        
+        
+        return certidao[tipo];
+    }
+    
+    /**
+    *indexCartorios recebe um valor aleátorio entre 0 e o tamanho de cartorios(número máximo de cartorios)
+    * 
+    *@return, retorna de forma aleátoria um cartório
+    */   
+    public String cartorio() {
+        int indexCartorios = aleatorio(0, cartorios.size() - 1);
+        return cartorios.get(indexCartorios);
+    }
+        
+    /**
+    *indexLogradouro recebe um valor aleátorio entre 0 e o tamanho de logradouros(número máximo de logradouros)
+    * 
+    *@return, retorna de forma aleátoria um logradouro
+    */   
+    public String localizaLogradouro() {
+        int indexLogradouro = aleatorio(0, logradouros.size() - 1);
+        return logradouros.get(indexLogradouro);
+    }
+    
+    /**
+    *indexCodigoNacional recebe um valor aleátorio entre 0 e o tamanho de codigos(número máximo de códigos nacionais)
+    * 
+    *@return, retorna de forma aleátoria um código nacional completo
+    */ 
+    public String codigoNacional() {
+        int indexCodigoNacional = aleatorio(0, codigosNacionais.size() - 1);
+        return codigosNacionais.get(indexCodigoNacional);
+    }
+
 }
