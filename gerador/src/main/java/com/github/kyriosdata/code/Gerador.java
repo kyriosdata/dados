@@ -305,7 +305,40 @@ public final class Gerador {
    	   }
        return cpf;
     }
-    
+    /**
+     * Usa de uma fórmula específica para criação de Pis válidos, a partir de 10 digitos aleátorios, conclui 1 dígito verificador
+     * @return Pis, retorna o Pis válido com os 11 dígitos
+     */
+    public StringBuilder PIS() {
+        int[] digitos = new int[11];
+        int somador1 =0, somador2 =0;
+        int verificador;
+        StringBuilder PIS = new StringBuilder();
+
+        for (int i = 0; i < digitos.length - 1; i++) {
+            digitos[i] = aleatorio(1, 9);
+            PIS.append(digitos[i]);
+        }
+
+        for(int i=0; i<digitos.length - 9; i++){
+            somador1 += digitos[i] *(3-i);
+        }
+
+        for(int i=2; i<digitos.length - 1; i++){
+            somador2 += digitos[i] *(11-i);
+        }
+        verificador = 11 - ((somador1+somador2)%11);
+        if (verificador == 10 || verificador == 11){
+            verificador = 0;
+        }
+        digitos[digitos.length-1] = verificador;
+        PIS.setLength(0);
+
+        for(int i = 0; i < digitos.length; i++) {
+            PIS.append(digitos[i]);
+        }
+        return PIS;
+    }
     
     /**
     * Usa de uma fórmula específica para criação de CNPJ's válidos, a partir de 8 dígitos aleátorios, conclui 2 dígitos verificadores
