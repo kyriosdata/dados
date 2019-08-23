@@ -306,6 +306,7 @@ public final class Gerador {
        return cpf;
     }
     
+    
     /**
     * Usa de uma fórmula específica para criação de CNPJ's válidos, a partir de 8 dígitos aleátorios, conclui 2 dígitos verificadores
     * @return cpf, retorna o CNPJ com os 14 dígitos válidos
@@ -455,6 +456,7 @@ public final class Gerador {
 
         return numeroCartao;
     }
+
     
     /**
     *String[] relacionamento são os possiveis vinculos de um indivíduo
