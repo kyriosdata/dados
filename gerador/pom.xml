@@ -4,25 +4,6 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- mvn javadoc:javadoc
-         Gera documentação do projeto
-
-         mvn test
-         Executa testes
-
-         mvn package -P cobertura
-         Compila, executa testes e elabora relatório de cobertura.
-
-         mvn exec:java -Dexec.mainClass="com.github.kyriosdata.dados.ProgramaCalendario"
-         Executa o programa exemplo
-
-         mvn site
-         Gera relatórios para o projeto: checkstyle, PMD (caso exista falha).
-
-         mvn javancss:check (verifica se limite são observados)
-         mvn javancss:report (gera relatório)
-    -->
-
     <groupId>com.github.kyriosdata</groupId>
     <artifactId>gerador</artifactId>
     <packaging>jar</packaging>
@@ -83,9 +64,9 @@
         </dependency>
 
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.5.1</version>
             <scope>test</scope>
         </dependency>
 

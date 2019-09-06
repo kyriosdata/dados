@@ -4,7 +4,7 @@
  * Creative Commons Attribution 4.0 International License.
  */
 
-package com.github.kyriosdata.code;
+package com.github.kyriosdata.dados;
 
 /**
  * Identifica uma fonte de dados.
