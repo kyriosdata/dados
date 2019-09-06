@@ -25,6 +25,32 @@ import java.util.concurrent.ThreadLocalRandom;
  */
 public final class Gerador {
 
+    /**
+     * Relacionamentos obtidos da norma ABNT NBR 15985:2011.
+     */
+    private static String[] relacionamento = {
+            "avó materna",
+            "avô materno",
+            "cônjuge/companheiro(a)",
+            "irmão",
+            "irmã",
+            "meio-irmão",
+            "meio-irmã",
+            "criança",
+            "filha",
+            "avó paterno",
+            "avô paterno",
+            "tio materno",
+            "tio paterno",
+            "tia paterna",
+            "tia materna",
+            "recém-nascido",
+            "pais",
+            "mãe adotiva",
+            "pai adotivo",
+            "responsável"
+    };
+
     private static final String nome = "nomes.txt";
     private static final String sobrenome = "sobrenomes.txt";
     private static final DateTimeFormatter SDF = DateTimeFormatter.ofPattern("dd/MM/yyyy");
@@ -498,28 +524,6 @@ public final class Gerador {
      * @return, retorna de forma aleátoria um dos possiveis relacionamentos
      */
     public String getRelacionamento() {
-        String[] relacionamento = {
-                "Avó materna",
-                "Avô materno",
-                "Cônjuge/companheiro(a)",
-                "Irmão",
-                "Irmã",
-                "Meio-irmão",
-                "Meio-irmã",
-                "Criança",
-                "Filha",
-                "Avó paterno",
-                "Avô paterno",
-                "Tio materno",
-                "Tio Paterno",
-                "Tia paterna",
-                "Tia materna",
-                "Recém nascido",
-                "Pais",
-                "Mãe adotiva",
-                "Pai adotivo",
-                "Responsável"
-        };
         int vinculo = aleatorio(0, relacionamento.length);
 
         return relacionamento[vinculo];
