@@ -11,17 +11,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
-import java.util.stream.Stream;
 
 /**
  * Classe geradora de dados.
@@ -77,15 +74,13 @@ public final class Gerador {
      * do arquivo texto.
      */
     private List<String> carregaLinhas(String arquivo) {
-        List<String> linhas = new ArrayList<>();
         File file = getFileFromResources(arquivo);
         Path path = Paths.get(file.toURI());
-        try (Stream<String> fluxo = Files.lines(path, StandardCharsets.UTF_8)) {
-            fluxo.forEach(linha -> linhas.add(linha));
-        } catch (IOException exp) {
+        try {
+            return Files.readAllLines(path);
+        } catch (IOException e) {
             return null;
         }
-        return linhas;
     }
 
     public Gerador() {
