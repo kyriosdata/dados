@@ -26,6 +26,11 @@ import java.util.concurrent.ThreadLocalRandom;
 public final class Gerador {
 
     /**
+     * Gerador de números randômicos empregado por vários métodos.
+     */
+    public static final ThreadLocalRandom RANDOM = ThreadLocalRandom.current();
+
+    /**
      * Relacionamentos obtidos da norma ABNT NBR 15985:2011.
      */
     private static String[] relacionamento = {
@@ -58,8 +63,6 @@ public final class Gerador {
     private static final String logradouro = "logradouros.txt";
     private static final String cartorio = "cartorios.txt";
     private static final String codigoNacional = "municipios.txt";
-    public static final ThreadLocalRandom CURRENT = ThreadLocalRandom.current();
-    public static final Random RANDOM = new Random();
 
     private final List<String> nomes;
     private final List<String> sobrenomes;
@@ -69,14 +72,14 @@ public final class Gerador {
     private final List<String> codigosNacionais;
 
     /**
-     * Gera um inteiro dentro da faixa indicada.
+     * Gera um inteiro contido na faixa indicada, inclusive.
      *
      * @param min O menor valor que pode ser sorteado.
      * @param max O maior valor que pode ser sorteado.
-     * @return Um inteiro entre a faixa fornecida.
+     * @return Um inteiro entre menor e maior, inclusive.
      */
     public static int aleatorio(int min, int max) {
-        return ThreadLocalRandom.current().nextInt(min, max + 1);
+        return RANDOM.nextInt(min, max + 1);
     }
 
     /**
@@ -139,23 +142,12 @@ public final class Gerador {
     }
 
     /**
-     * Gera um inteiro dentro da faixa indicada.
-     *
-     * @param min O menor valor que pode ser sorteado.
-     * @param max O maior valor que pode ser sorteado.
-     * @return Um inteiro entre a faixa fornecida, inclusive.
-     */
-    public int getInteiro(int min, int max) {
-        return CURRENT.nextInt(min, max);
-    }
-
-    /**
      * Gera um inteiro de 0 a 1000.
      *
      * @return inteiro gerado, já com um valor limite definido, nesse caso até 1000.
      */
     public int getInteiroUnico() {
-        return CURRENT.nextInt(1000);
+        return RANDOM.nextInt(1000);
     }
 
     /**
@@ -182,8 +174,8 @@ public final class Gerador {
      * @return Um nome completo (nome e sobrenome).
      */
     public String nomeCompleto() {
-        int indexNome = getInteiro(0, nomes.size() - 1);
-        int indexSobrenome = getInteiro(0, sobrenomes.size() - 1);
+        int indexNome = aleatorio(0, nomes.size() - 1);
+        int indexSobrenome = aleatorio(0, sobrenomes.size() - 1);
         return nomes.get(indexNome) + " " + sobrenomes.get(indexSobrenome);
     }
 
@@ -193,7 +185,7 @@ public final class Gerador {
      * @return double gerado, já com um valor limite definido, nesse caso até 100.
      */
     public double getDoubleUnico() {
-        return CURRENT.nextDouble(100);
+        return RANDOM.nextDouble(100);
     }
 
     /**
@@ -204,7 +196,7 @@ public final class Gerador {
      * @return Um double entre a faixa fornecida, inclusive.
      */
     public double getDouble(double min, double max) {
-        return CURRENT.nextDouble(min, max);
+        return RANDOM.nextDouble(min, max);
     }
 
     /**
@@ -215,9 +207,9 @@ public final class Gerador {
     public LocalDate getData() {
         int[] totalDias = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-        int mes = getInteiro(1, 12);
-        int dia = Math.min(getInteiro(1, 31), totalDias[mes - 1]);
-        int ano = getInteiro(1900, 2100);
+        int mes = aleatorio(1, 12);
+        int dia = Math.min(aleatorio(1, 31), totalDias[mes - 1]);
+        int ano = aleatorio(1900, 2100);
 
         return LocalDate.of(ano, mes, dia);
     }
