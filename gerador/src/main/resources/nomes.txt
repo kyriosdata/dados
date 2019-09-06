@@ -1,5 +1,4 @@
-﻿
-Sexo;Nome
+﻿Sexo;Nome
 F;Abadia
 M;Abdias
 M;Abecy
