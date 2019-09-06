@@ -32,7 +32,7 @@ public final class Gerador {
     private static final String nome = "nomes.txt";
     private static final String sobrenome = "sobrenomes.txt";
     private static final DateTimeFormatter SDF = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    private static final String texto = "lorem.txt";
+    private static final String texto = "lorem-ipsum.txt";
     private static final String logradouro = "logradouros.txt";
     private static final String cartorio = "cartorios.txt";
     private static final String codigoNacional = "municipios.txt";
