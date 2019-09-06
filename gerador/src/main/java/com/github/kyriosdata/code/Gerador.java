@@ -53,8 +53,7 @@ public final class Gerador {
      * @return Um inteiro entre a faixa fornecida.
      */
     public static int aleatorio(int min, int max) {
-        Random r = new Random();
-        return (min + r.nextInt(max - min + 1));
+        return ThreadLocalRandom.current().nextInt(min, max + 1);
     }
 
     /**
