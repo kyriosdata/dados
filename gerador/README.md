@@ -6,7 +6,7 @@ Gerador de bases de dados para testes com foco em informações em saúde.
 - `mvn test` (executa testes)
 - `mvn javadoc:javadoc` (geração de documentação)
 - `mvn package -P cobertura` (executação de testes e relatório de cobertura)
-- `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario` (execução do programa)
+- `mvn exec:java -Dexec.mainClass="com.github.kyriosdata.dados.ProgramaCalendario` (execução do programa)
 - `java -jar exemplo-1.0.0.jar` (executa o programa, alternativa para o comando acima. O diretório "jar", conforme configurado no pom.xml deve acompanhar exemplo-1.0.0.jar).
 - `mvn javancss:check` (verifica se limites são observados e gera erro se não são)
 - `mvn javancss:report` (gera relatório)

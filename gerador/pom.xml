@@ -13,7 +13,7 @@
          mvn package -P cobertura
          Compila, executa testes e elabora relatório de cobertura.
 
-         mvn exec:java -Dexec.mainClass="com.github.kyriosdata.exemplo.ProgramaCalendario"
+         mvn exec:java -Dexec.mainClass="com.github.kyriosdata.dados.ProgramaCalendario"
          Executa o programa exemplo
 
          mvn site
@@ -148,10 +148,10 @@
                 <version>1.1.10</version>
                 <configuration>
                     <targetClasses>
-                        <param>com.github.kyriosdata.exemplo.Gerador</param>
+                        <param>com.github.kyriosdata.dados.Gerador</param>
                     </targetClasses>
                     <targetTests>
-                        <param>com.github.kyriosdata.exemplo.*</param>
+                        <param>com.github.kyriosdata.dados.*</param>
                     </targetTests>
                 </configuration>
             </plugin>
@@ -202,7 +202,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>jars/</classpathPrefix>
-                            <mainClass>com.github.kyriosdata.exemplo.ProgramaCalendario</mainClass>
+                            <mainClass>com.github.kyriosdata.dados.ProgramaCalendario</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

@@ -1,5 +1,6 @@
-package com.github.kyriosdata.exemplo;
+package com.github.kyriosdata.dados;
 
+import com.github.kyriosdata.code.Gerador;
 import org.junit.Test;
 
 import java.time.LocalDate;
