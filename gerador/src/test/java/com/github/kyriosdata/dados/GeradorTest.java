@@ -9,10 +9,10 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
-public class GeradorTest {
+class GeradorTest {
 
     @Test
-    public void recuperaNomesSobrenomes() {
+    void recuperaNomesSobrenomes() {
         List<String> nomes = new Gerador().getNomes();
         assertTrue(nomes.size() > 1000);
 
@@ -21,7 +21,7 @@ public class GeradorTest {
     }
 
     @Test
-    public void verificaData() {
+    void verificaData() {
         String data = new Gerador().getDataAsString();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
@@ -31,7 +31,7 @@ public class GeradorTest {
     }
 
     @Test
-    public void verificaNomeCompleto() {
+    void verificaNomeCompleto() {
         String nome = new Gerador().nomeCompleto();
         assertTrue(nome.contains(" "));
     }

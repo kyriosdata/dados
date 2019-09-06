@@ -29,7 +29,13 @@ public final class Gerador {
      * Gerador de números randômicos empregado por vários métodos.
      */
     public static final ThreadLocalRandom RANDOM = ThreadLocalRandom.current();
-
+    private static final String nome = "nomes.txt";
+    private static final String sobrenome = "sobrenomes.txt";
+    private static final DateTimeFormatter SDF = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+    private static final String texto = "lorem-ipsum.txt";
+    private static final String logradouro = "logradouros.txt";
+    private static final String cartorio = "cartorios.txt";
+    private static final String codigoNacional = "municipios.txt";
     /**
      * Relacionamentos obtidos da norma ABNT NBR 15985:2011.
      */
@@ -55,21 +61,21 @@ public final class Gerador {
             "pai adotivo",
             "responsável"
     };
-
-    private static final String nome = "nomes.txt";
-    private static final String sobrenome = "sobrenomes.txt";
-    private static final DateTimeFormatter SDF = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-    private static final String texto = "lorem-ipsum.txt";
-    private static final String logradouro = "logradouros.txt";
-    private static final String cartorio = "cartorios.txt";
-    private static final String codigoNacional = "municipios.txt";
-
     private final List<String> nomes;
     private final List<String> sobrenomes;
     private final List<String> textos;
     private final List<String> logradouros;
     private final List<String> cartorios;
     private final List<String> codigosNacionais;
+
+    public Gerador() {
+        nomes = carregaLinhas(nome);
+        sobrenomes = carregaLinhas(sobrenome);
+        textos = carregaLinhas(texto);
+        logradouros = carregaLinhas(logradouro);
+        cartorios = carregaLinhas(cartorio);
+        codigosNacionais = carregaLinhas(codigoNacional);
+    }
 
     /**
      * Gera um inteiro contido na faixa indicada, inclusive.
@@ -112,33 +118,12 @@ public final class Gerador {
         }
     }
 
-    public Gerador() {
-        nomes = carregaLinhas(nome);
-        sobrenomes = carregaLinhas(sobrenome);
-        textos = carregaLinhas(texto);
-        logradouros = carregaLinhas(logradouro);
-        cartorios = carregaLinhas(cartorio);
-        codigosNacionais = carregaLinhas(codigoNacional);
-    }
-
     public List<String> getNomes() {
         return nomes;
     }
 
     public List<String> getSobrenomes() {
         return sobrenomes;
-    }
-
-    public List<String> getTextos() {
-        return textos;
-    }
-
-    public List<String> getLogradouro() {
-        return logradouros;
-    }
-
-    public List<String> getCodigoNacional() {
-        return codigosNacionais;
     }
 
     /**
