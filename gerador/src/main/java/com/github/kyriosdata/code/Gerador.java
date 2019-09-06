@@ -78,7 +78,7 @@ public final class Gerador {
      * @param max O maior valor que pode ser sorteado.
      * @return Um inteiro entre menor e maior, inclusive.
      */
-    public static int aleatorio(int min, int max) {
+    public static int inteiro(int min, int max) {
         return RANDOM.nextInt(min, max + 1);
     }
 
@@ -142,11 +142,11 @@ public final class Gerador {
     }
 
     /**
-     * Gera um inteiro de 0 a 1000.
+     * Gera um inteiro de 0 (inclusive) até 1000 (exclusive).
      *
      * @return inteiro gerado, já com um valor limite definido, nesse caso até 1000.
      */
-    public int getInteiroUnico() {
+    public int inteiro() {
         return RANDOM.nextInt(1000);
     }
 
@@ -164,7 +164,7 @@ public final class Gerador {
      *
      * @return Um valor lógico.
      */
-    public boolean getLogico() {
+    public boolean logico() {
         return RANDOM.nextBoolean();
     }
 
@@ -174,8 +174,8 @@ public final class Gerador {
      * @return Um nome completo (nome e sobrenome).
      */
     public String nomeCompleto() {
-        int indexNome = aleatorio(0, nomes.size() - 1);
-        int indexSobrenome = aleatorio(0, sobrenomes.size() - 1);
+        int indexNome = inteiro(0, nomes.size() - 1);
+        int indexSobrenome = inteiro(0, sobrenomes.size() - 1);
         return nomes.get(indexNome) + " " + sobrenomes.get(indexSobrenome);
     }
 
@@ -207,9 +207,9 @@ public final class Gerador {
     public LocalDate getData() {
         int[] totalDias = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-        int mes = aleatorio(1, 12);
-        int dia = Math.min(aleatorio(1, 31), totalDias[mes - 1]);
-        int ano = aleatorio(1900, 2100);
+        int mes = inteiro(1, 12);
+        int dia = Math.min(inteiro(1, 31), totalDias[mes - 1]);
+        int ano = inteiro(1900, 2100);
 
         return LocalDate.of(ano, mes, dia);
     }
@@ -283,7 +283,7 @@ public final class Gerador {
      * Nesse caso, o min será aleátorio entre 0 e 99 e o max será de 100 a 1000.
      */
     public char[] gettextoIntervalo() throws IOException {
-        return getTexto(aleatorio(0, 99), aleatorio(100, 1000));
+        return getTexto(inteiro(0, 99), inteiro(100, 1000));
     }
 
     /**
@@ -299,7 +299,7 @@ public final class Gerador {
         StringBuilder cpf = new StringBuilder();
 
         for (int i = 0; i < digitos.length - 2; i++) {
-            digitos[i] = aleatorio(1, 9);
+            digitos[i] = inteiro(1, 9);
             cpf.append(digitos[i]);
         }
 
@@ -334,7 +334,7 @@ public final class Gerador {
         StringBuilder PIS = new StringBuilder();
 
         for (int i = 0; i < digitos.length - 1; i++) {
-            digitos[i] = aleatorio(1, 9);
+            digitos[i] = inteiro(1, 9);
             PIS.append(digitos[i]);
         }
 
@@ -397,13 +397,13 @@ public final class Gerador {
      */
     public StringBuilder tituloEleitoral() {
 
-        int estado = aleatorio(1, 28);
+        int estado = inteiro(1, 28);
         int[] digitos = new int[12];
         int somador1 = 0;
         StringBuilder titulo = new StringBuilder();
 
         for (int i = 0; i < digitos.length - 4; i++) {
-            digitos[i] = aleatorio(1, 9);
+            digitos[i] = inteiro(1, 9);
             titulo.append(digitos[i]);
         }
 
@@ -461,12 +461,12 @@ public final class Gerador {
         for (int i = 0; i < digitos.length - 1; i++) {
             switch (i) {
                 case 0:
-                    digitos[i] = aleatorio(3, 6);
+                    digitos[i] = inteiro(3, 6);
                     break;
                 case 1:
                     digitos[1] = (
-                            digitos[0] == 4 ? aleatorio(0, 9) :
-                                    (digitos[0] == 5 ? aleatorio(1, 5) :
+                            digitos[0] == 4 ? inteiro(0, 9) :
+                                    (digitos[0] == 5 ? inteiro(1, 5) :
                                             (digitos[0] == 3 ? 5 :
                                                     (digitos[0] == 6 ? 0 : 0))));
                     break;
@@ -475,12 +475,12 @@ public final class Gerador {
                     if (digitos[0] == 6) {
                         digitos[i] = 1;
                     } else {
-                        digitos[i] = aleatorio(0, 9);
+                        digitos[i] = inteiro(0, 9);
                     }
 
                     break;
                 default:
-                    digitos[i] = aleatorio(0, 9);
+                    digitos[i] = inteiro(0, 9);
                     break;
             }
             numeroCartao.append(digitos[i]);
@@ -516,7 +516,7 @@ public final class Gerador {
      * @return, retorna de forma aleátoria um dos possiveis relacionamentos
      */
     public String getRelacionamento() {
-        int vinculo = aleatorio(0, relacionamento.length);
+        int vinculo = inteiro(0, relacionamento.length);
 
         return relacionamento[vinculo];
     }
@@ -532,7 +532,7 @@ public final class Gerador {
                 "Certidão de casamento",
                 "Certidão de divórcio"
         };
-        int tipo = aleatorio(0, certidao.length);
+        int tipo = inteiro(0, certidao.length);
 
         return certidao[tipo];
     }
@@ -543,7 +543,7 @@ public final class Gerador {
      * @return, retorna de forma aleátoria um cartório
      */
     public String cartorio() {
-        int indexCartorios = aleatorio(0, cartorios.size() - 1);
+        int indexCartorios = inteiro(0, cartorios.size() - 1);
         return cartorios.get(indexCartorios);
     }
 
@@ -553,7 +553,7 @@ public final class Gerador {
      * @return, retorna de forma aleátoria um logradouro
      */
     public String localizaLogradouro() {
-        int indexLogradouro = aleatorio(0, logradouros.size() - 1);
+        int indexLogradouro = inteiro(0, logradouros.size() - 1);
         return logradouros.get(indexLogradouro);
     }
 
@@ -563,7 +563,7 @@ public final class Gerador {
      * @return, retorna de forma aleátoria um código nacional completo
      */
     public String codigoNacional() {
-        int indexCodigoNacional = aleatorio(0, codigosNacionais.size() - 1);
+        int indexCodigoNacional = inteiro(0, codigosNacionais.size() - 1);
         return codigosNacionais.get(indexCodigoNacional);
     }
 
