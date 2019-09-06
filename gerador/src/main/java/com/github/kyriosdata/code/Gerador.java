@@ -35,7 +35,7 @@ public final class Gerador {
     private static final String texto = "lorem.txt";
     private static final String logradouro = "logradouros.txt";
     private static final String cartorio = "cartorios.txt";
-    private static final String codigoNacional = "codigosNacionais.txt";
+    private static final String codigoNacional = "municipios.txt";
     public static final ThreadLocalRandom CURRENT = ThreadLocalRandom.current();
     public static final Random RANDOM = new Random();
 
