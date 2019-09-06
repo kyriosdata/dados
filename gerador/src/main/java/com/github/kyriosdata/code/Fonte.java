@@ -14,7 +14,7 @@ public enum Fonte {
     NOME ("nomes.txt"),
 
     SOBRENOME ("sobrenomes.txt"),
-    
+
     TEXTO("lorem-ipsum.txt"),
 
     MUNICIPIO("municipios.txt");
