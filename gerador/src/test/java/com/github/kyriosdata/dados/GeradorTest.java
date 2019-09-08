@@ -25,7 +25,7 @@ class GeradorTest {
                 cartorios.stream().collect(Collectors.toSet());
         System.out.println(cartorios.size());
         System.out.println(nomes.size());
-        nomes.forEach(System.out::println);
+        nomes.stream().filter(n -> !n.startsWith("\"")).forEach(System.out::println);
     }
 
     @Test
