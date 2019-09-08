@@ -17,6 +17,10 @@ public enum Fonte {
 
     TEXTO("lorem-ipsum.txt"),
 
+    CARTORIOS("cartorios.csv"),
+
+    LOGRADOUROS("logradouros.csv"),
+
     MUNICIPIO("municipios.txt");
 
     /**

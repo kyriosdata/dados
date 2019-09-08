@@ -17,6 +17,8 @@ class FonteTest {
         assertEquals("nomes.txt", Fonte.NOME.getFileName());
         assertEquals("sobrenomes.txt", Fonte.SOBRENOME.getFileName());
         assertEquals("lorem-ipsum.txt", Fonte.TEXTO.getFileName());
+        assertEquals("cartorios.csv", Fonte.CARTORIOS.getFileName());
+        assertEquals("logradouros.csv", Fonte.LOGRADOUROS.getFileName());
         assertEquals("municipios.txt", Fonte.MUNICIPIO.getFileName());
     }
 }
