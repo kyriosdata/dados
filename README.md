@@ -1,3 +1,5 @@
+![badge](https://action-badges.now.sh/kyriosdata/dados)
+
 # dados
 Geração de bases de dados para teste. A estratégia para o desenvolvimento do gerador será baseada em fases. A primeira delas é a léxica. 
 
