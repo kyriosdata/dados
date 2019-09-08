@@ -69,7 +69,7 @@ public final class Gerador {
     private final List<String> codigosNacionais;
 
     public Gerador() {
-        nomes = carregaLinhas(nome);
+        nomes = carregaLinhas(Fonte.NOME.getFileName());
         sobrenomes = carregaLinhas(sobrenome);
         textos = carregaLinhas(texto);
         logradouros = carregaLinhas(logradouro);
