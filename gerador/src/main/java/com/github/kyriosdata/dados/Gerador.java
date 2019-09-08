@@ -70,8 +70,8 @@ public final class Gerador {
 
     public Gerador() {
         nomes = carregaLinhas(Fonte.NOME.getFileName());
-        sobrenomes = carregaLinhas(sobrenome);
-        textos = carregaLinhas(texto);
+        sobrenomes = carregaLinhas(Fonte.SOBRENOME.getFileName());
+        textos = carregaLinhas(Fonte.TEXTO.getFileName());
         logradouros = carregaLinhas(logradouro);
         cartorios = carregaLinhas(cartorio);
         codigosNacionais = carregaLinhas(codigoNacional);
