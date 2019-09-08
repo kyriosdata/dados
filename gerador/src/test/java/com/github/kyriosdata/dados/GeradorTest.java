@@ -14,18 +14,16 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class GeradorTest {
 
     @Test
     void redundancias() {
-        List<String> cartorios = new Gerador().cartorios();
-        Set<String> nomes =
-                cartorios.stream().filter(n -> n.length() > 15).collect(Collectors.toSet());
-        System.out.println(cartorios.size());
-        System.out.println(nomes.size());
-        nomes.forEach(System.out::println);
+        String cartorio = new Gerador().cartorio();
+        assertNotNull(cartorio);
+        assertTrue(cartorio.length() > 10);
+        assertFalse(cartorio.isEmpty());
     }
 
     @Test

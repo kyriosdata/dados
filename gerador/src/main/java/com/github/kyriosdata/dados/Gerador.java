@@ -534,10 +534,6 @@ public final class Gerador {
         return cartorios.get(indexCartorios);
     }
 
-    public List<String> cartorios() {
-        return cartorios;
-    }
-
     /**
      * indexLogradouro recebe um valor aleátorio entre 0 e o tamanho de logradouros(número máximo de logradouros)
      *
