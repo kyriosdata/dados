@@ -1,5 +1,6 @@
-# dados
-Gerador de bases de dados para testes com foco em informações em saúde.
+# Gerador de dados para testes
+
+> Contemplar dados demográficos na área da saúde. 
 
 
 ## Lembretes...
