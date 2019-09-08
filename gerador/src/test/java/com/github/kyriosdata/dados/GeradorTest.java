@@ -12,18 +12,21 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class GeradorTest {
 
     @Test
-    void redundancias() throws GeradorException {
-        String cartorio = new Gerador().cartorio();
-        assertNotNull(cartorio);
-        assertTrue(cartorio.length() > 10);
-        assertFalse(cartorio.isEmpty());
+    void inteiroFaixaInvalida() throws GeradorException {
+        Gerador gerador = new Gerador();
+        assertThrows(IllegalArgumentException.class, () ->
+                gerador.inteiro(0, -1));
+    }
+
+    @Test
+    void inteiroUnicoValor() throws GeradorException {
+        Gerador gerador = new Gerador();
+        assertEquals(0, gerador.inteiro(0, 0));
     }
 
     @Test
