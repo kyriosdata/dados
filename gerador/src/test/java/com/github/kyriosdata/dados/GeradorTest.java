@@ -22,10 +22,10 @@ class GeradorTest {
     void redundancias() {
         List<String> cartorios = new Gerador().cartorios();
         Set<String> nomes =
-                cartorios.stream().collect(Collectors.toSet());
+                cartorios.stream().filter(n -> n.length() > 15).collect(Collectors.toSet());
         System.out.println(cartorios.size());
         System.out.println(nomes.size());
-        nomes.stream().filter(n -> !n.startsWith("\"")).forEach(System.out::println);
+        nomes.forEach(System.out::println);
     }
 
     @Test
