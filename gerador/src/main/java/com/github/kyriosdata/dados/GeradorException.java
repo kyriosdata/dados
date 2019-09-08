@@ -6,6 +6,9 @@
 
 package com.github.kyriosdata.dados;
 
+/**
+ * Representa impossibilidade de oferecer a funcionalidad esperada do gerador.
+ */
 public class GeradorException extends Exception {
 
     /**
