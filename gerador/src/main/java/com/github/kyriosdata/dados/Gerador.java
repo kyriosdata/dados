@@ -29,7 +29,13 @@ public final class Gerador {
      * Gerador de números randômicos empregado por vários métodos.
      */
     public static final ThreadLocalRandom RANDOM = ThreadLocalRandom.current();
-    private static final DateTimeFormatter SDF = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+    /**
+     * Formato padrão (default) para data.
+     */
+    private static final DateTimeFormatter DATA_FMT =
+            DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
     private static final String texto = "lorem-ipsum.txt";
     /**
      * Relacionamentos obtidos da norma ABNT NBR 15985:2011.
@@ -56,6 +62,7 @@ public final class Gerador {
             "pai adotivo",
             "responsável"
     };
+
     private final List<String> nomes;
     private final List<String> sobrenomes;
     private final List<String> textos;
@@ -136,7 +143,7 @@ public final class Gerador {
      * @return Uma data arbitrária no período de ?? até ??.
      */
     public String getDataAsString() {
-        return SDF.format(getData());
+        return DATA_FMT.format(getData());
     }
 
     /**
