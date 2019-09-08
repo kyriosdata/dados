@@ -23,5 +23,6 @@ class GeradorExceptionTest {
         NullPointerException npe = new NullPointerException("x");
         GeradorException exception = new GeradorException("teste", npe);
         assertEquals("teste", exception.getMessage());
+        assertEquals("x", exception.getCause().getMessage());
     }
 }
