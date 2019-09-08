@@ -24,7 +24,20 @@ public enum Fonte {
      */
     private String fonte;
 
+    /**
+     * Cria tipo de fonte.
+     * @param arquivo Nome do arquivo contendo dados pertinente à fonte.
+     */
     Fonte(final String arquivo) {
         fonte = arquivo;
+    }
+
+    /**
+     * Retorna o nome do arquivo contendo dados pertinentes à fonte.
+     *
+     * @return O nome do arquivo contendo dados da fonte.
+     */
+    public String getFileName() {
+        return fonte;
     }
 }
