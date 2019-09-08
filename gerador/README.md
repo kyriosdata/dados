@@ -12,5 +12,3 @@
 - `mvn javancss:check` (verifica se limites são observados e gera erro se não são)
 - `mvn javancss:report` (gera relatório)
 - `mvn site` (gera documentação do projeto, além de análises estáticas)
-
-[![](https://codescene.io/projects/1157/status.svg) Get more details at **codescene.io**.](https://codescene.io/projects/1157/jobs/latest-successful/results)
