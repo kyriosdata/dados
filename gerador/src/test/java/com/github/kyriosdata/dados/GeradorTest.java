@@ -17,6 +17,13 @@ import static org.junit.jupiter.api.Assertions.*;
 class GeradorTest {
 
     @Test
+    void carregarDadosInexistentesGeraExcecao() throws GeradorException {
+        Gerador gerador = new Gerador();
+        assertThrows(GeradorException.class, () ->
+                gerador.carregarDados(""));
+    }
+
+    @Test
     void inteiroFaixaInvalida() throws GeradorException {
         Gerador gerador = new Gerador();
         assertThrows(IllegalArgumentException.class, () ->

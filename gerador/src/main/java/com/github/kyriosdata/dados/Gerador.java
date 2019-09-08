@@ -119,7 +119,7 @@ public final class Gerador {
      *
      * @throws GeradorException Em caso de falha ao carregar dados.
      */
-    private List<String> carregarDados(String arquivo) throws GeradorException {
+    List<String> carregarDados(String arquivo) throws GeradorException {
         final File file = getFileFromResources(arquivo);
         final Path path = Paths.get(file.toURI());
         try {
