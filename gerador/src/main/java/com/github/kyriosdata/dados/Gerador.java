@@ -29,13 +29,8 @@ public final class Gerador {
      * Gerador de números randômicos empregado por vários métodos.
      */
     public static final ThreadLocalRandom RANDOM = ThreadLocalRandom.current();
-    private static final String nome = "nomes.txt";
-    private static final String sobrenome = "sobrenomes.txt";
     private static final DateTimeFormatter SDF = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     private static final String texto = "lorem-ipsum.txt";
-    private static final String logradouro = "logradouros.txt";
-    private static final String cartorio = "cartorios.txt";
-    private static final String codigoNacional = "municipios.txt";
     /**
      * Relacionamentos obtidos da norma ABNT NBR 15985:2011.
      */
