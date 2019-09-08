@@ -70,13 +70,20 @@ public final class Gerador {
     private final List<String> cartorios;
     private final List<String> codigosNacionais;
 
-    public Gerador() {
-        nomes = carregaLinhas(Fonte.NOMES.getFileName());
-        sobrenomes = carregaLinhas(Fonte.SOBRENOMES.getFileName());
-        textos = carregaLinhas(Fonte.TEXTO.getFileName());
-        logradouros = carregaLinhas(Fonte.LOGRADOUROS.getFileName());
-        cartorios = carregaLinhas(Fonte.CARTORIOS.getFileName());
-        codigosNacionais = carregaLinhas(Fonte.MUNICIPIOS.getFileName());
+    /**
+     * Cria uma instância do gerador de dados.
+     *
+     * @throws GeradorException Se não foi possível criar uma instância do
+     * gerador. Em geral, isto é decorrência da impossibilidade de carregar
+     * dados.
+     */
+    public Gerador() throws GeradorException {
+        nomes = carregarDados(Fonte.NOMES.getFileName());
+        sobrenomes = carregarDados(Fonte.SOBRENOMES.getFileName());
+        textos = carregarDados(Fonte.TEXTO.getFileName());
+        logradouros = carregarDados(Fonte.LOGRADOUROS.getFileName());
+        cartorios = carregarDados(Fonte.CARTORIOS.getFileName());
+        codigosNacionais = carregarDados(Fonte.MUNICIPIOS.getFileName());
     }
 
     /**
@@ -109,14 +116,16 @@ public final class Gerador {
      * @param arquivo O arquivo texto (UTF-8) cujas linhas serão carregadas.
      * @return Lista de sequências de caracteres correspondentes às linhas
      * do arquivo texto.
+     *
+     * @throws GeradorException Em caso de falha ao carregar dados.
      */
-    private List<String> carregaLinhas(String arquivo) {
-        File file = getFileFromResources(arquivo);
-        Path path = Paths.get(file.toURI());
+    private List<String> carregarDados(String arquivo) throws GeradorException {
+        final File file = getFileFromResources(arquivo);
+        final Path path = Paths.get(file.toURI());
         try {
             return Files.readAllLines(path);
         } catch (IOException e) {
-            return null;
+            throw new GeradorException("Erro ao carregar " + arquivo, e);
         }
     }
 
