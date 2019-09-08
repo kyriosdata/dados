@@ -11,9 +11,9 @@ package com.github.kyriosdata.dados;
  */
 public enum Fonte {
 
-    NOME ("nomes.txt"),
+    NOMES("nomes.txt"),
 
-    SOBRENOME ("sobrenomes.txt"),
+    SOBRENOMES("sobrenomes.txt"),
 
     TEXTO("lorem-ipsum.txt"),
 
@@ -21,7 +21,7 @@ public enum Fonte {
 
     LOGRADOUROS("logradouros.csv"),
 
-    MUNICIPIO("municipios.txt");
+    MUNICIPIOS("municipios.txt");
 
     /**
      * Nome do arquivo contendo dados para a fonte em questão.

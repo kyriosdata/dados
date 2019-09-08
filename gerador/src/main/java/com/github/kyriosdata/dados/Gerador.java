@@ -69,12 +69,12 @@ public final class Gerador {
     private final List<String> codigosNacionais;
 
     public Gerador() {
-        nomes = carregaLinhas(Fonte.NOME.getFileName());
-        sobrenomes = carregaLinhas(Fonte.SOBRENOME.getFileName());
+        nomes = carregaLinhas(Fonte.NOMES.getFileName());
+        sobrenomes = carregaLinhas(Fonte.SOBRENOMES.getFileName());
         textos = carregaLinhas(Fonte.TEXTO.getFileName());
-        logradouros = carregaLinhas(logradouro);
-        cartorios = carregaLinhas(cartorio);
-        codigosNacionais = carregaLinhas(codigoNacional);
+        logradouros = carregaLinhas(Fonte.LOGRADOUROS.getFileName());
+        cartorios = carregaLinhas(Fonte.CARTORIOS.getFileName());
+        codigosNacionais = carregaLinhas(Fonte.MUNICIPIOS.getFileName());
     }
 
     /**
