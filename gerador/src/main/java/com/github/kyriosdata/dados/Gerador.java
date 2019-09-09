@@ -85,6 +85,16 @@ public final class Gerador {
         codigosNacionais = carregarDados(Fonte.MUNICIPIOS.getFileName());
     }
 
+
+    /**
+     * Gera um inteiro de 0 (inclusive) até 1000 (inclusive).
+     *
+     * @return inteiro gerado, já com um valor limite definido, nesse caso até 1000.
+     */
+    public int inteiro() {
+        return RANDOM.nextInt(1001);
+    }
+
     /**
      * Gera um inteiro contido na faixa indicada, inclusive.
      *
@@ -134,15 +144,6 @@ public final class Gerador {
 
     public List<String> getSobrenomes() {
         return sobrenomes;
-    }
-
-    /**
-     * Gera um inteiro de 0 (inclusive) até 1000 (exclusive).
-     *
-     * @return inteiro gerado, já com um valor limite definido, nesse caso até 1000.
-     */
-    public int inteiro() {
-        return RANDOM.nextInt(1000);
     }
 
     /**
