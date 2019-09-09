@@ -36,7 +36,6 @@ public final class Gerador {
     private static final DateTimeFormatter DATA_FMT =
             DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
-    private static final String texto = "lorem-ipsum.txt";
     /**
      * Relacionamentos obtidos da norma ABNT NBR 15985:2011.
      */
@@ -245,7 +244,7 @@ public final class Gerador {
         BufferedReader leitorTexto = null;
         FileInputStream inputStream = null;
         try {
-            inputStream = new FileInputStream(texto);
+            inputStream = new FileInputStream(Fonte.TEXTO.getFileName());
             leitorTexto = new BufferedReader(new InputStreamReader(inputStream));
             cBuffer = new char[inputStream.available()];
             leitorTexto.read(cBuffer, min, max);
@@ -319,7 +318,8 @@ public final class Gerador {
     }
 
     /**
-     * Usa de uma fórmula específica para criação de Pis válidos, a partir de 10 digitos aleátorios, conclui 1 dígito verificador
+     * Usa de uma fórmula específica para criação de Pis válidos, a partir de
+     * 10 digitos aleátorios, conclui 1 dígito verificador
      *
      * @return Pis, retorna o Pis válido com os 11 dígitos
      */
@@ -355,7 +355,8 @@ public final class Gerador {
     }
 
     /**
-     * Usa de uma fórmula específica para criação de CNPJ's válidos, a partir de 8 dígitos aleátorios, conclui 2 dígitos verificadores
+     * Usa de uma fórmula específica para criação de CNPJ's válidos, a partir
+     * de 8 dígitos aleátorios, conclui 2 dígitos verificadores
      *
      * @return cpf, retorna o CNPJ com os 14 dígitos válidos
      */
