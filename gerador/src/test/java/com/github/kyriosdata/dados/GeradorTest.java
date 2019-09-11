@@ -12,42 +12,44 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class GeradorTest {
 
     @Test
     void carregarDadosInexistentesGeraExcecao() throws GeradorException {
-        Gerador gerador = new Gerador();
+        Gerador gerador = Gerador.getInstance();
         assertThrows(GeradorException.class, () ->
                 gerador.carregarDados(""));
     }
 
     @Test
     void inteiroFaixaInvalida() throws GeradorException {
-        Gerador gerador = new Gerador();
+        Gerador gerador = Gerador.getInstance();
         assertThrows(IllegalArgumentException.class, () ->
                 gerador.inteiro(0, -1));
     }
 
     @Test
     void inteiroUnicoValor() throws GeradorException {
-        Gerador gerador = new Gerador();
+        Gerador gerador = Gerador.getInstance();
         assertEquals(0, gerador.inteiro(0, 0));
     }
 
     @Test
     void recuperaNomesSobrenomes() throws GeradorException {
-        List<String> nomes = new Gerador().getNomes();
+        List<String> nomes = Gerador.getInstance().getNomes();
         assertTrue(nomes.size() > 1000);
 
-        List<String> sobrenomes = new Gerador().getSobrenomes();
+        List<String> sobrenomes = Gerador.getInstance().getSobrenomes();
         assertTrue(sobrenomes.size() > 400);
     }
 
     @Test
     void verificaData() throws GeradorException {
-        String data = new Gerador().getDataAsString();
+        String data = Gerador.getInstance().getDataAsString();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         // Gera exceção se formato for inválido.
@@ -57,7 +59,7 @@ class GeradorTest {
 
     @Test
     void verificaNomeCompleto() throws GeradorException {
-        String nome = new Gerador().nomeCompleto();
+        String nome = Gerador.getInstance().nomeCompleto();
         assertTrue(nome.contains(" "));
     }
 }
