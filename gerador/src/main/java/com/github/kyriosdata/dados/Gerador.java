@@ -76,7 +76,7 @@ public final class Gerador {
      * gerador. Em geral, isto é decorrência da impossibilidade de carregar
      * dados.
      */
-    public Gerador() throws GeradorException {
+    private Gerador() throws GeradorException {
         nomes = carregarDados(Fonte.NOMES.getFileName());
         sobrenomes = carregarDados(Fonte.SOBRENOMES.getFileName());
         textos = carregarDados(Fonte.TEXTO.getFileName());
@@ -84,7 +84,37 @@ public final class Gerador {
         cartorios = carregarDados(Fonte.CARTORIOS.getFileName());
         codigosNacionais = carregarDados(Fonte.MUNICIPIOS.getFileName());
     }
-    
+
+    /**
+     * Referência para a única instância da classe.
+     */
+    private static final Gerador INSTANCIA = criaInstancia();
+
+    /**
+     * Único método que cria uma instância da presente classe.
+     *
+     * @return Instância da presente classe ou o valor {@code null} caso
+     * ocorra uma falha durante a construção da instância.
+     */
+    private static Gerador criaInstancia() {
+        try {
+            return new Gerador();
+        } catch (GeradorException e) {
+            return null;
+        }
+    }
+
+    /**
+     *  Recupera instância (única) da classe Gerador.
+     *
+     * @return A única instância da classe Gerador. Se houve situação
+     * excepcional durante a construção da única instância, então o valor
+     * retornado é {@code null}.
+     */
+    public static Gerador getInstance() {
+        return INSTANCIA;
+    }
+
     /**
      * Gera um inteiro de 0 (inclusive) até 1000 (inclusive).
      *
