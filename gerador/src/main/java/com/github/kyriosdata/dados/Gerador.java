@@ -84,8 +84,7 @@ public final class Gerador {
         cartorios = carregarDados(Fonte.CARTORIOS.getFileName());
         codigosNacionais = carregarDados(Fonte.MUNICIPIOS.getFileName());
     }
-
-
+    
     /**
      * Gera um inteiro de 0 (inclusive) até 1000 (inclusive).
      *
