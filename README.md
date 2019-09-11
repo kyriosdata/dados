@@ -9,7 +9,7 @@ Geração de bases de dados para teste. A estratégia para o desenvolvimento do 
  1. Ainda há cenários mais elaborados, por exemplo, endereço. Nesse caso, o logradouro e o número, além da cidade e do estado, deverão estar em conformidade com o CEP. 
 
 ### Links relevantes
-- [Unisdades de medida](http://unitsofmeasure.org/ucum.html)
+- [Unidades de medida](http://unitsofmeasure.org/ucum.html)
 
 /*Andoly
 
