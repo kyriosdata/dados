@@ -19,6 +19,8 @@ import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 /**
  * Classe geradora de dados.
@@ -73,8 +75,8 @@ public final class Gerador {
      * Cria uma instância do gerador de dados.
      *
      * @throws GeradorException Se não foi possível criar uma instância do
-     * gerador. Em geral, isto é decorrência da impossibilidade de carregar
-     * dados.
+     *                          gerador. Em geral, isto é decorrência da impossibilidade de carregar
+     *                          dados.
      */
     private Gerador() throws GeradorException {
         nomes = carregarDados(Fonte.NOMES.getFileName());
@@ -105,7 +107,7 @@ public final class Gerador {
     }
 
     /**
-     *  Recupera instância (única) da classe Gerador.
+     * Recupera instância (única) da classe Gerador.
      *
      * @return A única instância da classe Gerador. Se houve situação
      * excepcional durante a construção da única instância, então o valor
@@ -154,7 +156,6 @@ public final class Gerador {
      * @param arquivo O arquivo texto (UTF-8) cujas linhas serão carregadas.
      * @return Lista de sequências de caracteres correspondentes às linhas
      * do arquivo texto.
-     *
      * @throws GeradorException Em caso de falha ao carregar dados.
      */
     List<String> carregarDados(String arquivo) throws GeradorException {
@@ -385,32 +386,27 @@ public final class Gerador {
     }
 
     /**
+     * TODO verificar
      * Usa de uma fórmula específica para criação de CNPJ's válidos, a partir
      * de 8 dígitos aleátorios, conclui 2 dígitos verificadores
      *
      * @return cpf, retorna o CNPJ com os 14 dígitos válidos
      */
     public String cnpj() {
-        Random gerador = new Random();
-        int digito1 = (gerador.nextInt(10));
-        int digito2 = (gerador.nextInt(10));
-        int digito3 = (gerador.nextInt(10));
-        int digito4 = (gerador.nextInt(10));
-        int digito5 = (gerador.nextInt(10));
-        int digito6 = (gerador.nextInt(10));
-        int digito7 = (gerador.nextInt(10));
-        int digito8 = (gerador.nextInt(10));
-        int digito9 = 0;
-        int digito10 = 0;
-        int digito11 = 0;
-        int digito12 = 1;
+        // CNPJ arbitrário com filial 0001 (dígitos verificadores 00)
+        int[] d = new int[17];
+        IntStream.range(0, 9).forEach(i -> d[i] = inteiro(0, 8));
+        d[12] = 1;
 
-        int verificador1 = (digito1 * 6 + digito2 * 7 + digito3 * 8 + digito4 * 9 + digito5 * 2 + digito6 * 3 + digito7 * 4 + digito8 * 5 + digito12 * 9) % 11;
-        int verificador2 = (digito1 * 5 + digito2 * 6 + digito3 * 7 + digito4 * 8 + digito5 * 9 + digito6 * 2 + digito7 * 3 + digito8 * 4 + digito12 * 8 + verificador1 * 9) % 11;
+        d[15] = (d[1] * 6 + d[2] * 7 + d[3] * 8 + d[4] * 9 + d[5] * 2
+                + d[6] * 3 + d[7] * 4 + d[8] * 5 + d[12] * 9) % 11;
 
-        String cnpj = String.format("%d%d%d%d%d%d%d%d%d%d%d%d%d%d", digito1, digito2, digito3, digito4, digito5, digito6, digito7, digito8, digito9, digito10, digito11, digito12, verificador1, verificador2);
+        d[16] = (d[1] * 5 + d[2] * 6 + d[3] * 7 + d[4] * 8 + d[5] * 9
+                + d[6] * 2 + d[7] * 3 + d[8] * 4 + d[12] * 8 + d[15] * 9) % 11;
 
-        return cnpj;
+        return IntStream.range(1, 17)
+                .mapToObj(i -> Integer.toString(d[i]))
+                .collect(Collectors.joining());
     }
 
     /**
