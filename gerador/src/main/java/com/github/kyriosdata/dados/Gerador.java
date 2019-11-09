@@ -113,6 +113,15 @@ public final class Gerador {
     }
 
     /**
+     * Gera o valor lógico {@code true} ou {@code false}.
+     *
+     * @return Um valor lógico.
+     */
+    public static boolean logico() {
+        return RANDOM.nextBoolean();
+    }
+
+    /**
      * Gera um inteiro de 0 (inclusive) até 1000 (inclusive).
      *
      * @return inteiro gerado, já com um valor limite definido, nesse caso até 1000.
@@ -130,19 +139,6 @@ public final class Gerador {
      */
     public static int inteiro(int min, int max) {
         return RANDOM.nextInt(min, max + 1);
-    }
-
-    /**
-     * Obtém instância de {@link File} para arquivo mantido no diretório
-     * "resources".
-     *
-     * @param file Nome do arquivo contido no diretório "resources".
-     * @return Instância de {@link File} para arquivo contido no diretório
-     * "resources".
-     */
-    private File getFileFromResources(String file) {
-        ClassLoader classLoader = this.getClass().getClassLoader();
-        return new File(classLoader.getResource(file).getFile());
     }
 
     /**
@@ -183,15 +179,6 @@ public final class Gerador {
      */
     public String getDataAsString() {
         return DATA_FMT.format(getData());
-    }
-
-    /**
-     * Gera um valor lógico {@code true} ou {@code false}.
-     *
-     * @return Um valor lógico.
-     */
-    public boolean logico() {
-        return RANDOM.nextBoolean();
     }
 
     /**

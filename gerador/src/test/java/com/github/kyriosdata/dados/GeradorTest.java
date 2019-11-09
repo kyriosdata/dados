@@ -19,6 +19,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class GeradorTest {
 
     @Test
+    void umValorLogico() {
+        boolean logico = Gerador.logico();
+        assertTrue(logico == true || logico == false);
+    }
+
+    @Test
     void umInteiroMenorIgual1000() {
         int x = Gerador.inteiro();
         assertTrue(x >= 0 && x <= 1e3);
