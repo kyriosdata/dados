@@ -1,3 +1,9 @@
-# Gerador de dados para testes
+# Gerador de dados
 
-> Referência para geração de dados demográficos na área da saúde. 
+> O objetivo é se tornar uma referência para geração de dados demográficos na
+> área da saúde. 
+
+## Tipos de dados considerados
+
+- Inteiro (em uma faixa)
+- Data (LocalDate) ou no formato "dd/mm/aaaa" (em uma faixa)
