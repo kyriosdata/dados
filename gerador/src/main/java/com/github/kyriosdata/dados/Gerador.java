@@ -23,7 +23,8 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 /**
- * Classe geradora de dados.
+ * Classe geradora de dados. O principal uso pretendido é fornecer dados para
+ * a execução de testes.
  */
 public final class Gerador {
 

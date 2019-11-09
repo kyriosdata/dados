@@ -19,6 +19,12 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class GeradorTest {
 
     @Test
+    void umInteiroMenorIgual1000() {
+        int x = Gerador.getInstance().inteiro();
+        assertTrue(x >= 0 && x <= 1e3);
+    }
+
+    @Test
     void carregarDadosInexistentesGeraExcecao() {
         Gerador gerador = Gerador.getInstance();
         assertThrows(GeradorException.class, () ->
