@@ -62,5 +62,10 @@ class GeradorTest {
         String nome = Gerador.getInstance().nomeCompleto();
         assertTrue(nome.contains(" "));
     }
+
+    @Test
+    void geraCnpj() {
+        System.out.println(Gerador.getInstance().cnpj());
+    }
 }
 
