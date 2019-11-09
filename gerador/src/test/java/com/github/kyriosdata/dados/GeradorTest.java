@@ -20,8 +20,14 @@ class GeradorTest {
 
     @Test
     void umInteiroMenorIgual1000() {
-        int x = Gerador.getInstance().inteiro();
+        int x = Gerador.inteiro();
         assertTrue(x >= 0 && x <= 1e3);
+    }
+
+    @Test
+    void geraEmFaixaUmUnicoValor() {
+        assertEquals(0, Gerador.inteiro(0, 0));
+        assertEquals(987, Gerador.inteiro(987, 987));
     }
 
     @Test

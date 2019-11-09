@@ -123,7 +123,7 @@ public final class Gerador {
      *
      * @return inteiro gerado, já com um valor limite definido, nesse caso até 1000.
      */
-    public int inteiro() {
+    public static int inteiro() {
         return RANDOM.nextInt(1001);
     }
 
