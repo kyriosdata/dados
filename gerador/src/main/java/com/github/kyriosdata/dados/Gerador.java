@@ -6,18 +6,12 @@
 
 package com.github.kyriosdata.dados;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Random;
+import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -160,12 +154,17 @@ public final class Gerador {
      * @throws GeradorException Em caso de falha ao carregar dados.
      */
     List<String> carregarDados(String arquivo) throws GeradorException {
-        final File file = getFileFromResources(arquivo);
-        final Path path = Paths.get(file.toURI());
-        try {
-            return Files.readAllLines(path);
+        if (arquivo == null || arquivo.isEmpty()) {
+            throw new GeradorException("nome inválido");
+        }
+
+        InputStream is = ClassLoader.getSystemResourceAsStream(arquivo);
+        InputStreamReader isr = new InputStreamReader(is,
+                StandardCharsets.UTF_8);
+        try (BufferedReader br = new BufferedReader(isr)) {
+            return br.lines().collect(Collectors.toList());
         } catch (IOException e) {
-            throw new GeradorException("Erro ao carregar " + arquivo, e);
+            throw new GeradorException("arquivo inválido");
         }
     }
 
