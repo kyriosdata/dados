@@ -19,27 +19,27 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class GeradorTest {
 
     @Test
-    void carregarDadosInexistentesGeraExcecao() throws GeradorException {
+    void carregarDadosInexistentesGeraExcecao() {
         Gerador gerador = Gerador.getInstance();
         assertThrows(GeradorException.class, () ->
                 gerador.carregarDados(""));
     }
 
     @Test
-    void inteiroFaixaInvalida() throws GeradorException {
+    void inteiroFaixaInvalida() {
         Gerador gerador = Gerador.getInstance();
         assertThrows(IllegalArgumentException.class, () ->
                 gerador.inteiro(0, -1));
     }
 
     @Test
-    void inteiroUnicoValor() throws GeradorException {
+    void inteiroUnicoValor() {
         Gerador gerador = Gerador.getInstance();
         assertEquals(0, gerador.inteiro(0, 0));
     }
 
     @Test
-    void recuperaNomesSobrenomes() throws GeradorException {
+    void recuperaNomesSobrenomes() {
         List<String> nomes = Gerador.getInstance().getNomes();
         assertTrue(nomes.size() > 1000);
 
@@ -48,7 +48,7 @@ class GeradorTest {
     }
 
     @Test
-    void verificaData() throws GeradorException {
+    void verificaData() {
         String data = Gerador.getInstance().getDataAsString();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
@@ -58,7 +58,7 @@ class GeradorTest {
     }
 
     @Test
-    void verificaNomeCompleto() throws GeradorException {
+    void verificaNomeCompleto() {
         String nome = Gerador.getInstance().nomeCompleto();
         assertTrue(nome.contains(" "));
     }
