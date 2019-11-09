@@ -1,6 +1,4 @@
-[![badge](https://action-badges.now.sh/kyriosdata/dados)](https://github.com/kyriosdata/dados/actions)
-
-[![Actions Status](https://github.com/kyriosdata/dados/workflows/dados/badge.svg)](https://github.com/kyriosdata/dados/workflows/dados/badge.svg)
+[![Actions Status](https://github.com/kyriosdata/dados/workflows/dados/badge.svg)](https://github.com/kyriosdata/dados/actions)
 
 
 
