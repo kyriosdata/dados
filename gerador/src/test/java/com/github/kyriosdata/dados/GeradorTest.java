@@ -19,6 +19,20 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class GeradorTest {
 
     @Test
+    void gerarDataFaixaUmUnicoDia() {
+        String dia = "01/01/2019";
+        assertEquals(dia, Gerador.entre(dia, dia));
+    }
+
+    @Test
+    void gerarDataEmUmMes() {
+        String inicio = "30/01/2019";
+        String termino = "31/01/2019";
+        String data = Gerador.entre(inicio, termino);
+        assertTrue(data.equals(inicio) || data.equals(termino));
+    }
+
+    @Test
     void umValorLogico() {
         boolean logico = Gerador.logico();
         assertTrue(logico == true || logico == false);

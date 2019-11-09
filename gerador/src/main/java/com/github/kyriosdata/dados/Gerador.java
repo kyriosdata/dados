@@ -70,7 +70,8 @@ public final class Gerador {
      * Cria uma instância do gerador de dados.
      *
      * @throws GeradorException Se não foi possível criar uma instância do
-     *                          gerador. Em geral, isto é decorrência da impossibilidade de carregar
+     *                          gerador. Em geral, isto é decorrência da
+     *                          impossibilidade de carregar
      *                          dados.
      */
     private Gerador() throws GeradorException {
@@ -124,7 +125,8 @@ public final class Gerador {
     /**
      * Gera um inteiro de 0 (inclusive) até 1000 (inclusive).
      *
-     * @return inteiro gerado, já com um valor limite definido, nesse caso até 1000.
+     * @return inteiro gerado, já com um valor limite definido, nesse caso
+     * até 1000.
      */
     public static int inteiro() {
         return RANDOM.nextInt(1001);
@@ -139,6 +141,38 @@ public final class Gerador {
      */
     public static int inteiro(int min, int max) {
         return RANDOM.nextInt(min, max + 1);
+    }
+
+    /**
+     * Produz uma data entre aquelas fornecidas (inclusive).
+     *
+     * @param inicioInclusive  Data de início (inclusive).
+     * @param terminoInclusive Data de término (inclusive).
+     * @return Uma data entre aquelas fornecidas, possivelmente uma
+     * delas.
+     */
+    public static LocalDate entre(final LocalDate inicioInclusive,
+                                  final LocalDate terminoInclusive) {
+        final long inicio = inicioInclusive.toEpochDay();
+        final long termino = terminoInclusive.toEpochDay() + 1;
+        final long dataNaFaixa = RANDOM.nextLong(inicio, termino);
+        return LocalDate.ofEpochDay(dataNaFaixa);
+    }
+
+    /**
+     * Produz uma data no formato "dd/mm/aaaa" entre o início e o término,
+     * inclusive.
+     *
+     * @param inicioInclusive  Data de início (inclusive).
+     * @param terminoInclusive Data de término (inclusive).
+     * @return Uma data entre aquelas fornecidas, possivelmente uma delas.
+     */
+    public static String entre(final String inicioInclusive,
+                               final String terminoInclusive) {
+        final LocalDate inicio = LocalDate.parse(inicioInclusive, DATA_FMT);
+        final LocalDate termino = LocalDate.parse(terminoInclusive, DATA_FMT);
+        final LocalDate retorno = entre(inicio, termino);
+        return DATA_FMT.format(retorno);
     }
 
     /**
@@ -195,7 +229,8 @@ public final class Gerador {
     /**
      * Gera um double de 0 a 100.
      *
-     * @return double gerado, já com um valor limite definido, nesse caso até 100.
+     * @return double gerado, já com um valor limite definido, nesse caso até
+     * 100.
      */
     public double getDoubleUnico() {
         return RANDOM.nextDouble(100);
@@ -213,9 +248,11 @@ public final class Gerador {
     }
 
     /**
-     * Gera uma data aleátoria entre o intervalo de 1900 ao ano 2100, tratando a diferença de dias de referente a cada mês
+     * Gera uma data aleátoria entre o intervalo de 1900 ao ano 2100,
+     * tratando a diferença de dias de referente a cada mês
      *
-     * @return a data aleátoria usando a biblioteca LocalDate, no formato (ano/mes/dia)
+     * @return a data aleátoria usando a biblioteca LocalDate, no formato
+     * (ano/mes/dia)
      */
     public LocalDate getData() {
         int[] totalDias = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -241,7 +278,8 @@ public final class Gerador {
         LocalDate dataFim = LocalDate.of(2018, 12, 11);
         long fim = dataFim.toEpochDay();
 
-        long dataQualquer = ThreadLocalRandom.current().longs(inicio, fim).findAny().getAsLong();
+        long dataQualquer =
+                ThreadLocalRandom.current().longs(inicio, fim).findAny().getAsLong();
         return LocalDate.ofEpochDay(dataQualquer);
     }
 
@@ -251,10 +289,13 @@ public final class Gerador {
      * @param min O menor valor que pode ser sorteado.
      * @param max O maior valor que pode ser sorteado.
      *            <p>
-     *            "inputStream" recebe o documento e abre com a finalidade de leitura
-     *            "leitorTexto" recebe a entrada, como sendo um novo leitor de entrada
+     *            "inputStream" recebe o documento e abre com a finalidade de
+     *            leitura
+     *            "leitorTexto" recebe a entrada, como sendo um novo leitor
+     *            de entrada
      *            "cBuffer" cria um novo leitor em buffer
-     * @return c retorna os caracteres do intervalo min e max, passados como parâmetro.
+     * @return c retorna os caracteres do intervalo min e max, passados como
+     * parâmetro.
      */
     public char[] getTexto(int min, int max) throws IOException {
 
@@ -263,7 +304,8 @@ public final class Gerador {
         FileInputStream inputStream = null;
         try {
             inputStream = new FileInputStream(Fonte.TEXTO.getFileName());
-            leitorTexto = new BufferedReader(new InputStreamReader(inputStream));
+            leitorTexto =
+                    new BufferedReader(new InputStreamReader(inputStream));
             cBuffer = new char[inputStream.available()];
             leitorTexto.read(cBuffer, min, max);
             return cBuffer;
@@ -282,7 +324,8 @@ public final class Gerador {
     /**
      * Acessa getTexto para realizar leitura do arquivo texto
      *
-     * @return, retorna uma quantidade exata de caracteres passado no parâmetro de getTexto, nesse caso os 1000 primeiros caracteres
+     * @return, retorna uma quantidade exata de caracteres passado no
+     * parâmetro de getTexto, nesse caso os 1000 primeiros caracteres
      */
     public char[] gettextoFixo() throws IOException {
         return getTexto(0, 1000);
@@ -290,9 +333,11 @@ public final class Gerador {
 
     /**
      * Acessa getTexto para realizar leitura do arquivo texto
-     * Acessa o método "aleatorio" para passar como parâmetro o limite de faixa, min e max.
+     * Acessa o método "aleatorio" para passar como parâmetro o limite de
+     * faixa, min e max.
      *
-     * @return, retorna de forma aleatoria, um minimo e maximo de início e fim de leitura do arquivo.
+     * @return, retorna de forma aleatoria, um minimo e maximo de início e
+     * fim de leitura do arquivo.
      * Nesse caso, o min será aleátorio entre 0 e 99 e o max será de 100 a 1000.
      */
     public char[] gettextoIntervalo() throws IOException {
@@ -300,7 +345,8 @@ public final class Gerador {
     }
 
     /**
-     * Usa de uma fórmula específica para criação de CPF's válidos, a partir de 9 digitos aleátorios, conclui 2 dígitos verificadores
+     * Usa de uma fórmula específica para criação de CPF's válidos, a partir
+     * de 9 digitos aleátorios, conclui 2 dígitos verificadores
      *
      * @return cpf, retorna o CPF válido com os 11 dígitos
      */
@@ -397,11 +443,15 @@ public final class Gerador {
     }
 
     /**
-     * É realizado a multiplicação dos 8 primeiros digitos por 2 3 4 5 6 7 8 9 encontro o digito
-     * O digito do estado é desmembrado em unidades, por exemplo estado = 05, logo verificador2 = (0*7 + 5*8 + DV1*9) modulo por 11
+     * É realizado a multiplicação dos 8 primeiros digitos por 2 3 4 5 6 7 8
+     * 9 encontro o digito
+     * O digito do estado é desmembrado em unidades, por exemplo estado = 05,
+     * logo verificador2 = (0*7 + 5*8 + DV1*9) modulo por 11
      * estado recebe um desses valores de forma aleátoria :
-     * 01-SP, 02-MG, 03-RJ, 04-RS, 05-BA, 06-PR, 07-CE, 08-PE, 09-SC, 10-GO, 11-MA, 12-PB, 13-PA, 14-ES, 15-PI,
-     * 16-RN, 17-AL, 18-MT, 19-MS, 20-DF, 21-SE, 22-AM, 23-RO, 24-AC, 25-AP, 26-RR, 27-TO e 28-Exterior(ZZ)
+     * 01-SP, 02-MG, 03-RJ, 04-RS, 05-BA, 06-PR, 07-CE, 08-PE, 09-SC, 10-GO,
+     * 11-MA, 12-PB, 13-PA, 14-ES, 15-PI,
+     * 16-RN, 17-AL, 18-MT, 19-MS, 20-DF, 21-SE, 22-AM, 23-RO, 24-AC, 25-AP,
+     * 26-RR, 27-TO e 28-Exterior(ZZ)
      *
      * @return titulo, retornará o título composto por 12 digitos
      */
@@ -436,7 +486,8 @@ public final class Gerador {
                 verificador1 = 0;
             }
         }
-        verificador2 = ((digito1_estado * 7 + digito2_estado * 8 + verificador1 * 9) % 11);
+        verificador2 =
+                ((digito1_estado * 7 + digito2_estado * 8 + verificador1 * 9) % 11);
         if (verificador2 >= 10) {
             verificador2 = 0;
         }
@@ -455,11 +506,15 @@ public final class Gerador {
     }
 
     /**
-     * De forma aleátoria cria o primeiro digito sendo 3 para JCB, 4 para VISA, 5 para Mastercard e 6 para Diners Club
-     * Cria-se um vetor de 16 posições, a partir de operações sobre os 15 primeiros digitos encontra o digito verificador que do cartão
+     * De forma aleátoria cria o primeiro digito sendo 3 para JCB, 4 para
+     * VISA, 5 para Mastercard e 6 para Diners Club
+     * Cria-se um vetor de 16 posições, a partir de operações sobre os 15
+     * primeiros digitos encontra o digito verificador que do cartão
      * digito[0] será o primero digito do cartão
-     * digito[1], será o segundo digito sendo JCB sendo sempre 5,mastercard um valor aleatório(1 a 5), e no caso de visa sem restrições(0 a 9);
-     * No caso do Diners Club, por padrão os 4 primeiros digitos já são pre-definidos 6011.
+     * digito[1], será o segundo digito sendo JCB sendo sempre 5,mastercard
+     * um valor aleatório(1 a 5), e no caso de visa sem restrições(0 a 9);
+     * No caso do Diners Club, por padrão os 4 primeiros digitos já são
+     * pre-definidos 6011.
      *
      * @return o número completo de um cartão de credito válido
      */
@@ -548,7 +603,8 @@ public final class Gerador {
     }
 
     /**
-     * indexCartorios recebe um valor aleátorio entre 0 e o tamanho de cartorios(número máximo de cartorios)
+     * indexCartorios recebe um valor aleátorio entre 0 e o tamanho de
+     * cartorios(número máximo de cartorios)
      *
      * @return, retorna de forma aleátoria um cartório
      */
@@ -558,7 +614,8 @@ public final class Gerador {
     }
 
     /**
-     * indexLogradouro recebe um valor aleátorio entre 0 e o tamanho de logradouros(número máximo de logradouros)
+     * indexLogradouro recebe um valor aleátorio entre 0 e o tamanho de
+     * logradouros(número máximo de logradouros)
      *
      * @return, retorna de forma aleátoria um logradouro
      */
@@ -568,7 +625,8 @@ public final class Gerador {
     }
 
     /**
-     * indexCodigoNacional recebe um valor aleátorio entre 0 e o tamanho de codigos(número máximo de códigos nacionais)
+     * indexCodigoNacional recebe um valor aleátorio entre 0 e o tamanho de
+     * codigos(número máximo de códigos nacionais)
      *
      * @return, retorna de forma aleátoria um código nacional completo
      */
