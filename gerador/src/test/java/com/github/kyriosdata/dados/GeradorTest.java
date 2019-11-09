@@ -19,11 +19,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 class GeradorTest {
 
     @Test
-    void deveFalhar() {
-        assertTrue(false);
-    }
-
-    @Test
     void gerarDataFaixaUmUnicoDia() {
         String dia = "01/01/2019";
         assertEquals(dia, Gerador.entre(dia, dia));
