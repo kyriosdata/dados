@@ -59,6 +59,27 @@ public final class Gerador {
             "responsável"
     };
 
+    /**
+     * Raça/cor obtidos da norma ABNT NBR 15985:2011.
+     */
+    private static String[] cor = {
+            "branco",
+            "preta",
+            "parda",
+            "amarela",
+            "indígena"
+    };
+
+    /**
+     * sexo obtidos da norma ABNT NBR 15985:2011.
+     */
+    private static String[] sexo = {
+            "masculino",
+            "feminino",
+            "indeterminado",
+            "nao-declarado"
+    };
+
     private final List<String> nomes;
     private final List<String> sobrenomes;
     private final List<String> textos;
@@ -506,15 +527,14 @@ public final class Gerador {
     }
 
     /**
-     * De forma aleátoria cria o primeiro digito sendo 3 para JCB, 4 para
-     * VISA, 5 para Mastercard e 6 para Diners Club
+     * De forma aleátoria cria o primeiro digito sendo 3 para JCB, 
+     * 4 para VISA, 5 para Mastercard e 6 para Discover
      * Cria-se um vetor de 16 posições, a partir de operações sobre os 15
      * primeiros digitos encontra o digito verificador que do cartão
      * digito[0] será o primero digito do cartão
-     * digito[1], será o segundo digito sendo JCB sendo sempre 5,mastercard
-     * um valor aleatório(1 a 5), e no caso de visa sem restrições(0 a 9);
-     * No caso do Diners Club, por padrão os 4 primeiros digitos já são
-     * pre-definidos 6011.
+     * digito[1], será o segundo digito sendo JCB sendo sempre 5,
+     * mastercard um valor aleatório(1 a 5), e no caso de visa sem restrições(0 a 9);
+     * No caso do Discover, por padrão os 4 primeiros digitos já são pre-definidos 6011.
      *
      * @return o número completo de um cartão de credito válido
      */
@@ -584,6 +604,29 @@ public final class Gerador {
         int vinculo = inteiro(0, relacionamento.length);
 
         return relacionamento[vinculo];
+    }
+
+    
+    /**
+     * String[] cor são s possiveis cores/raça de um indivíduo
+     *
+     * @return, retorna de forma aleátoria uma das possiveis cores
+     */
+    public String getCor() {
+        int raca = inteiro(0, cor.length);
+
+        return cor[raca];
+    }
+
+    /**
+     * String[] sexo são os possiveis gêneros de um indivíduo
+     *
+     * @return, retorna de forma aleátoria um dos possíveis gêneros
+     */
+    public String getSexo() {
+        int genero = inteiro(0, sexo.length);
+
+        return sexo[genero];
     }
 
     /**
