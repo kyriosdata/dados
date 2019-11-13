@@ -149,7 +149,16 @@
             assertTrue(GeradorTestHelper.sexoValido(sexoFeminino));
             assertTrue(GeradorTestHelper.sexoValido(sexoIndeterminado));
             assertTrue(GeradorTestHelper.sexoValido(sexoNaoDeclarado));
+        }
 
+        @Test
+        void cnpjValido(){
+            assertTrue(GeradorTestHelper.CNPJ(gerador.cnpj()));
+        }
+
+        @Test
+        void cnpjInvalido(){
+            assertFalse(GeradorTestHelper.CNPJ("123456789000156"));
         }
     }
 
