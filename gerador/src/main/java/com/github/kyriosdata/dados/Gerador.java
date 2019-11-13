@@ -63,7 +63,7 @@ public final class Gerador {
      * Raça/cor obtidos da norma ABNT NBR 15985:2011.
      */
     private static String[] cor = {
-            "branco",
+            "branca",
             "preta",
             "parda",
             "amarela",
@@ -248,13 +248,13 @@ public final class Gerador {
     }
 
     /**
-     * Gera um double de 0 a 100.
+     * Gera um double de 0 a 1000.
      *
      * @return double gerado, já com um valor limite definido, nesse caso até
      * 100.
      */
     public double getDoubleUnico() {
-        return RANDOM.nextDouble(100);
+        return RANDOM.nextDouble(1000);
     }
 
     /**
@@ -447,18 +447,18 @@ public final class Gerador {
      * @return cpf, retorna o CNPJ com os 14 dígitos válidos
      */
     public String cnpj() {
-        // CNPJ arbitrário com filial 0001 (dígitos verificadores 00)
-        int[] d = new int[17];
+        // CNPJ arbitrário com filial 0001 (dígitos verificadores d[13] e d[14])
+        int[] d = new int[15];
         IntStream.range(0, 9).forEach(i -> d[i] = inteiro(0, 8));
         d[12] = 1;
 
-        d[15] = (d[1] * 6 + d[2] * 7 + d[3] * 8 + d[4] * 9 + d[5] * 2
+        d[13] = (d[1] * 6 + d[2] * 7 + d[3] * 8 + d[4] * 9 + d[5] * 2
                 + d[6] * 3 + d[7] * 4 + d[8] * 5 + d[12] * 9) % 11;
 
-        d[16] = (d[1] * 5 + d[2] * 6 + d[3] * 7 + d[4] * 8 + d[5] * 9
-                + d[6] * 2 + d[7] * 3 + d[8] * 4 + d[12] * 8 + d[15] * 9) % 11;
+        d[14] = (d[1] * 5 + d[2] * 6 + d[3] * 7 + d[4] * 8 + d[5] * 9
+                + d[6] * 2 + d[7] * 3 + d[8] * 4 + d[12] * 8 + d[13] * 9) % 11;
 
-        return IntStream.range(1, 17)
+        return IntStream.range(1, 15)
                 .mapToObj(i -> Integer.toString(d[i]))
                 .collect(Collectors.joining());
     }
