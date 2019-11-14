@@ -101,11 +101,6 @@
         }
 
         @Test
-        void geraCnpjTest() {
-            System.out.println(gerador.cnpj());
-        }
-
-        @Test
         void doubleValidoTest(){
             double d = gerador.getDoubleUnico();
             assertTrue(GeradorTestHelper.isDouble(d));
@@ -152,13 +147,65 @@
         }
 
         @Test
-        void cnpjValido(){
+        void relacionamentoValidoTest(){
+            String avoMaterna ="avó materna";
+            String avoMaterno = "avô materno";
+            String cônjuge = "cônjuge/companheiro(a)";
+            String irmão = "irmão";
+            String irmã ="irmã";
+            String irmãoMeio = "meio-irmão";
+            String irmãMeio = "meio-irmã";
+            String criança = "criança";
+            String filha = "filha";
+            String avôPaterno = "avô paterno";
+            String avóPaterno = "avó paterno";
+            String tioMaterno = "tio materno";
+            String tioPaterno = "tio paterno";
+            String tiaPaterna = "tia paterna";
+            String tiaMaterna = "tia materna";
+            String recémNasc = "recém-nascido";
+            String pais = "pais";
+            String mãeAdot = "mãe adotiva";
+            String paiAdot = "pai adotivo";
+            String responsável = "responsável";
+
+            assertTrue(GeradorTestHelper.relaçionamentoValido(avoMaterna));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(avoMaterno));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(cônjuge));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(irmão));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(irmã));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(irmãoMeio));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(irmãMeio));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(criança));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(filha));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(avôPaterno));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(avóPaterno));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(tioMaterno));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(tioPaterno));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(tiaPaterna));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(tiaMaterna));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(recémNasc));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(pais));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(mãeAdot));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(paiAdot));
+            assertTrue(GeradorTestHelper.relaçionamentoValido(responsável));
+
+        }
+
+        @Test
+        void geraCnpjTest() {
+            System.out.println(gerador.cnpj());
+        }
+
+        @Test
+        void cnpjValidoTest(){
             assertTrue(GeradorTestHelper.CNPJ(gerador.cnpj()));
         }
 
         @Test
-        void cnpjInvalido(){
+        void cnpjInvalidoTest(){
             assertFalse(GeradorTestHelper.CNPJ("123456789000156"));
         }
+
     }
 

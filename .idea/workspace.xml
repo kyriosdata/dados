@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d35a77b4-ae46-419b-81e8-f50066691f17" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTestHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTestHelper.java" afterDir="false" />
-    </list>
+    <list default="true" id="d35a77b4-ae46-419b-81e8-f50066691f17" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/gerador/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,8 +38,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTestHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+            <state relative-caret-position="257">
+              <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#115#116#0" expanded="true" />
@@ -327,7 +323,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1573668277063</updated>
-      <workItem from="1573668300996" duration="14006000" />
+      <workItem from="1573668300996" duration="14159000" />
     </task>
     <servers />
   </component>
@@ -364,11 +360,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14006000" />
+    <option name="totallyTimeSpent" value="14159000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Capture Tool" order="1" />
@@ -383,10 +378,10 @@
       <window_info anchor="bottom" id="Database Changes" order="3" />
       <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="bottom" id="Flutter Performance" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="6" weight="0.3289689" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="6" visible="true" weight="0.3289689" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
-      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.3289689" />
+      <window_info anchor="bottom" id="Run" order="9" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -449,8 +444,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTestHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="54" lean-forward="true" selection-start-line="54" selection-end-line="54" />
+        <state relative-caret-position="257">
+          <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#115#116#0" expanded="true" />
