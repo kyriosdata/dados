@@ -1,6 +1,5 @@
 package com.github.kyriosdata.dados;
 
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.IntStream;
 
 public class GeradorTestHelper {
@@ -11,7 +10,7 @@ public class GeradorTestHelper {
      *
      * @param d
      *
-     * @return true se a cor for válida, false se não.
+     * @return true se o double for válido, false se não.
      */
     public static boolean isDouble(double d){
         return (!Double.isNaN(d)) && (d >= 0.0 && d < 1001.0);
@@ -40,7 +39,7 @@ public class GeradorTestHelper {
      *
      * @param sexo
      *
-     * @return true se a cor for válida, false se não.
+     * @return true se a sexo for válido, false se não.
      */
     public static boolean sexoValido(String sexo){
         String sexos[] = {
@@ -63,9 +62,9 @@ public class GeradorTestHelper {
      *
      * @param relacionamento
      *
-     * @return true se a cor for válida, false se não.
+     * @return true se o relacionamento for válida, false se não.
      */
-    public static boolean relaçionamentoValido(String relacionamento){
+    public static boolean relacionamentoValido(String relacionamento){
         String relacionamentos[] = {
                 "avó materna",
                 "avô materno",
@@ -97,28 +96,116 @@ public class GeradorTestHelper {
     }
 
     /**
+     * Método auxiliar que verifica se determinado tipo de  certidão
+     * recebida como parâmetro é válida em relação aos certidões validos.
+     *
+     * @param certidao
+     *
+     * @return true se a certidão for válida, false se não.
+     */
+    public static boolean certidaoValida(String certidao){
+        String[] certidoes = {
+                "Certidão de nascimento",
+                "Certidão de casamento",
+                "Certidão de divórcio"
+        };
+        for(int i = 0; i < certidoes.length; i++){
+            if(certidao == certidoes[i]){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /**
      * Método auxiliar que reescreve o cnpj gerado e verifica se o verificador_1
      * é igual ao 13º dígito do cnpj e o verificador_2 é igual ao 14º dígito,
      * determinando se um cnpj recebido como parâmetro é válido.
      *
      * @param cnpj
      *
-     * @return true se a cor for válida, false se não.
+     * @return true se o cnpj for válido, false se não.
      */
     public static boolean CNPJ(String cnpj){
         int aux[] = new int[14];
         IntStream.range(1, 15).forEach(i -> aux[i-1] = Integer.parseInt(String.valueOf(cnpj.charAt(i-1))));
 
-        System.out.println(cnpj);
-
         int verificador_1 = (aux[0] * 6 + aux[1] * 7 + aux[2] * 8 + aux[3] * 9 + aux[4] * 2
                 + aux[5] * 3 + aux[6] * 4 + aux[7] * 5 + aux[11] * 9) % 11;
 
-        //System.out.println(verificador_1);
         int verificador_2 = (aux[0] * 5 + aux[1] * 6 + aux[2] * 7 + aux[3] * 8 + aux[4] * 9
                 + aux[5] * 2 + aux[6] * 3 + aux[7] * 4 + aux[11] * 8 + verificador_1 * 9) % 11;
 
         return (verificador_1 == aux[12]) && (verificador_2 == aux[13]);
+    }
+    /**
+     * Método auxiliar que reescreve o cpf gerado e verifica se o verificador1
+     * é igual ao 10º dígito do cpf e o verificador2 é igual ao 11º dígito,
+     * determinando se um cpf recebido como parâmetro é válido.
+     *
+     * @param cpf
+     *
+     * @return true se o cpf for válido, false se não.
+     */
+    public static boolean CPF(String cpf){
+        int []digitos = new int[11];
+        int somador1 = 0, somador2 = 0;
+        int verificador1 , verificador2 ;
+
+        IntStream.range(0, 11).forEach(i -> digitos[i] = Integer.parseInt(String.valueOf(cpf.charAt(i))));
+
+        for (int i = 1; i < 10; i++) {
+            somador1 += digitos[i-1] * i ;
+        }
+        verificador1 = somador1 % 11;
+        if (verificador1 == 10) {
+            verificador1 = 0;
+        }
+
+        for (int j = 0; j < 10; j++) {
+            somador2 += digitos[j] * j;
+        }
+        verificador2 = somador2 % 11;
+        if (verificador2 == 10) {
+            verificador2 = 0;
+        }
+        return (verificador1 == digitos[9]) && (verificador2 == digitos[10]);
+    }
+    /**
+     * Método auxiliar que reescreve o pis gerado e verifica se o verificador
+     * é igual ao 11º dígito que corresponde ao digitos[10],
+     * determinando se um pis recebido como parâmetro é válido.
+     *
+     * @param pis
+     *
+     * @return true se o pis for válido, false se não.
+     */
+    public static boolean PIS(String pis){
+        int[] digitos = new int[11];
+        int somador1 = 0, somador2 = 0;
+        int verificador;
+
+        IntStream.range(0, 11).forEach(i -> digitos[i] = Integer.parseInt(String.valueOf(pis.charAt(i))));
+
+        for (int i = 0; i < digitos.length - 9; i++) {
+            somador1 += digitos[i] * (3 - i);
+        }
+
+        for (int i = 2; i < digitos.length - 1; i++) {
+            somador2 += digitos[i] * (11 - i);
+        }
+        verificador = 11 - ((somador1 + somador2) % 11);
+        if (verificador == 10 || verificador == 11) {
+            verificador = 0;
+        }
+        if (digitos[10] == 0 ){
+            digitos[10] = verificador;
+        }
+
+        for (int i=0;i<digitos.length; i++){
+            System.out.print(digitos[i]);
+        }
+        return (verificador == digitos[10] );
     }
 
 }

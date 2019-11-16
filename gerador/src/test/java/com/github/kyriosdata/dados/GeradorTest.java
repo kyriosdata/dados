@@ -57,14 +57,12 @@
 
         @Test
         void carregarDadosInexistentesGeraExcecaoTest() {
-            
             assertThrows(GeradorException.class, () ->
                     gerador.carregarDados(""));
         }
 
         @Test
         void inteiroFaixaInvalidaTest() {
-            
             assertThrows(IllegalArgumentException.class, () ->
                     gerador.inteiro(0, -1));
         }
@@ -147,65 +145,114 @@
         }
 
         @Test
+        void sexoInvalidaTest(){
+            assertFalse(GeradorTestHelper.sexoValido("trans"));
+        }
+
+        @Test
         void relacionamentoValidoTest(){
             String avoMaterna ="avó materna";
             String avoMaterno = "avô materno";
-            String cônjuge = "cônjuge/companheiro(a)";
-            String irmão = "irmão";
-            String irmã ="irmã";
-            String irmãoMeio = "meio-irmão";
-            String irmãMeio = "meio-irmã";
-            String criança = "criança";
+            String conjuge = "cônjuge/companheiro(a)";
+            String irmao = "irmão";
+            String irma ="irmã";
+            String irmaoMeio = "meio-irmão";
+            String irmaMeio = "meio-irmã";
+            String crianca = "criança";
             String filha = "filha";
-            String avôPaterno = "avô paterno";
-            String avóPaterno = "avó paterno";
+            String avooPaterno = "avô paterno";
+            String avoPaterno = "avó paterno";
             String tioMaterno = "tio materno";
             String tioPaterno = "tio paterno";
             String tiaPaterna = "tia paterna";
             String tiaMaterna = "tia materna";
-            String recémNasc = "recém-nascido";
+            String recemNasc = "recém-nascido";
             String pais = "pais";
-            String mãeAdot = "mãe adotiva";
+            String maeAdot = "mãe adotiva";
             String paiAdot = "pai adotivo";
-            String responsável = "responsável";
+            String responsavel = "responsável";
 
-            assertTrue(GeradorTestHelper.relaçionamentoValido(avoMaterna));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(avoMaterno));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(cônjuge));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(irmão));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(irmã));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(irmãoMeio));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(irmãMeio));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(criança));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(filha));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(avôPaterno));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(avóPaterno));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(tioMaterno));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(tioPaterno));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(tiaPaterna));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(tiaMaterna));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(recémNasc));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(pais));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(mãeAdot));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(paiAdot));
-            assertTrue(GeradorTestHelper.relaçionamentoValido(responsável));
-
+            assertTrue(GeradorTestHelper.relacionamentoValido(avoMaterna));
+            assertTrue(GeradorTestHelper.relacionamentoValido(avoMaterno));
+            assertTrue(GeradorTestHelper.relacionamentoValido(conjuge));
+            assertTrue(GeradorTestHelper.relacionamentoValido(irmao));
+            assertTrue(GeradorTestHelper.relacionamentoValido(irma));
+            assertTrue(GeradorTestHelper.relacionamentoValido(irmaoMeio));
+            assertTrue(GeradorTestHelper.relacionamentoValido(irmaMeio));
+            assertTrue(GeradorTestHelper.relacionamentoValido(crianca));
+            assertTrue(GeradorTestHelper.relacionamentoValido(filha));
+            assertTrue(GeradorTestHelper.relacionamentoValido(avooPaterno));
+            assertTrue(GeradorTestHelper.relacionamentoValido(avoPaterno));
+            assertTrue(GeradorTestHelper.relacionamentoValido(tioMaterno));
+            assertTrue(GeradorTestHelper.relacionamentoValido(tioPaterno));
+            assertTrue(GeradorTestHelper.relacionamentoValido(tiaPaterna));
+            assertTrue(GeradorTestHelper.relacionamentoValido(tiaMaterna));
+            assertTrue(GeradorTestHelper.relacionamentoValido(recemNasc));
+            assertTrue(GeradorTestHelper.relacionamentoValido(pais));
+            assertTrue(GeradorTestHelper.relacionamentoValido(maeAdot));
+            assertTrue(GeradorTestHelper.relacionamentoValido(paiAdot));
+            assertTrue(GeradorTestHelper.relacionamentoValido(responsavel));
         }
 
         @Test
-        void geraCnpjTest() {
-            System.out.println(gerador.cnpj());
+        void relacionamentoInvalidaTest(){
+            assertFalse(GeradorTestHelper.sexoValido("marido"));
         }
 
         @Test
-        void cnpjValidoTest(){
+        void certidaoValidaTest(){
+            String Nascimento = "Certidão de nascimento";
+            String Casamento = "Certidão de casamento";
+            String Divorcio = "Certidão de divórcio";
+
+            assertTrue(GeradorTestHelper.certidaoValida(Nascimento));
+            assertTrue(GeradorTestHelper.certidaoValida(Casamento));
+            assertTrue(GeradorTestHelper.certidaoValida(Divorcio));
+        }
+
+        @Test
+        void certidaoInvalidaTest(){
+            assertFalse(GeradorTestHelper.sexoValido("Certidão de união"));
+        }
+
+        @Test
+        void cnpjTest() {
+            System.out.println("CNPJ : "+ gerador.cnpj());
+        }
+
+        @Test
+        void verificaCnpjValidoTest(){
             assertTrue(GeradorTestHelper.CNPJ(gerador.cnpj()));
         }
 
         @Test
         void cnpjInvalidoTest(){
-            assertFalse(GeradorTestHelper.CNPJ("123456789000156"));
+            assertFalse(GeradorTestHelper.CNPJ("12345678000156"));
         }
 
+        @Test
+        void cpfTest() {
+            System.out.println("CPF : "+ gerador.cpf());
+        }
+
+        @Test
+        void verificaCpfValidoTest(){
+            assertTrue(GeradorTestHelper.CPF(((gerador.cpf()))));
+        }
+
+        @Test
+        void cpfInvalidoTest(){
+            assertFalse(GeradorTestHelper.CPF("70200961160"));
+        }
+
+        @Test
+        void verificaPisValidoTest(){
+            assertTrue(GeradorTestHelper.PIS(((gerador.pis()))));
+        }
+
+        @Test
+        void pisInvalidoTest(){
+            assertFalse(GeradorTestHelper.PIS("11000000167"));
+        }
     }
 

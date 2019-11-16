@@ -270,10 +270,10 @@ public final class Gerador {
 
     /**
      * Gera uma data aleátoria entre o intervalo de 1900 ao ano 2100,
-     * tratando a diferença de dias de referente a cada mês
+     * tratando a diferença de dias de referente a cada mês.
      *
      * @return a data aleátoria usando a biblioteca LocalDate, no formato
-     * (ano/mes/dia)
+     * (ano/mes/dia).
      */
     public LocalDate getData() {
         int[] totalDias = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
@@ -288,9 +288,9 @@ public final class Gerador {
     /**
      * Gera uma data aleátoria entre o intervalo especificado nos parâmetros
      * dataInicio recebe uma data inicial(limite inferior)
-     * dataFim recebe uma data final(limite superior)
+     * dataFim recebe uma data final(limite superior).
      *
-     * @return a data a partir do intervalo especificado no método getData
+     * @return a data a partir do intervalo especificado no método getData.
      */
     public LocalDate getDataIntervalo() {
         LocalDate dataInicio = LocalDate.of(2010, 10, 10);
@@ -314,7 +314,7 @@ public final class Gerador {
      *            leitura
      *            "leitorTexto" recebe a entrada, como sendo um novo leitor
      *            de entrada
-     *            "cBuffer" cria um novo leitor em buffer
+     *            "cBuffer" cria um novo leitor em buffer.
      * @return c retorna os caracteres do intervalo min e max, passados como
      * parâmetro.
      */
@@ -343,10 +343,10 @@ public final class Gerador {
     }
 
     /**
-     * Acessa getTexto para realizar leitura do arquivo texto
+     * Acessa getTexto para realizar leitura do arquivo texto.
      *
      * @return, retorna uma quantidade exata de caracteres passado no
-     * parâmetro de getTexto, nesse caso os 1000 primeiros caracteres
+     * parâmetro de getTexto, nesse caso os 1000 primeiros caracteres.
      */
     public char[] gettextoFixo() throws IOException {
         return getTexto(0, 1000);
@@ -367,84 +367,74 @@ public final class Gerador {
 
     /**
      * Usa de uma fórmula específica para criação de CPF's válidos, a partir
-     * de 9 digitos aleátorios, conclui 2 dígitos verificadores
+     * de 9 digitos aleátorios, conclui 2 dígitos verificadores.
      *
-     * @return cpf, retorna o CPF válido com os 11 dígitos
+     * @return cpf, retorna o CPF válido com os 11 dígitos.
      */
-    public StringBuilder cpf() {
-
-        int[] digitos = new int[11];
+    public String cpf() {
+        int[] digitos = new int[12];
         int somador1 = 0, somador2 = 0;
-        int verificador1 = 0, verificador2 = 0;
-        StringBuilder cpf = new StringBuilder();
 
-        for (int i = 0; i < digitos.length - 2; i++) {
-            digitos[i] = inteiro(1, 9);
-            cpf.append(digitos[i]);
+        IntStream.range(0, 10).forEach(i -> digitos[i] = inteiro(0, 8));
+
+        for (int i = 1; i < digitos.length - 2; i++) {
+            somador1 += digitos[i] * i;
         }
 
-        for (int i = 0; i < digitos.length - 2; i++) {
-            somador1 += digitos[i] * (i + 1);
+        digitos[10] = somador1 % 11;
+        if (digitos[10] == 10 ) {
+            digitos[10] = 0;
         }
-        verificador1 = somador1 % 11;
+        for (int j = 1; j < digitos.length - 1; j++) {
+            somador2 += digitos[j] * (j-1);
+        }
+        digitos[11] = somador2 % 11;
+        if (digitos[11] == 10 ) {
+            digitos[11] = 0;
+        }
 
-        digitos[digitos.length - 2] = verificador1;
-        for (int j = 0; j < digitos.length - 1; j++) {
-            somador2 += digitos[j] * j;
-        }
-
-        verificador2 = somador2 % 11;
-        digitos[digitos.length - 1] = verificador2;
-        cpf.setLength(0);
-        for (int i = 0; i < digitos.length; i++) {
-            cpf.append(digitos[i]);
-        }
-        return cpf;
+        return IntStream.range(1, 12)
+                .mapToObj(i -> Integer.toString(digitos[i]))
+                .collect(Collectors.joining());
     }
+
 
     /**
      * Usa de uma fórmula específica para criação de Pis válidos, a partir de
-     * 10 digitos aleátorios, conclui 1 dígito verificador
+     * 10 digitos aleátorios, conclui 1 dígito verificador.
      *
-     * @return Pis, retorna o Pis válido com os 11 dígitos
+     * @return Pis, retorna o Pis válido com os 11 dígitos.
      */
-    public StringBuilder PIS() {
-        int[] digitos = new int[11];
+    public String pis() {
+        int[] digitos = new int[12];
         int somador1 = 0, somador2 = 0;
         int verificador;
-        StringBuilder PIS = new StringBuilder();
 
-        for (int i = 0; i < digitos.length - 1; i++) {
-            digitos[i] = inteiro(1, 9);
-            PIS.append(digitos[i]);
-        }
+        IntStream.range(0, 11).forEach(i -> digitos[i] = inteiro(0, 8));
 
-        for (int i = 0; i < digitos.length - 9; i++) {
-            somador1 += digitos[i] * (3 - i);
+        for (int i = 1; i < digitos.length - 9; i++) {
+            somador1 += digitos[i] * (4 - i);
         }
 
-        for (int i = 2; i < digitos.length - 1; i++) {
-            somador2 += digitos[i] * (11 - i);
+        for (int i = 3; i < digitos.length - 2; i++) {
+            somador2 += digitos[i] * (12 - i);
         }
-        verificador = 11 - ((somador1 + somador2) % 11);
-        if (verificador == 10 || verificador == 11) {
-            verificador = 0;
+        digitos[10] = 11 - ((somador1 + somador2) % 11);
+        if (digitos[10] == 10 || digitos[10] == 11) {
+            digitos[10] = 0;
         }
-        digitos[digitos.length - 1] = verificador;
-        PIS.setLength(0);
 
-        for (int i = 0; i < digitos.length; i++) {
-            PIS.append(digitos[i]);
-        }
-        return PIS;
+        return IntStream.range(1, 12)
+                .mapToObj(i -> Integer.toString(digitos[i]))
+                .collect(Collectors.joining());
     }
 
     /**
      * TODO verificar
      * Usa de uma fórmula específica para criação de CNPJ's válidos, a partir
-     * de 8 dígitos aleátorios, conclui 2 dígitos verificadores
+     * de 8 dígitos aleátorios, conclui 2 dígitos verificadores.
      *
-     * @return cpf, retorna o CNPJ com os 14 dígitos válidos
+     * @return cpf, retorna o CNPJ com os 14 dígitos válidos.
      */
     public String cnpj() {
         // CNPJ arbitrário com filial 0001 (dígitos verificadores d[13] e d[14])
@@ -465,16 +455,16 @@ public final class Gerador {
 
     /**
      * É realizado a multiplicação dos 8 primeiros digitos por 2 3 4 5 6 7 8
-     * 9 encontro o digito
+     * 9 encontro o digito.
      * O digito do estado é desmembrado em unidades, por exemplo estado = 05,
      * logo verificador2 = (0*7 + 5*8 + DV1*9) modulo por 11
      * estado recebe um desses valores de forma aleátoria :
      * 01-SP, 02-MG, 03-RJ, 04-RS, 05-BA, 06-PR, 07-CE, 08-PE, 09-SC, 10-GO,
      * 11-MA, 12-PB, 13-PA, 14-ES, 15-PI,
      * 16-RN, 17-AL, 18-MT, 19-MS, 20-DF, 21-SE, 22-AM, 23-RO, 24-AC, 25-AP,
-     * 26-RR, 27-TO e 28-Exterior(ZZ)
+     * 26-RR, 27-TO e 28-Exterior(ZZ).
      *
-     * @return titulo, retornará o título composto por 12 digitos
+     * @return titulo, retornará o título composto por 12 digitos.
      */
     public StringBuilder tituloEleitoral() {
 
@@ -528,7 +518,7 @@ public final class Gerador {
 
     /**
      * De forma aleátoria cria o primeiro digito sendo 3 para JCB, 
-     * 4 para VISA, 5 para Mastercard e 6 para Discover
+     * 4 para VISA, 5 para Mastercard e 6 para Discover.
      * Cria-se um vetor de 16 posições, a partir de operações sobre os 15
      * primeiros digitos encontra o digito verificador que do cartão
      * digito[0] será o primero digito do cartão
@@ -536,7 +526,7 @@ public final class Gerador {
      * mastercard um valor aleatório(1 a 5), e no caso de visa sem restrições(0 a 9);
      * No caso do Discover, por padrão os 4 primeiros digitos já são pre-definidos 6011.
      *
-     * @return o número completo de um cartão de credito válido
+     * @return o número completo de um cartão de credito válido.
      */
     public StringBuilder luhn() {
 
@@ -596,9 +586,9 @@ public final class Gerador {
 
 
     /**
-     * String[] relacionamento são os possiveis vinculos de um indivíduo
+     * String[] relacionamento são os possiveis vinculos de um indivíduo.
      *
-     * @return, retorna de forma aleátoria um dos possiveis relacionamentos
+     * @return, retorna de forma aleátoria um dos possiveis relacionamentos.
      */
     public String getRelacionamento() {
         int vinculo = inteiro(0, relacionamento.length);
@@ -608,9 +598,9 @@ public final class Gerador {
 
     
     /**
-     * String[] cor são s possiveis cores/raça de um indivíduo
+     * String[] cor são s possiveis cores/raça de um indivíduo.
      *
-     * @return, retorna de forma aleátoria uma das possiveis cores
+     * @return, retorna de forma aleátoria uma das possiveis cores.
      */
     public String getCor() {
         int raca = inteiro(0, cor.length);
@@ -619,9 +609,9 @@ public final class Gerador {
     }
 
     /**
-     * String[] sexo são os possiveis gêneros de um indivíduo
+     * String[] sexo são os possiveis gêneros de um indivíduo.
      *
-     * @return, retorna de forma aleátoria um dos possíveis gêneros
+     * @return, retorna de forma aleátoria um dos possíveis gêneros.
      */
     public String getSexo() {
         int genero = inteiro(0, sexo.length);
@@ -630,9 +620,9 @@ public final class Gerador {
     }
 
     /**
-     * String[] certidao são os três possíveis certidões
+     * String[] certidao são os três possíveis certidões.
      *
-     * @return, retorna de forma aleátoria uma certidão
+     * @return, retorna de forma aleátoria uma certidão.
      */
     public String getCertidao() {
         String[] certidao = {
@@ -647,9 +637,9 @@ public final class Gerador {
 
     /**
      * indexCartorios recebe um valor aleátorio entre 0 e o tamanho de
-     * cartorios(número máximo de cartorios)
+     * cartorios(número máximo de cartorios).
      *
-     * @return, retorna de forma aleátoria um cartório
+     * @return, retorna de forma aleátoria um cartório.
      */
     public String cartorio() {
         int indexCartorios = inteiro(0, cartorios.size() - 1);
@@ -658,9 +648,9 @@ public final class Gerador {
 
     /**
      * indexLogradouro recebe um valor aleátorio entre 0 e o tamanho de
-     * logradouros(número máximo de logradouros)
+     * logradouros(número máximo de logradouros).
      *
-     * @return, retorna de forma aleátoria um logradouro
+     * @return, retorna de forma aleátoria um logradouro.
      */
     public String localizaLogradouro() {
         int indexLogradouro = inteiro(0, logradouros.size() - 1);
@@ -669,9 +659,9 @@ public final class Gerador {
 
     /**
      * indexCodigoNacional recebe um valor aleátorio entre 0 e o tamanho de
-     * codigos(número máximo de códigos nacionais)
+     * codigos(número máximo de códigos nacionais).
      *
-     * @return, retorna de forma aleátoria um código nacional completo
+     * @return, retorna de forma aleátoria um código nacional completo.
      */
     public String codigoNacional() {
         int indexCodigoNacional = inteiro(0, codigosNacionais.size() - 1);
