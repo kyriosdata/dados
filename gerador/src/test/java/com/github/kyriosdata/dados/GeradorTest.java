@@ -69,7 +69,6 @@
 
         @Test
         void inteiroUnicoValorTest() {
-            
             assertEquals(0, gerador.inteiro(0, 0));
         }
 
@@ -246,13 +245,31 @@
         }
 
         @Test
+        void pisTest() {
+            System.out.println("PIS : "+ gerador.pis());
+        }
+
+        @Test
         void verificaPisValidoTest(){
-            assertTrue(GeradorTestHelper.PIS(((gerador.pis()))));
+            assertTrue(GeradorTestHelper.PIS(gerador.pis()));
         }
 
         @Test
         void pisInvalidoTest(){
             assertFalse(GeradorTestHelper.PIS("11000000167"));
+        }
+
+        @Test
+        void tituloELTest() {
+            System.out.println("Título eleitoral : "+ gerador.tituloEleitoral());
+        }
+        @Test
+        void verificatituloValidoTest(){
+            assertTrue(GeradorTestHelper.tituloEleitoral(((gerador.tituloEleitoral()))));
+        }
+        @Test
+        void tituloInvalidoTest(){
+            assertFalse(GeradorTestHelper.tituloEleitoral("670637480935"));
         }
     }
 

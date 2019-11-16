@@ -187,25 +187,46 @@ public class GeradorTestHelper {
 
         IntStream.range(0, 11).forEach(i -> digitos[i] = Integer.parseInt(String.valueOf(pis.charAt(i))));
 
-        for (int i = 0; i < digitos.length - 9; i++) {
-            somador1 += digitos[i] * (3 - i);
+        for (int i = 1; i < 3; i++) {
+            somador1 += digitos[i-1] * (4 - i);
         }
 
-        for (int i = 2; i < digitos.length - 1; i++) {
+        for (int i = 2; i < 10; i++) {
             somador2 += digitos[i] * (11 - i);
         }
         verificador = 11 - ((somador1 + somador2) % 11);
-        if (verificador == 10 || verificador == 11) {
+        if ( verificador == 10 ) {
             verificador = 0;
         }
         if (digitos[10] == 0 ){
             digitos[10] = verificador;
         }
 
-        for (int i=0;i<digitos.length; i++){
-            System.out.print(digitos[i]);
-        }
         return (verificador == digitos[10] );
     }
+
+    public static boolean tituloEleitoral(String titulo){
+        int[] digitos = new int[12];
+        int somador1 = 0;
+        int verificador1=0, verificador2 ;
+        IntStream.range(0, 12).forEach(i -> digitos[i] = Integer.parseInt(String.valueOf(titulo.charAt(i))));
+
+        for (int j = 0; j < digitos.length - 4; j++) {
+            somador1 += digitos[j] * (j + 2);
+            verificador1 = somador1 % 11;
+            //System.out.println("S1 =" + somador1);
+            if (verificador1 == 10) {
+                verificador1 = 0;
+            }
+        }
+        verificador2 = (digitos[8] * 7 + digitos[9] * 8 + (verificador1 * 9)) % 11;
+        if (verificador2 == 10) {
+            verificador2 = 0;
+        }
+        if (digitos[11]==0){
+            digitos[11]=verificador2;
+        }
+        return (verificador1 == digitos[10] && verificador2 == digitos[11]);
+        }
 
 }

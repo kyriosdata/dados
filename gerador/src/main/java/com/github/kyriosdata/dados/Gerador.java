@@ -408,23 +408,23 @@ public final class Gerador {
     public String pis() {
         int[] digitos = new int[12];
         int somador1 = 0, somador2 = 0;
-        int verificador;
+        int verificador = 0;
 
         IntStream.range(0, 11).forEach(i -> digitos[i] = inteiro(0, 8));
 
         for (int i = 1; i < digitos.length - 9; i++) {
-            somador1 += digitos[i] * (4 - i);
+            somador1 += digitos[i-1] * (4 - i);
         }
 
-        for (int i = 3; i < digitos.length - 2; i++) {
-            somador2 += digitos[i] * (12 - i);
+        for (int i = 2; i < digitos.length - 2; i++) {
+            somador2 += digitos[i] * (11 - i);
         }
         digitos[10] = 11 - ((somador1 + somador2) % 11);
-        if (digitos[10] == 10 || digitos[10] == 11) {
+        if (digitos[10] == 10 ) {
             digitos[10] = 0;
         }
 
-        return IntStream.range(1, 12)
+        return IntStream.range(0, 11)
                 .mapToObj(i -> Integer.toString(digitos[i]))
                 .collect(Collectors.joining());
     }
@@ -466,54 +466,37 @@ public final class Gerador {
      *
      * @return titulo, retornará o título composto por 12 digitos.
      */
-    public StringBuilder tituloEleitoral() {
+    public String tituloEleitoral() {
 
         int estado = inteiro(1, 28);
         int[] digitos = new int[12];
         int somador1 = 0;
-        StringBuilder titulo = new StringBuilder();
-
-        for (int i = 0; i < digitos.length - 4; i++) {
-            digitos[i] = inteiro(1, 9);
-            titulo.append(digitos[i]);
-        }
-
-        int digito1_estado, digito2_estado;
-        int verificador1 = 0, verificador2 = 0;
+        IntStream.range(0, 12).forEach(i -> digitos[i] = inteiro(0, 8));
 
         if (estado <= 9) {
-            digito1_estado = 0;
-            digito2_estado = estado;
+            digitos[8] = 0;
+            digitos[9] = estado;
         } else {
-            digito1_estado = estado / 10;
-            digito2_estado = estado % 10;
+            digitos[8] = estado / 10;
+            digitos[9] = estado % 10;
         }
 
         for (int j = 0; j < digitos.length - 4; j++) {
             somador1 += digitos[j] * (j + 2);
-            verificador1 = somador1 % 11;
-
-            if (verificador1 >= 10) {
-                verificador1 = 0;
+            digitos[10] = somador1 % 11;
+            if (digitos[10] == 10) {
+                digitos[10] = 0;
             }
         }
-        verificador2 =
-                ((digito1_estado * 7 + digito2_estado * 8 + verificador1 * 9) % 11);
-        if (verificador2 >= 10) {
-            verificador2 = 0;
+        digitos[11] =
+                ((digitos[8] * 7 + digitos[9] * 8 + digitos[10] * 9) % 11);
+        if (digitos[11] == 10) {
+            digitos[11] = 0;
         }
 
-        digitos[digitos.length - 4] = digito1_estado;
-        digitos[digitos.length - 3] = digito2_estado;
-        digitos[digitos.length - 2] = verificador1;
-        digitos[digitos.length - 1] = verificador2;
-
-        titulo.setLength(0);
-        for (int i = 0; i < digitos.length; i++) {
-            titulo.append(digitos[i]);
-        }
-
-        return titulo;
+        return IntStream.range(0, 12)
+                .mapToObj(i -> Integer.toString(digitos[i]))
+                .collect(Collectors.joining());
     }
 
     /**
