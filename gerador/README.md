@@ -1,6 +1,6 @@
 # Gerador de dados
 
-> O objetivo é se tornar uma referência para geração de dados demográficos na
+> O objetivo criar uma referência para geração de dados demográficos na
 > área da saúde. 
 
 ## Tipos de dados considerados
