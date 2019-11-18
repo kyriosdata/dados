@@ -5,7 +5,8 @@
 
 ## Tipos de dados considerados
 
-- Inteiro (em uma faixa) cobrindo diversos intervalos de dados
+- inteiro de 0 até 1000, inclusive.
+- inteiro de um valor inicial até o final indicados, inclusive.
 - Data (LocalDate) ou no formato "dd/mm/aaaa" (em uma faixa dentro de um intervalo)
 - Nomes e sobrenomes concatenados a partir de uma lista pré definida
 - Sexo
