@@ -444,7 +444,10 @@ public final class Gerador {
     }
 
     /**
-     * É realizado a multiplicação dos 8 primeiros digitos por 2 3 4 5 6 7 8
+     * Retorna um título eleitoral.
+     *
+     * <p>É realizado a multiplicação dos 8 primeiros
+     * digitos por 2 3 4 5 6 7 8
      * 9 encontro o digito.
      * O digito do estado é desmembrado em unidades, por exemplo estado = 05,
      * logo verificador2 = (0*7 + 5*8 + DV1*9) modulo por 11
@@ -452,9 +455,9 @@ public final class Gerador {
      * 01-SP, 02-MG, 03-RJ, 04-RS, 05-BA, 06-PR, 07-CE, 08-PE, 09-SC, 10-GO,
      * 11-MA, 12-PB, 13-PA, 14-ES, 15-PI,
      * 16-RN, 17-AL, 18-MT, 19-MS, 20-DF, 21-SE, 22-AM, 23-RO, 24-AC, 25-AP,
-     * 26-RR, 27-TO e 28-Exterior(ZZ).
+     * 26-RR, 27-TO e 28-Exterior(ZZ).</p>
      *
-     * @return titulo, retornará o título composto por 12 digitos.
+     * @return Um título eleitoral. 
      */
     public String tituloEleitoral() {
 
