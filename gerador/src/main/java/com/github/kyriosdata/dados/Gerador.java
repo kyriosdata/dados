@@ -444,7 +444,10 @@ public final class Gerador {
     }
 
     /**
-     * Retorna um título eleitoral.
+     * TODO foneça a referência.
+     * Retorna um título eleitoral. O algoritmo abaixo foi obtido (coloque
+     * aqui a referência substituindo tudo que está entre parênteses,
+     * inclusive eles).
      *
      * <p>É realizado a multiplicação dos 8 primeiros
      * digitos por 2 3 4 5 6 7 8
@@ -457,7 +460,7 @@ public final class Gerador {
      * 16-RN, 17-AL, 18-MT, 19-MS, 20-DF, 21-SE, 22-AM, 23-RO, 24-AC, 25-AP,
      * 26-RR, 27-TO e 28-Exterior(ZZ).</p>
      *
-     * @return Um título eleitoral. 
+     * @return Um título eleitoral.
      */
     public String tituloEleitoral() {
 
