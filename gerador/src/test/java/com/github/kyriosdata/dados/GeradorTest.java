@@ -10,7 +10,10 @@
     import org.junit.jupiter.api.Test;
     import java.time.LocalDate;
     import java.time.format.DateTimeFormatter;
+    import java.util.HashSet;
     import java.util.List;
+    import java.util.Set;
+    import java.util.stream.IntStream;
 
     import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,6 +24,16 @@
         @BeforeEach
         void setup(){
             gerador = Gerador.getInstance();
+        }
+
+        @Test
+        void sexo() {
+            Set<Sexo> sorteados = new HashSet<>();
+            IntStream.range(0, 100).forEach(i -> sorteados.add(gerador.getSexo()));
+
+            // Estamos supondo que em 1000 sorteios todas as opções serão
+            // utilizadas.
+            assertEquals(4, sorteados.size());
         }
 
         @Test

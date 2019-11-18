@@ -70,16 +70,6 @@ public final class Gerador {
             "indígena"
     };
 
-    /**
-     * sexo obtidos da norma ABNT NBR 15985:2011.
-     */
-    private static String[] sexo = {
-            "masculino",
-            "feminino",
-            "indeterminado",
-            "nao-declarado"
-    };
-
     private final List<String> nomes;
     private final List<String> sobrenomes;
     private final List<String> textos;
@@ -592,14 +582,16 @@ public final class Gerador {
     }
 
     /**
-     * String[] sexo são os possiveis gêneros de um indivíduo.
+     * Retorna um sexo dentre as possibilidades apresentadas pela ABNT NBR
+     * 15985:2011.
      *
-     * @return, retorna de forma aleátoria um dos possíveis gêneros.
+     * @return Um sexo conforme a ABNT NBR 15985:2011.
      */
-    public String getSexo() {
-        int genero = inteiro(0, sexo.length);
+    public Sexo getSexo() {
+        Sexo[] opcoes = Sexo.values();
+        int sorteado = inteiro(0, opcoes.length - 1);
 
-        return sexo[genero];
+        return opcoes[sorteado];
     }
 
     /**
