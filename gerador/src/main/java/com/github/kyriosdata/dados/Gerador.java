@@ -410,7 +410,7 @@ public final class Gerador {
             somador2 += digitos[i] * (11 - i);
         }
         digitos[10] = 11 - ((somador1 + somador2) % 11);
-        if (digitos[10] == 10 ) {
+        if (digitos[10] == 10 || digitos[10] == 11) {
             digitos[10] = 0;
         }
 
@@ -437,6 +437,14 @@ public final class Gerador {
 
         d[14] = (d[1] * 5 + d[2] * 6 + d[3] * 7 + d[4] * 8 + d[5] * 9
                 + d[6] * 2 + d[7] * 3 + d[8] * 4 + d[12] * 8 + d[13] * 9) % 11;
+
+        if (d[13] == 10) {
+            d[13] = 0;
+        }
+        if (d[14] == 10) {
+            d[14] = 0;
+        }
+
 
         return IntStream.range(1, 15)
                 .mapToObj(i -> Integer.toString(d[i]))

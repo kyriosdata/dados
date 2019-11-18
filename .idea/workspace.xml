@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d35a77b4-ae46-419b-81e8-f50066691f17" name="Default Changelist" comment="" />
+    <list default="true" id="d35a77b4-ae46-419b-81e8-f50066691f17" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gerador/src/main/java/com/github/kyriosdata/dados/Gerador.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerador/src/main/java/com/github/kyriosdata/dados/Gerador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTestHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTestHelper.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/gerador/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,37 +19,24 @@
     <option name="delegatedBuild" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="160" column="23" selection-start-line="160" selection-start-column="23" selection-end-line="160" selection-end-column="23" />
+            <state relative-caret-position="141">
+              <caret line="264" column="45" lean-forward="true" selection-start-line="264" selection-start-column="45" selection-end-line="264" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#667#668#0" expanded="true" />
-                <element signature="e#715#716#0" expanded="true" />
-                <element signature="e#3050#3051#0" expanded="true" />
-                <element signature="e#3106#3107#0" expanded="true" />
-                <element signature="e#4651#4652#0" expanded="true" />
-                <element signature="e#4725#4726#0" expanded="true" />
-                <element signature="e#4777#4778#0" expanded="true" />
-                <element signature="e#4851#4852#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTestHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#115#116#0" expanded="true" />
-                <element signature="e#184#185#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="243">
+              <caret line="138" column="9" lean-forward="true" selection-start-line="138" selection-start-column="9" selection-end-line="138" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -52,12 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gerador/src/main/java/com/github/kyriosdata/dados/Gerador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="457" column="8" selection-start-line="457" selection-start-column="8" selection-end-line="458" selection-end-column="79" />
-              <folding>
-                <element signature="e#4672#4673#0" expanded="true" />
-                <element signature="e#4723#4724#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-281">
+              <caret line="411" column="56" lean-forward="true" selection-start-line="411" selection-start-column="56" selection-end-line="411" selection-end-column="56" />
             </state>
           </provider>
         </entry>
@@ -88,8 +76,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/gerador/src/main/java/com/github/kyriosdata/dados/GeradorTestHelper.java" />
-        <option value="$PROJECT_DIR$/gerador/src/main/java/com/github/kyriosdata/dados/Gerador.java" />
         <option value="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTestHelper.java" />
+        <option value="$PROJECT_DIR$/gerador/src/main/java/com/github/kyriosdata/dados/Gerador.java" />
         <option value="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java" />
       </list>
     </option>
@@ -151,15 +139,6 @@
               <item name="dados" type="462c0819:PsiDirectoryNode" />
               <item name="gerador" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dados" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dados" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dados" type="462c0819:PsiDirectoryNode" />
-              <item name="gerador" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -169,15 +148,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dados" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dados" type="462c0819:PsiDirectoryNode" />
-              <item name="gerador" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dados" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -324,6 +294,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573668277063</updated>
       <workItem from="1573668300996" duration="14159000" />
+      <workItem from="1574100508700" duration="636000" />
     </task>
     <servers />
   </component>
@@ -360,17 +331,18 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14159000" />
+    <option name="totallyTimeSpent" value="14795000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="Capture Tool" order="1" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.22541603" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.22844176" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
@@ -415,41 +387,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gerador/src/main/java/com/github/kyriosdata/dados/Gerador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="457" column="8" selection-start-line="457" selection-start-column="8" selection-end-line="458" selection-end-column="79" />
-          <folding>
-            <element signature="e#4672#4673#0" expanded="true" />
-            <element signature="e#4723#4724#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="160" column="23" selection-start-line="160" selection-start-column="23" selection-end-line="160" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#667#668#0" expanded="true" />
-            <element signature="e#715#716#0" expanded="true" />
-            <element signature="e#3050#3051#0" expanded="true" />
-            <element signature="e#3106#3107#0" expanded="true" />
-            <element signature="e#4651#4652#0" expanded="true" />
-            <element signature="e#4725#4726#0" expanded="true" />
-            <element signature="e#4777#4778#0" expanded="true" />
-            <element signature="e#4851#4852#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-281">
+          <caret line="411" column="56" lean-forward="true" selection-start-line="411" selection-start-column="56" selection-end-line="411" selection-end-column="56" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTestHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="47" column="33" lean-forward="true" selection-start-line="47" selection-start-column="33" selection-end-line="47" selection-end-column="33" />
+        <state relative-caret-position="243">
+          <caret line="138" column="9" lean-forward="true" selection-start-line="138" selection-start-column="9" selection-end-line="138" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="264" column="45" lean-forward="true" selection-start-line="264" selection-start-column="45" selection-end-line="264" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#115#116#0" expanded="true" />
-            <element signature="e#184#185#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -241,7 +241,7 @@ class GeradorTest {
     @Test
     void verificaCnpjValido() {
         String cnpj = gerador.cnpj();
-        assertTrue(GeradorTestHelper.CNPJ(cnpj), cnpj);
+        assertTrue(GeradorTestHelper.CNPJ(cnpj));
     }
 
     @Test
@@ -262,7 +262,7 @@ class GeradorTest {
     @Test
     void verificaPisValido() {
         String pis = gerador.pis();
-        assertTrue(GeradorTestHelper.PIS(pis), pis);
+        assertTrue(GeradorTestHelper.PIS(pis));
     }
 
     @Test

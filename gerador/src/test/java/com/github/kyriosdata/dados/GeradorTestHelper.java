@@ -134,6 +134,13 @@ public class GeradorTestHelper {
                 (aux[0] * 5 + aux[1] * 6 + aux[2] * 7 + aux[3] * 8 + aux[4] * 9
                 + aux[5] * 2 + aux[6] * 3 + aux[7] * 4 + aux[11] * 8 + verificador_1 * 9) % 11;
 
+        if (verificador_1 == 10) {
+            verificador_1 = 0;
+        }
+        if (verificador_2 == 10) {
+            verificador_2 = 0;
+        }
+
         return (verificador_1 == aux[12]) && (verificador_2 == aux[13]);
     }
 
@@ -195,7 +202,7 @@ public class GeradorTestHelper {
             somador2 += digitos[i] * (11 - i);
         }
         verificador = 11 - ((somador1 + somador2) % 11);
-        if (verificador == 10) {
+        if (verificador == 10 || verificador == 11) {
             verificador = 0;
         }
         if (digitos[10] == 0) {
