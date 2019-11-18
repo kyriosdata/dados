@@ -571,14 +571,16 @@ public final class Gerador {
 
     
     /**
-     * String[] cor são s possiveis cores/raça de um indivíduo.
+     * Retorna uma raça dentre as possibilidades apresentadas pela
+     * ABNT NBR 15985:2011.
      *
-     * @return, retorna de forma aleátoria uma das possiveis cores.
+     * @return Uma raça conforme a ABNT NBR 15985:2011.
      */
-    public String getCor() {
-        int raca = inteiro(0, cor.length);
+    public Raca getRaca() {
+        Raca[] opcoes = Raca.values();
+        int sorteado = inteiro(0, opcoes.length - 1);
 
-        return cor[raca];
+        return opcoes[sorteado];
     }
 
     /**

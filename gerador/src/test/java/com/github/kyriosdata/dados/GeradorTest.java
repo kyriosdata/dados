@@ -27,6 +27,16 @@
         }
 
         @Test
+        void raca() {
+            Set<Raca> sorteados = new HashSet<>();
+            IntStream.range(0, 100).forEach(i -> sorteados.add(gerador.getRaca()));
+
+            // Estamos supondo que em 1000 sorteios todas as opções serão
+            // utilizadas.
+            assertEquals(5, sorteados.size());
+        }
+
+        @Test
         void sexo() {
             Set<Sexo> sorteados = new HashSet<>();
             IntStream.range(0, 100).forEach(i -> sorteados.add(gerador.getSexo()));
