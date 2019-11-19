@@ -1,8 +1,17 @@
 package com.github.kyriosdata.dados;
 
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util. *;
 
 public class GeradorTestHelper {
+
+    public static final ThreadLocalRandom RANDOM = ThreadLocalRandom.current();
+
+    public static int inteiro(int min, int max) {
+        return RANDOM.nextInt(min, max + 1);
+    }
     /**
      * Método auxiliar que verifica se determinada valor do tipo
      * double recebido como parâmetro é válido em relação ao limite
@@ -237,5 +246,34 @@ public class GeradorTestHelper {
         }
         return (verificador1 == digitos[10] && verificador2 == digitos[11]);
     }
+
+
+    public static boolean luhn(String luhn) {
+        int[] digitos = new int[16];
+
+        IntStream.range(0, 16).forEach(i -> digitos[i] =
+                Integer.parseInt(String.valueOf(luhn.charAt(i))));
+
+        int somaDigitos = 0;
+        for (int i = 0; i < 15; i++) {
+            int digitoAtual = digitos[i];
+            if ((i % 2) == 0) {
+                digitoAtual = digitos[i] * 2;
+                if (digitoAtual > 9) {
+                    digitoAtual -= 9;
+                }
+            }
+            somaDigitos += digitoAtual;
+        }
+
+        int digitoVerificador = (10 - (somaDigitos % 10));
+
+        if (digitos[15] == 0) {
+            digitos[15] = digitoVerificador;
+        }
+
+        return digitoVerificador == digitos[15];
+    }
+
 
 }

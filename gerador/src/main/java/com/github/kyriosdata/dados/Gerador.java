@@ -515,10 +515,9 @@ public final class Gerador {
      *
      * @return o número completo de um cartão de credito válido.
      */
-    public StringBuilder luhn() {
+    public String luhn() {
 
         int[] digitos = new int[16];
-        StringBuilder numeroCartao = new StringBuilder();
 
         for (int i = 0; i < digitos.length - 1; i++) {
             switch (i) {
@@ -545,7 +544,6 @@ public final class Gerador {
                     digitos[i] = inteiro(0, 9);
                     break;
             }
-            numeroCartao.append(digitos[i]);
         }
 
         int somaDigitos = 0;
@@ -560,15 +558,12 @@ public final class Gerador {
             somaDigitos += digitoAtual;
         }
 
-        int digitoVerificador = ((somaDigitos % 10) == 0) ? 0 :
+        digitos[15] = ((somaDigitos % 10) == 0) ? 0 :
                 (10 - (somaDigitos % 10));
-        digitos[digitos.length - 1] = digitoVerificador;
-        numeroCartao.setLength(0);
-        for (int i = 0; i < digitos.length; i++) {
-            numeroCartao.append(digitos[i]);
-        }
 
-        return numeroCartao;
+        return IntStream.range(0, 16)
+                .mapToObj(i -> Integer.toString(digitos[i]))
+                .collect(Collectors.joining());
     }
 
 
@@ -583,7 +578,6 @@ public final class Gerador {
         return relacionamento[vinculo];
     }
 
-    
     /**
      * Retorna uma raça dentre as possibilidades apresentadas pela
      * ABNT NBR 15985:2011.

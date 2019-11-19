@@ -279,5 +279,16 @@ class GeradorTest {
     void tituloInvalido() {
         assertFalse(GeradorTestHelper.tituloEleitoral("670637480935"));
     }
+
+    @Test
+    void verificaluhnValido() {
+        String cartao = gerador.luhn();
+        assertTrue(GeradorTestHelper.luhn((cartao)));
+    }
+
+    @Test
+    void luhnInvalido() {
+        assertFalse(GeradorTestHelper.luhn("3544335808738481"));
+    }
 }
 
