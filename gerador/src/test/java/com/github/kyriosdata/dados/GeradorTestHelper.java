@@ -1,17 +1,9 @@
 package com.github.kyriosdata.dados;
 
-import java.util.concurrent.ThreadLocalRandom;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util. *;
 
 public class GeradorTestHelper {
 
-    public static final ThreadLocalRandom RANDOM = ThreadLocalRandom.current();
-
-    public static int inteiro(int min, int max) {
-        return RANDOM.nextInt(min, max + 1);
-    }
     /**
      * Método auxiliar que verifica se determinada valor do tipo
      * double recebido como parâmetro é válido em relação ao limite
@@ -22,6 +14,11 @@ public class GeradorTestHelper {
      */
     public static boolean isDouble(double d) {
         return (!Double.isNaN(d)) && (d >= 0.0 && d < 1001.0);
+    }
+
+    public static String codNacional(String codigo){
+        int codigoNac = Gerador.inteiro(1,100);
+        return codigo;
     }
 
     /**
@@ -247,7 +244,6 @@ public class GeradorTestHelper {
         return (verificador1 == digitos[10] && verificador2 == digitos[11]);
     }
 
-
     public static boolean luhn(String luhn) {
         int[] digitos = new int[16];
 
@@ -274,6 +270,8 @@ public class GeradorTestHelper {
 
         return digitoVerificador == digitos[15];
     }
+
+
 
 
 }

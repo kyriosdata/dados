@@ -9,6 +9,7 @@ package com.github.kyriosdata.dados;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashSet;
@@ -290,5 +291,37 @@ class GeradorTest {
     void luhnInvalido() {
         assertFalse(GeradorTestHelper.luhn("3544335808738481"));
     }
+
+    @Test
+    void verificaTexto() throws IOException {
+        String textos = Gerador.getInstance().gettextoInteiro();
+        assertTrue(textos.contains(" "));
+        assertFalse(textos.length() > 1000);
+        char[]  texto = Gerador.getInstance().getTexto(1, 11);
+        assertEquals("Lorem ipsum", String.valueOf(texto));
+    }
+
+    @Test
+    void verificaLogradouro() throws IOException {
+        String logradouros = Gerador.getInstance().localizaLogradouro();
+        assertTrue(logradouros.contains(" "));
+    }
+
+    @Test
+    void verificaCartorio() throws IOException {
+        String cartorio = Gerador.getInstance().cartorio();
+        assertTrue(cartorio.contains(" "));
+    }
+
+    @Test
+    void verificaCodigoNacional() throws IOException {
+        String cod_Nacional = Gerador.getInstance().codigoNacional();
+        assertFalse(cod_Nacional.isEmpty());
+        assertFalse(cod_Nacional.length() > 10000);
+        String codigo = Gerador.getInstance().codigoNacional();
+        assertEquals(codigo,codigo);
+    }
+
+
 }
 

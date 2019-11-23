@@ -19,15 +19,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="280" column="5" selection-start-line="280" selection-start-column="5" selection-end-line="280" selection-end-column="5" />
+            <state relative-caret-position="5049">
+              <caret line="323" lean-forward="true" selection-start-line="323" selection-end-line="323" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#581#582#0" expanded="true" />
-                <element signature="e#628#629#0" expanded="true" />
+                <element signature="e#2421#2422#0" expanded="true" />
+                <element signature="e#2475#2476#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -36,24 +36,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTestHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
-              <caret line="272" column="9" selection-start-line="272" selection-start-column="9" selection-end-line="272" selection-end-column="9" />
+            <state relative-caret-position="190">
+              <caret line="271" column="5" selection-start-line="271" selection-start-column="5" selection-end-line="271" selection-end-column="5" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#421#422#0" expanded="true" />
+                <element signature="e#490#491#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gerador/src/main/java/com/github/kyriosdata/dados/Gerador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="561" column="42" lean-forward="true" selection-start-line="561" selection-start-column="42" selection-end-line="561" selection-end-column="42" />
+            <state relative-caret-position="221">
+              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4455#4456#0" expanded="true" />
                 <element signature="e#4506#4507#0" expanded="true" />
+                <element signature="e#7141#7142#0" expanded="true" />
+                <element signature="e#7190#7191#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,6 +79,30 @@
       <find>genero</find>
       <find>raça</find>
       <find>sexo</find>
+      <find>luhn</find>
+      <find>entre</find>
+      <find>getT</find>
+      <find>getIn</find>
+      <find>inteiro</find>
+      <find>texto</find>
+      <find>nome</find>
+      <find>nomes</find>
+      <find>text</find>
+      <find>char</find>
+      <find>getText</find>
+      <find>ENTRE</find>
+      <find>lograd</find>
+      <find>cert</find>
+      <find>nacional</find>
+      <find>codigosNacionais</find>
+      <find>doubl</find>
+      <find>cpf</find>
+      <find>gett</find>
+      <find>localiza</find>
+      <find>codigo</find>
+      <find>raca</find>
+      <find>Raca</find>
+      <find>Codigo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -117,7 +144,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -130,46 +156,11 @@
               <item name="dados" type="462c0819:PsiDirectoryNode" />
               <item name="gerador" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="dados" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dados" type="462c0819:PsiDirectoryNode" />
-              <item name="gerador" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dados" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dados" type="462c0819:PsiDirectoryNode" />
-              <item name="gerador" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dados" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dados" type="462c0819:PsiDirectoryNode" />
-              <item name="gerador" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dados" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dados" type="462c0819:PsiDirectoryNode" />
-              <item name="gerador" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="dados" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dados" type="462c0819:PsiDirectoryNode" />
-              <item name="gerador" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -211,7 +202,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GeradorTest">
+  <component name="RunManager" selected="JUnit.GeradorTest.verificaTextoIntervalo">
     <configuration name="GeradorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gerador" />
       <extension name="coverage">
@@ -227,7 +218,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeradorTest.luhnInvalido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GeradorTest.verificaCartorio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gerador" />
       <extension name="coverage">
         <pattern>
@@ -237,13 +228,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.github.kyriosdata.dados" />
       <option name="MAIN_CLASS_NAME" value="com.github.kyriosdata.dados.GeradorTest" />
-      <option name="METHOD_NAME" value="luhnInvalido" />
+      <option name="METHOD_NAME" value="verificaCartorio" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeradorTest.luhnTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GeradorTest.verificaCodigoNacional" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gerador" />
       <extension name="coverage">
         <pattern>
@@ -253,13 +244,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.github.kyriosdata.dados" />
       <option name="MAIN_CLASS_NAME" value="com.github.kyriosdata.dados.GeradorTest" />
-      <option name="METHOD_NAME" value="luhnTest" />
+      <option name="METHOD_NAME" value="verificaCodigoNacional" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeradorTest.verificaluhnValido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GeradorTest.verificaTexto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gerador" />
       <extension name="coverage">
         <pattern>
@@ -269,13 +260,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.github.kyriosdata.dados" />
       <option name="MAIN_CLASS_NAME" value="com.github.kyriosdata.dados.GeradorTest" />
-      <option name="METHOD_NAME" value="verificaluhnValido" />
+      <option name="METHOD_NAME" value="verificaTexto" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeradorTest.verificatituloValido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GeradorTest.verificaTextoIntervalo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gerador" />
       <extension name="coverage">
         <pattern>
@@ -285,7 +276,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.github.kyriosdata.dados" />
       <option name="MAIN_CLASS_NAME" value="com.github.kyriosdata.dados.GeradorTest" />
-      <option name="METHOD_NAME" value="verificatituloValido" />
+      <option name="METHOD_NAME" value="verificaTextoIntervalo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -293,18 +284,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.GeradorTest" />
-      <item itemvalue="JUnit.GeradorTest.luhnTest" />
-      <item itemvalue="JUnit.GeradorTest.verificaluhnValido" />
-      <item itemvalue="JUnit.GeradorTest.luhnInvalido" />
-      <item itemvalue="JUnit.GeradorTest.verificatituloValido" />
+      <item itemvalue="JUnit.GeradorTest.verificaCartorio" />
+      <item itemvalue="JUnit.GeradorTest.verificaCodigoNacional" />
+      <item itemvalue="JUnit.GeradorTest.verificaTexto" />
+      <item itemvalue="JUnit.GeradorTest.verificaTextoIntervalo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GeradorTest.verificaTextoIntervalo" />
+        <item itemvalue="JUnit.GeradorTest.verificaCodigoNacional" />
+        <item itemvalue="JUnit.GeradorTest.verificaTexto" />
         <item itemvalue="JUnit.GeradorTest" />
-        <item itemvalue="JUnit.GeradorTest.verificaluhnValido" />
-        <item itemvalue="JUnit.GeradorTest.verificatituloValido" />
-        <item itemvalue="JUnit.GeradorTest.luhnTest" />
-        <item itemvalue="JUnit.GeradorTest.luhnInvalido" />
+        <item itemvalue="JUnit.GeradorTest.verificaCartorio" />
       </list>
     </recent_temporary>
   </component>
@@ -322,44 +313,49 @@
       <workItem from="1574100508700" duration="3137000" />
       <workItem from="1574104156826" duration="1931000" />
       <workItem from="1574122926224" duration="10583000" />
-      <workItem from="1574164137163" duration="2569000" />
+      <workItem from="1574164137163" duration="18998000" />
+      <workItem from="1574257170693" duration="560000" />
+      <workItem from="1574303468278" duration="5265000" />
+      <workItem from="1574363633982" duration="4399000" />
+      <workItem from="1574422936148" duration="6723000" />
+      <workItem from="1574471560527" duration="2719000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GeradorTest_luhnInvalido - 2019.11.19 at 10h 22m 33s.xml">
-      <configuration name="GeradorTest.luhnInvalido" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaTexto - 2019.11.22 at 23h 28m 46s.xml">
+      <configuration name="GeradorTest.verificaTexto" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_luhnInvalido - 2019.11.19 at 10h 23m 02s.xml">
-      <configuration name="GeradorTest.luhnInvalido" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaTexto - 2019.11.22 at 23h 28m 58s.xml">
+      <configuration name="GeradorTest.verificaTexto" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_verificaluhnValido - 2019.11.19 at 10h 23m 18s.xml">
-      <configuration name="GeradorTest.verificaluhnValido" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaTexto - 2019.11.22 at 23h 29m 10s.xml">
+      <configuration name="GeradorTest.verificaTexto" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_verificaluhnValido - 2019.11.19 at 10h 24m 11s.xml">
-      <configuration name="GeradorTest.verificaluhnValido" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaTexto - 2019.11.22 at 23h 29m 20s.xml">
+      <configuration name="GeradorTest.verificaTexto" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_luhnTest - 2019.11.19 at 10h 24m 27s.xml">
-      <configuration name="GeradorTest.luhnTest" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaCodigoNacional - 2019.11.22 at 23h 41m 37s.xml">
+      <configuration name="GeradorTest.verificaCodigoNacional" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_verificaluhnValido - 2019.11.19 at 10h 25m 00s.xml">
-      <configuration name="GeradorTest.verificaluhnValido" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaCodigoNacional - 2019.11.22 at 23h 42m 38s.xml">
+      <configuration name="GeradorTest.verificaCodigoNacional" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_verificaluhnValido - 2019.11.19 at 10h 26m 03s.xml">
-      <configuration name="GeradorTest.verificaluhnValido" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaCodigoNacional - 2019.11.22 at 23h 43m 20s.xml">
+      <configuration name="GeradorTest.verificaCodigoNacional" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_verificatituloValido - 2019.11.19 at 10h 26m 37s.xml">
-      <configuration name="GeradorTest.verificatituloValido" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaCodigoNacional - 2019.11.22 at 23h 46m 48s.xml">
+      <configuration name="GeradorTest.verificaCodigoNacional" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_verificaluhnValido - 2019.11.19 at 10h 30m 55s.xml">
-      <configuration name="GeradorTest.verificaluhnValido" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaTextoIntervalo - 2019.11.22 at 23h 53m 44s.xml">
+      <configuration name="GeradorTest.verificaTextoIntervalo" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest - 2019.11.19 at 10h 31m 37s.xml">
-      <configuration name="GeradorTest" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaTextoIntervalo - 2019.11.22 at 23h 53m 57s.xml">
+      <configuration name="GeradorTest.verificaTextoIntervalo" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32379000" />
+    <option name="totallyTimeSpent" value="68474000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -379,7 +375,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Designer" order="4" />
-      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.2397882" />
+      <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.25869894" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="0" sideWeight="0.50075644" side_tool="true" weight="0.39934534" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
@@ -390,7 +386,7 @@
       <window_info anchor="bottom" id="Terminal" order="6" weight="0.3289689" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
-      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.38134205" />
+      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.27659574" />
       <window_info anchor="bottom" id="Debug" order="10" sideWeight="0.49924356" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -422,36 +418,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gerador/src/main/java/com/github/kyriosdata/dados/Gerador.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/io/FileInputStream.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="561" column="42" lean-forward="true" selection-start-line="561" selection-start-column="42" selection-end-line="561" selection-end-column="42" />
+        <state relative-caret-position="116">
+          <caret line="194" selection-start-line="194" selection-end-line="194" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.5.1/junit-jupiter-engine-5.5.1.jar!/org/junit/jupiter/engine/extension/TimeoutExtension.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="65" selection-start-line="65" selection-end-line="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.5.1/junit-jupiter-engine-5.5.1.jar!/org/junit/jupiter/engine/execution/InvocationInterceptorChain.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.5.1/junit-jupiter-engine-5.5.1.jar!/org/junit/jupiter/engine/execution/MethodInvocation.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.5.1/junit-platform-commons-1.5.1.jar!/org/junit/platform/commons/util/ReflectionUtils.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="354" selection-start-line="354" selection-end-line="354" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/src.zip!/java/lang/reflect/Method.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="497" selection-start-line="497" selection-end-line="497" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/jre/lib/rt.jar!/sun/reflect/DelegatingMethodAccessorImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_211/jre/lib/rt.jar!/sun/reflect/NativeMethodAccessorImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5049">
+          <caret line="323" lean-forward="true" selection-start-line="323" selection-end-line="323" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4455#4456#0" expanded="true" />
-            <element signature="e#4506#4507#0" expanded="true" />
+            <element signature="e#2421#2422#0" expanded="true" />
+            <element signature="e#2475#2476#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTestHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="272" column="9" selection-start-line="272" selection-start-column="9" selection-end-line="272" selection-end-column="9" />
+        <state relative-caret-position="190">
+          <caret line="271" column="5" selection-start-line="271" selection-start-column="5" selection-end-line="271" selection-end-column="5" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#421#422#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java">
+    <entry file="file://$PROJECT_DIR$/gerador/src/main/java/com/github/kyriosdata/dados/Gerador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="280" column="5" selection-start-line="280" selection-start-column="5" selection-end-line="280" selection-end-column="5" />
+        <state relative-caret-position="221">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#581#582#0" expanded="true" />
-            <element signature="e#628#629#0" expanded="true" />
+            <element signature="e#4455#4456#0" expanded="true" />
+            <element signature="e#4506#4507#0" expanded="true" />
+            <element signature="e#7141#7142#0" expanded="true" />
+            <element signature="e#7190#7191#0" expanded="true" />
           </folding>
         </state>
       </provider>

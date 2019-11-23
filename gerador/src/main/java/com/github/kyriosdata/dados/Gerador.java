@@ -341,6 +341,16 @@ public final class Gerador {
     public char[] gettextoFixo() throws IOException {
         return getTexto(0, 1000);
     }
+    /**
+     * Acessa getTexto para realizar leitura do arquivo texto.
+     *
+     * @return, retorna todos os caracteres de getTexto
+     */
+
+    public String gettextoInteiro() throws IOException {
+        int indexTexto = inteiro(0,textos.size() - 1);
+        return textos.get(indexTexto);
+    }
 
     /**
      * Acessa getTexto para realizar leitura do arquivo texto
@@ -565,7 +575,6 @@ public final class Gerador {
                 .mapToObj(i -> Integer.toString(digitos[i]))
                 .collect(Collectors.joining());
     }
-
 
     /**
      * String[] relacionamento são os possiveis vinculos de um indivíduo.
