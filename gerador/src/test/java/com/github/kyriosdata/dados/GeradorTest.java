@@ -17,6 +17,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.IntStream;
 
+import static java.lang.String.valueOf;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GeradorTest {
@@ -297,8 +298,15 @@ class GeradorTest {
         String textos = Gerador.getInstance().gettextoInteiro();
         assertTrue(textos.contains(" "));
         assertFalse(textos.length() > 1000);
-//        char[]  texto = Gerador.getInstance().getTexto(1, 11);
-//        assertEquals("Lorem ipsum", String.valueOf(texto));
+        char[] texto = Gerador.getInstance().getTexto(1, 11);
+//
+//        Class cls = texto.getClass();
+//        System.out.println("The type of the object is: " + cls.getName());
+//
+//        cls = "Lorem ipsum".getClass();
+//        System.out.println("The type of the object is: " + cls.getName());
+
+        assertEquals("Lorem ipsum", valueOf().charAt(texto));
     }
 
     @Test
