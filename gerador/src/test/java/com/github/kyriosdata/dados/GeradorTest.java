@@ -34,7 +34,7 @@ class GeradorTest {
         assertTrue(texto.length() >= 10);
         assertTrue(texto.length() <= 15);
     }
-    
+
     @Test
     void textoExtenso() {
         // Entre 1kB e 10kB
