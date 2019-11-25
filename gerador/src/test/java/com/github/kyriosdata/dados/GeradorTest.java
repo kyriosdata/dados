@@ -29,6 +29,21 @@ class GeradorTest {
     }
 
     @Test
+    void texto() {
+        String texto = gerador.texto(10, 15);
+        assertTrue(texto.length() >= 10);
+        assertTrue(texto.length() <= 15);
+    }
+    
+    @Test
+    void textoExtenso() {
+        // Entre 1kB e 10kB
+        String extenso = gerador.texto(1024, 10 * 1024);
+        assertTrue(extenso.length() >= 1024);
+        assertTrue(extenso.length() <= 10 * 1024);
+    }
+
+    @Test
     void raca() {
         Set<Raca> sorteados = new HashSet<>();
         IntStream.range(0, 100).forEach(i -> sorteados.add(gerador.getRaca()));

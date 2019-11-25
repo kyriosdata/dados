@@ -295,52 +295,32 @@ public final class Gerador {
     }
 
     /**
-     * Método criado para acessar e ler caracteres do arquivo Lorem.txt
+     * Recupera um texto arbitrário cujo tamanho está entre os valores
+     * fornecidos.
      *
-     * @param min O menor valor que pode ser sorteado.
-     * @param max O maior valor que pode ser sorteado.
-     *            <p>
-     *            "inputStream" recebe o documento e abre com a finalidade de
-     *            leitura
-     *            "leitorTexto" recebe a entrada, como sendo um novo leitor
-     *            de entrada
-     *            "cBuffer" cria um novo leitor em buffer.
-     * @return c retorna os caracteres do intervalo min e max, passados como
-     * parâmetro.
+     * @param min O tamanho mínimo do texto.
+     * @param max O tamanho máximo do texto.
+     * @return Um texto arbitrário cujo tamanho está entre os valores
+     * fornecidos, inclusive.
      */
-    public char[] getTexto(int min, int max) throws IOException {
-
-        char[] cBuffer;
-        BufferedReader leitorTexto = null;
-        FileInputStream inputStream = null;
-        try {
-            inputStream = new FileInputStream(Fonte.TEXTO.getFileName());
-            leitorTexto =
-                    new BufferedReader(new InputStreamReader(inputStream));
-            cBuffer = new char[inputStream.available()];
-            leitorTexto.read(cBuffer, min, max);
-            return cBuffer;
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                leitorTexto.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+    public String texto(int min, int max) {
+        final StringBuilder sb = new StringBuilder();
+        final int tamanho = inteiro(min, max);
+        for (String linha : textos) {
+            if (sb.length() < tamanho) {
+                sb.append(linha);
+            } else {
+                break;
             }
         }
-        return null;
+
+        if (sb.length() > tamanho) {
+            return sb.substring(0, tamanho);
+        }
+
+        return sb.toString();
     }
 
-    /**
-     * Acessa getTexto para realizar leitura do arquivo texto.
-     *
-     * @return, retorna uma quantidade exata de caracteres passado no
-     * parâmetro de getTexto, nesse caso os 1000 primeiros caracteres.
-     */
-    public char[] gettextoFixo() throws IOException {
-        return getTexto(0, 1000);
-    }
     /**
      * Acessa getTexto para realizar leitura do arquivo texto.
      *
@@ -348,21 +328,8 @@ public final class Gerador {
      */
 
     public String gettextoInteiro() throws IOException {
-        int indexTexto = inteiro(0,textos.size() - 1);
+        int indexTexto = inteiro(0, textos.size() - 1);
         return textos.get(indexTexto);
-    }
-
-    /**
-     * Acessa getTexto para realizar leitura do arquivo texto
-     * Acessa o método "aleatorio" para passar como parâmetro o limite de
-     * faixa, min e max.
-     *
-     * @return, retorna de forma aleatoria, um minimo e maximo de início e
-     * fim de leitura do arquivo.
-     * Nesse caso, o min será aleátorio entre 0 e 99 e o max será de 100 a 1000.
-     */
-    public char[] gettextoIntervalo() throws IOException {
-        return getTexto(inteiro(0, 99), inteiro(100, 1000));
     }
 
     /**
@@ -382,14 +349,14 @@ public final class Gerador {
         }
 
         digitos[10] = somador1 % 11;
-        if (digitos[10] == 10 ) {
+        if (digitos[10] == 10) {
             digitos[10] = 0;
         }
         for (int j = 1; j < digitos.length - 1; j++) {
-            somador2 += digitos[j] * (j-1);
+            somador2 += digitos[j] * (j - 1);
         }
         digitos[11] = somador2 % 11;
-        if (digitos[11] == 10 ) {
+        if (digitos[11] == 10) {
             digitos[11] = 0;
         }
 
@@ -413,7 +380,7 @@ public final class Gerador {
         IntStream.range(0, 11).forEach(i -> digitos[i] = inteiro(0, 8));
 
         for (int i = 1; i < digitos.length - 9; i++) {
-            somador1 += digitos[i-1] * (4 - i);
+            somador1 += digitos[i - 1] * (4 - i);
         }
 
         for (int i = 2; i < digitos.length - 2; i++) {
@@ -514,14 +481,16 @@ public final class Gerador {
     }
 
     /**
-     * De forma aleátoria cria o primeiro digito sendo 3 para JCB, 
+     * De forma aleátoria cria o primeiro digito sendo 3 para JCB,
      * 4 para VISA, 5 para Mastercard e 6 para Discover.
      * Cria-se um vetor de 16 posições, a partir de operações sobre os 15
      * primeiros digitos encontra o digito verificador que do cartão
      * digito[0] será o primero digito do cartão
      * digito[1], será o segundo digito sendo JCB sendo sempre 5,
-     * mastercard um valor aleatório(1 a 5), e no caso de visa sem restrições(0 a 9);
-     * No caso do Discover, por padrão os 4 primeiros digitos já são pre-definidos 6011.
+     * mastercard um valor aleatório(1 a 5), e no caso de visa sem restrições
+     * (0 a 9);
+     * No caso do Discover, por padrão os 4 primeiros digitos já são
+     * pre-definidos 6011.
      *
      * @return o número completo de um cartão de credito válido.
      */
