@@ -11,7 +11,6 @@ import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Objects;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -152,6 +151,16 @@ public final class Gerador {
      */
     public static int inteiro(int min, int max) {
         return RANDOM.nextInt(min, max + 1);
+    }
+    /**
+     * Gera um inteiro fixo.
+     *
+     * @param min O menor valor de entrada.
+     * @param max O maior valor de entrada.
+     * @return Um inteiro .
+     */
+    public static int exato(int min, int max) {
+        return Math.abs(max - min);
     }
 
     /**
@@ -305,7 +314,7 @@ public final class Gerador {
      */
     public String texto(int min, int max) {
         final StringBuilder sb = new StringBuilder();
-        final int tamanho = inteiro(min, max);
+        final int tamanho = exato(min, max);
         for (String linha : textos) {
             if (sb.length() < tamanho) {
                 sb.append(linha);
@@ -315,10 +324,9 @@ public final class Gerador {
         }
 
         if (sb.length() > tamanho) {
-            return sb.substring(0, tamanho);
+            return sb.substring(min, tamanho);
         }
-
-        return sb.toString();
+        return sb.substring(min, max);
     }
 
     /**
@@ -375,7 +383,6 @@ public final class Gerador {
     public String pis() {
         int[] digitos = new int[12];
         int somador1 = 0, somador2 = 0;
-        int verificador = 0;
 
         IntStream.range(0, 11).forEach(i -> digitos[i] = inteiro(0, 8));
 
@@ -626,8 +633,8 @@ public final class Gerador {
      *
      * @return, retorna de forma aleátoria um código nacional completo.
      */
-    public String codigoNacional() {
-        int indexCodigoNacional = inteiro(0, codigosNacionais.size() - 1);
+    public String codigoNacional(int min, int max) {
+        int indexCodigoNacional = exato(min, max);
         return codigosNacionais.get(indexCodigoNacional);
     }
 

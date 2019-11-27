@@ -17,7 +17,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.IntStream;
 
-import static java.lang.String.valueOf;
 import static org.junit.jupiter.api.Assertions.*;
 
 class GeradorTest {
@@ -311,17 +310,9 @@ class GeradorTest {
     @Test
     void verificaTexto() throws IOException {
         String textos = Gerador.getInstance().gettextoInteiro();
-        assertTrue(textos.contains(" "));
-        assertFalse(textos.length() > 1000);
-        char[] texto = Gerador.getInstance().getTexto(1, 11);
-//
-//        Class cls = texto.getClass();
-//        System.out.println("The type of the object is: " + cls.getName());
-//
-//        cls = "Lorem ipsum".getClass();
-//        System.out.println("The type of the object is: " + cls.getName());
-
-        assertEquals("Lorem ipsum", valueOf().charAt(texto));
+        assertFalse(textos.length() > 10000);
+        String texto = Gerador.getInstance().texto(8,58);
+        assertEquals("uterque me intueretur seseque ad audiendum", String.valueOf(texto));
     }
 
     @Test
@@ -338,13 +329,11 @@ class GeradorTest {
 
     @Test
     void verificaCodigoNacional() throws IOException {
-        String cod_Nacional = Gerador.getInstance().codigoNacional();
+        String cod_Nacional = Gerador.getInstance().codigoNacional(7,10);
         assertFalse(cod_Nacional.isEmpty());
         assertFalse(cod_Nacional.length() > 10000);
-        String codigo = Gerador.getInstance().codigoNacional();
-        assertEquals(codigo,codigo);
+        assertEquals(("AC;Brasiléia;1200104;68;69900-000;69999-999"),cod_Nacional);
     }
-
 
 }
 

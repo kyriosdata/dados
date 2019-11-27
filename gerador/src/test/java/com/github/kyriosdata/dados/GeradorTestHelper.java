@@ -271,7 +271,4 @@ public class GeradorTestHelper {
         return digitoVerificador == digitos[15];
     }
 
-
-
-
 }
