@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d35a77b4-ae46-419b-81e8-f50066691f17" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bases/codigos-nacionais.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gerador/bases/codigos-nacionais.csv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/gerador/src/main/java/com/github/kyriosdata/dados/Gerador.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerador/src/main/java/com/github/kyriosdata/dados/Gerador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTestHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTestHelper.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/gerador/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,13 +18,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="337" lean-forward="true" selection-start-line="337" selection-end-line="337" />
+            <state relative-caret-position="163">
+              <caret line="321" column="21" lean-forward="true" selection-start-line="321" selection-start-column="21" selection-end-line="321" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#7977#7978#0" expanded="true" />
+                <element signature="e#8055#8056#0" expanded="true" />
+                <element signature="e#8229#8230#0" expanded="true" />
+                <element signature="e#8298#8299#0" expanded="true" />
+                <element signature="e#8340#8341#0" expanded="true" />
+                <element signature="e#8408#8409#0" expanded="true" />
+                <element signature="e#8444#8445#0" expanded="true" />
+                <element signature="e#8509#8510#0" expanded="true" />
+                <element signature="e#8677#8678#0" expanded="true" />
+                <element signature="e#8742#8743#0" expanded="true" />
+                <element signature="e#8787#8788#0" expanded="true" />
+                <element signature="e#8879#8880#0" expanded="true" />
+                <element signature="e#8918#8919#0" expanded="true" />
+                <element signature="e#8996#8997#0" expanded="true" />
+                <element signature="e#9176#9177#0" expanded="true" />
+                <element signature="e#9247#9248#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -36,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTestHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="272" selection-start-line="272" selection-end-line="272" />
+            <state relative-caret-position="68">
+              <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
               <folding>
                 <element signature="e#421#422#0" expanded="true" />
                 <element signature="e#490#491#0" expanded="true" />
@@ -46,21 +59,22 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/gerador/src/main/java/com/github/kyriosdata/dados/Gerador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6168">
-              <caret line="384" column="39" selection-start-line="384" selection-start-column="39" selection-end-line="384" selection-end-column="39" />
+            <state relative-caret-position="146">
+              <caret line="642" column="53" selection-start-line="642" selection-start-column="53" selection-end-line="642" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4455#4456#0" expanded="true" />
-                <element signature="e#4506#4507#0" expanded="true" />
-                <element signature="e#4529#4530#0" expanded="true" />
-                <element signature="e#4571#4572#0" expanded="true" />
+                <element signature="e#7069#7070#0" expanded="true" />
                 <element signature="e#7097#7098#0" expanded="true" />
+                <element signature="e#7140#7141#0" expanded="true" />
                 <element signature="e#7173#7174#0" expanded="true" />
+                <element signature="e#7373#7374#0" expanded="true" />
                 <element signature="e#7422#7423#0" expanded="true" />
+                <element signature="e#7980#7981#0" expanded="true" />
                 <element signature="e#8026#8027#0" expanded="true" />
+                <element signature="e#8323#8324#0" expanded="true" />
                 <element signature="e#8373#8374#0" expanded="true" />
               </folding>
             </state>
@@ -85,7 +99,6 @@
       <find>getIn</find>
       <find>nome</find>
       <find>nomes</find>
-      <find>text</find>
       <find>char</find>
       <find>getText</find>
       <find>ENTRE</find>
@@ -108,6 +121,7 @@
       <find>codigo</find>
       <find>carrega</find>
       <find>texto</find>
+      <find>text</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -117,9 +131,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/gerador/src/main/java/com/github/kyriosdata/dados/GeradorTestHelper.java" />
-        <option value="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java" />
         <option value="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTestHelper.java" />
         <option value="$PROJECT_DIR$/gerador/src/main/java/com/github/kyriosdata/dados/Gerador.java" />
+        <option value="$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java" />
       </list>
     </option>
   </component>
@@ -187,7 +201,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.folding" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -207,7 +221,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.GeradorTest.textoExtenso">
+  <component name="RunManager" selected="JUnit.GeradorTest">
     <configuration name="GeradorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gerador" />
       <extension name="coverage">
@@ -219,6 +233,22 @@
       <option name="PACKAGE_NAME" value="com.github.kyriosdata.dados" />
       <option name="MAIN_CLASS_NAME" value="com.github.kyriosdata.dados.GeradorTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GeradorTest.texto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="gerador" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.github.kyriosdata.dados.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.github.kyriosdata.dados" />
+      <option name="MAIN_CLASS_NAME" value="com.github.kyriosdata.dados.GeradorTest" />
+      <option name="METHOD_NAME" value="texto" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -239,7 +269,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeradorTest.verificaCodigoNacional" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GeradorTest.verificaCartorio" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gerador" />
       <extension name="coverage">
         <pattern>
@@ -249,13 +279,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.github.kyriosdata.dados" />
       <option name="MAIN_CLASS_NAME" value="com.github.kyriosdata.dados.GeradorTest" />
-      <option name="METHOD_NAME" value="verificaCodigoNacional" />
+      <option name="METHOD_NAME" value="verificaCartorio" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GeradorTest.verificaTexto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GeradorTest.verificaLogradouro" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gerador" />
       <extension name="coverage">
         <pattern>
@@ -265,23 +295,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.github.kyriosdata.dados" />
       <option name="MAIN_CLASS_NAME" value="com.github.kyriosdata.dados.GeradorTest" />
-      <option name="METHOD_NAME" value="verificaTexto" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeradorTest.verificaTextoIntervalo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="gerador" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.github.kyriosdata.dados.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.github.kyriosdata.dados" />
-      <option name="MAIN_CLASS_NAME" value="com.github.kyriosdata.dados.GeradorTest" />
-      <option name="METHOD_NAME" value="verificaTextoIntervalo" />
+      <option name="METHOD_NAME" value="verificaLogradouro" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -289,18 +303,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.GeradorTest" />
-      <item itemvalue="JUnit.GeradorTest.verificaCodigoNacional" />
-      <item itemvalue="JUnit.GeradorTest.verificaTexto" />
-      <item itemvalue="JUnit.GeradorTest.verificaTextoIntervalo" />
       <item itemvalue="JUnit.GeradorTest.textoExtenso" />
+      <item itemvalue="JUnit.GeradorTest.texto" />
+      <item itemvalue="JUnit.GeradorTest.verificaCartorio" />
+      <item itemvalue="JUnit.GeradorTest.verificaLogradouro" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GeradorTest.textoExtenso" />
         <item itemvalue="JUnit.GeradorTest" />
-        <item itemvalue="JUnit.GeradorTest.verificaCodigoNacional" />
-        <item itemvalue="JUnit.GeradorTest.verificaTexto" />
-        <item itemvalue="JUnit.GeradorTest.verificaTextoIntervalo" />
+        <item itemvalue="JUnit.GeradorTest.verificaLogradouro" />
+        <item itemvalue="JUnit.GeradorTest.verificaCartorio" />
+        <item itemvalue="JUnit.GeradorTest.textoExtenso" />
+        <item itemvalue="JUnit.GeradorTest.texto" />
       </list>
     </recent_temporary>
   </component>
@@ -325,44 +339,44 @@
       <workItem from="1574422936148" duration="6723000" />
       <workItem from="1574471560527" duration="3867000" />
       <workItem from="1574682881320" duration="4045000" />
-      <workItem from="1574767396572" duration="25194000" />
+      <workItem from="1574767396572" duration="31237000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GeradorTest_verificaCodigoNacional - 2019.11.26 at 21h 47m 21s.xml">
-      <configuration name="GeradorTest.verificaCodigoNacional" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaCartorio - 2019.11.27 at 00h 08m 25s.xml">
+      <configuration name="GeradorTest.verificaCartorio" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_verificaCodigoNacional - 2019.11.26 at 21h 47m 44s.xml">
-      <configuration name="GeradorTest.verificaCodigoNacional" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaCartorio - 2019.11.27 at 00h 11m 31s.xml">
+      <configuration name="GeradorTest.verificaCartorio" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_verificaCodigoNacional - 2019.11.26 at 21h 49m 53s.xml">
-      <configuration name="GeradorTest.verificaCodigoNacional" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaCartorio - 2019.11.27 at 00h 11m 42s.xml">
+      <configuration name="GeradorTest.verificaCartorio" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_verificaCodigoNacional - 2019.11.26 at 22h 21m 35s.xml">
-      <configuration name="GeradorTest.verificaCodigoNacional" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaLogradouro - 2019.11.27 at 00h 35m 58s.xml">
+      <configuration name="GeradorTest.verificaLogradouro" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_verificaCodigoNacional - 2019.11.26 at 22h 22m 10s.xml">
-      <configuration name="GeradorTest.verificaCodigoNacional" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaLogradouro - 2019.11.27 at 00h 39m 32s.xml">
+      <configuration name="GeradorTest.verificaLogradouro" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_verificaCodigoNacional - 2019.11.26 at 22h 26m 54s.xml">
-      <configuration name="GeradorTest.verificaCodigoNacional" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaLogradouro - 2019.11.27 at 00h 40m 12s.xml">
+      <configuration name="GeradorTest.verificaLogradouro" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_verificaCodigoNacional - 2019.11.26 at 22h 54m 36s.xml">
-      <configuration name="GeradorTest.verificaCodigoNacional" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaLogradouro - 2019.11.27 at 00h 40m 23s.xml">
+      <configuration name="GeradorTest.verificaLogradouro" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_verificaCodigoNacional - 2019.11.26 at 23h 01m 02s.xml">
-      <configuration name="GeradorTest.verificaCodigoNacional" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaLogradouro - 2019.11.27 at 01h 28m 56s.xml">
+      <configuration name="GeradorTest.verificaLogradouro" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_verificaCodigoNacional - 2019.11.26 at 23h 01m 17s.xml">
-      <configuration name="GeradorTest.verificaCodigoNacional" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaLogradouro - 2019.11.27 at 01h 31m 22s.xml">
+      <configuration name="GeradorTest.verificaLogradouro" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="GeradorTest_verificaCodigoNacional - 2019.11.26 at 23h 06m 21s.xml">
-      <configuration name="GeradorTest.verificaCodigoNacional" configurationId="JUnit" />
+    <history-entry file="GeradorTest_verificaLogradouro - 2019.11.27 at 01h 31m 36s.xml">
+      <configuration name="GeradorTest.verificaLogradouro" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112331000" />
+    <option name="totallyTimeSpent" value="118374000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -390,10 +404,10 @@
       <window_info anchor="bottom" id="Database Changes" order="3" />
       <window_info anchor="bottom" id="Version Control" order="4" />
       <window_info anchor="bottom" id="Flutter Performance" order="5" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="6" visible="true" weight="0.31914893" />
+      <window_info anchor="bottom" id="Terminal" order="6" weight="0.31914893" />
       <window_info anchor="bottom" id="Message" order="7" />
       <window_info anchor="bottom" id="Find" order="8" />
-      <window_info anchor="bottom" id="Run" order="9" weight="0.2700491" />
+      <window_info active="true" anchor="bottom" id="Run" order="9" visible="true" weight="0.2700491" />
       <window_info anchor="bottom" id="Debug" order="10" sideWeight="0.49924356" weight="0.39934534" />
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
@@ -481,20 +495,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="337" lean-forward="true" selection-start-line="337" selection-end-line="337" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTestHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="272" selection-start-line="272" selection-end-line="272" />
+        <state relative-caret-position="68">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
           <folding>
             <element signature="e#421#422#0" expanded="true" />
             <element signature="e#490#491#0" expanded="true" />
@@ -504,19 +508,46 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gerador/src/main/java/com/github/kyriosdata/dados/Gerador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6168">
-          <caret line="384" column="39" selection-start-line="384" selection-start-column="39" selection-end-line="384" selection-end-column="39" />
+        <state relative-caret-position="146">
+          <caret line="642" column="53" selection-start-line="642" selection-start-column="53" selection-end-line="642" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4455#4456#0" expanded="true" />
-            <element signature="e#4506#4507#0" expanded="true" />
-            <element signature="e#4529#4530#0" expanded="true" />
-            <element signature="e#4571#4572#0" expanded="true" />
+            <element signature="e#7069#7070#0" expanded="true" />
             <element signature="e#7097#7098#0" expanded="true" />
+            <element signature="e#7140#7141#0" expanded="true" />
             <element signature="e#7173#7174#0" expanded="true" />
+            <element signature="e#7373#7374#0" expanded="true" />
             <element signature="e#7422#7423#0" expanded="true" />
+            <element signature="e#7980#7981#0" expanded="true" />
             <element signature="e#8026#8027#0" expanded="true" />
+            <element signature="e#8323#8324#0" expanded="true" />
             <element signature="e#8373#8374#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gerador/src/test/java/com/github/kyriosdata/dados/GeradorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="321" column="21" lean-forward="true" selection-start-line="321" selection-start-column="21" selection-end-line="321" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7977#7978#0" expanded="true" />
+            <element signature="e#8055#8056#0" expanded="true" />
+            <element signature="e#8229#8230#0" expanded="true" />
+            <element signature="e#8298#8299#0" expanded="true" />
+            <element signature="e#8340#8341#0" expanded="true" />
+            <element signature="e#8408#8409#0" expanded="true" />
+            <element signature="e#8444#8445#0" expanded="true" />
+            <element signature="e#8509#8510#0" expanded="true" />
+            <element signature="e#8677#8678#0" expanded="true" />
+            <element signature="e#8742#8743#0" expanded="true" />
+            <element signature="e#8787#8788#0" expanded="true" />
+            <element signature="e#8879#8880#0" expanded="true" />
+            <element signature="e#8918#8919#0" expanded="true" />
+            <element signature="e#8996#8997#0" expanded="true" />
+            <element signature="e#9176#9177#0" expanded="true" />
+            <element signature="e#9247#9248#0" expanded="true" />
           </folding>
         </state>
       </provider>

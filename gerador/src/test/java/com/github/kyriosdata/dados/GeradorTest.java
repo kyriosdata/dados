@@ -30,7 +30,7 @@ class GeradorTest {
 
     @Test
     void texto() {
-        String texto = gerador.texto(10, 15);
+        String texto = gerador.textoEspecifico(10, 15);
         assertTrue(texto.length() >= 10);
         assertTrue(texto.length() <= 15);
     }
@@ -38,7 +38,7 @@ class GeradorTest {
     @Test
     void textoExtenso() {
         // Entre 1kB e 10kB
-        String extenso = gerador.texto(1024, 10 * 1024);
+        String extenso = gerador.textoEspecifico(1024, 10 * 1024);
         assertTrue(extenso.length() >= 1024);
         assertTrue(extenso.length() <= 10 * 1024);
     }
@@ -317,14 +317,16 @@ class GeradorTest {
 
     @Test
     void verificaLogradouro() throws IOException {
-        String logradouros = Gerador.getInstance().localizaLogradouro();
+        String logradouros = Gerador.getInstance().localizaLogradouro(1,13);
         assertTrue(logradouros.contains(" "));
+        assertEquals("Av. Santos Dumont, 1740;Centro",logradouros);
     }
 
     @Test
     void verificaCartorio() throws IOException {
-        String cartorio = Gerador.getInstance().cartorio();
+        String cartorio = Gerador.getInstance().cartorio(1,4);
         assertTrue(cartorio.contains(" "));
+        assertEquals(("Cartório J. Feitosa"),cartorio);
     }
 
     @Test

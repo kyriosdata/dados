@@ -329,6 +329,23 @@ public final class Gerador {
         return sb.substring(min, max);
     }
 
+    public String textoEspecifico(int min, int max) {
+        final StringBuilder sb = new StringBuilder();
+        final int tamanho = inteiro(min, max);
+        for (String linha : textos) {
+            if (sb.length() < tamanho) {
+                sb.append(linha);
+            } else {
+                break;
+            }
+        }
+
+        if (sb.length() > tamanho) {
+            return sb.substring(0, tamanho);
+        }
+        return sb.toString();
+    }
+
     /**
      * Acessa getTexto para realizar leitura do arquivo texto.
      *
@@ -611,9 +628,10 @@ public final class Gerador {
      *
      * @return, retorna de forma aleátoria um cartório.
      */
-    public String cartorio() {
-        int indexCartorios = inteiro(0, cartorios.size() - 1);
+    public String cartorio(int min, int max) {
+        int indexCartorios = exato(min, max);
         return cartorios.get(indexCartorios);
+        //return cartorios.toString();
     }
 
     /**
@@ -622,8 +640,8 @@ public final class Gerador {
      *
      * @return, retorna de forma aleátoria um logradouro.
      */
-    public String localizaLogradouro() {
-        int indexLogradouro = inteiro(0, logradouros.size() - 1);
+    public String localizaLogradouro(int min, int max) {
+        int indexLogradouro = exato(min, max);
         return logradouros.get(indexLogradouro);
     }
 
