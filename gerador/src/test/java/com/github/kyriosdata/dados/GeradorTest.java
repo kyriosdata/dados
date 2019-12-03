@@ -272,7 +272,7 @@ class GeradorTest {
 
     @Test
     void cpfInvalido() {
-        assertFalse(GeradorTestHelper.CPF("70200961160"));
+        assertFalse(GeradorTestHelper.CPF("00000000000"));
     }
 
     @Test
@@ -288,7 +288,8 @@ class GeradorTest {
 
     @Test
     void verificatituloValido() {
-        assertTrue(GeradorTestHelper.tituloEleitoral(((gerador.tituloEleitoral()))));
+        assertTrue(GeradorTestHelper.tituloEleitoral(
+                ((gerador.tituloEleitoral()))));
     }
 
     @Test
@@ -312,7 +313,8 @@ class GeradorTest {
         String textos = Gerador.getInstance().gettextoInteiro();
         assertFalse(textos.length() > 10000);
         String texto = Gerador.getInstance().texto(8,58);
-        assertEquals("uterque me intueretur seseque ad audiendum", String.valueOf(texto));
+        assertEquals("uterque me intueretur seseque ad audiendum",
+                String.valueOf(texto));
     }
 
     @Test
@@ -334,7 +336,8 @@ class GeradorTest {
         String cod_Nacional = Gerador.getInstance().codigoNacional(7,10);
         assertFalse(cod_Nacional.isEmpty());
         assertFalse(cod_Nacional.length() > 10000);
-        assertEquals(("AC;Brasiléia;1200104;68;69900-000;69999-999"),cod_Nacional);
+        assertEquals(("AC;Brasiléia;1200104;68;69900-000;69999-999"),
+                cod_Nacional);
     }
 
 }

@@ -159,6 +159,9 @@ public class GeradorTestHelper {
      * @return true se o cpf for válido, false se não.
      */
     public static boolean CPF(String cpf) {
+        if(cpf == null || cpf.matches("00000000000")){
+            return false;
+        }
         int[] digitos = new int[11];
         int somador1 = 0, somador2 = 0;
         int verificador1, verificador2;

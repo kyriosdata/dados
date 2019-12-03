@@ -304,13 +304,12 @@ public final class Gerador {
     }
 
     /**
-     * Recupera um texto arbitrário cujo tamanho está entre os valores
-     * fornecidos.
+     * Recupera um texto arbitrário cujo tamanho é exato(max - min).
      *
      * @param min O tamanho mínimo do texto.
      * @param max O tamanho máximo do texto.
-     * @return Um texto arbitrário cujo tamanho está entre os valores
-     * fornecidos, inclusive.
+     * @return Um texto arbitrário cujo tamanho é o resultado da
+     * operação max - min fornecidos, inclusive.
      */
     public String texto(int min, int max) {
         final StringBuilder sb = new StringBuilder();
@@ -329,6 +328,15 @@ public final class Gerador {
         return sb.substring(min, max);
     }
 
+    /**
+     * Recupera um texto arbitrário cujo tamanho está entre os valores
+     * fornecidos.
+     *
+     * @param min O tamanho mínimo do texto.
+     * @param max O tamanho máximo do texto.
+     * @return Um texto arbitrário cujo tamanho está entre os valores
+     * fornecidos, inclusive.
+     */
     public String textoEspecifico(int min, int max) {
         final StringBuilder sb = new StringBuilder();
         final int tamanho = inteiro(min, max);
@@ -371,6 +379,9 @@ public final class Gerador {
 
         for (int i = 1; i < digitos.length - 2; i++) {
             somador1 += digitos[i] * i;
+        }
+        if(somador1 == 0){
+            return null;
         }
 
         digitos[10] = somador1 % 11;
