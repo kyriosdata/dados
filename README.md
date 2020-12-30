@@ -16,6 +16,7 @@ Esta biblioteca faz uso de uma estratégia baseada em fases: (a) léxica; (b) si
 ### Links relevantes
 
 - [Unidades de medida](http://unitsofmeasure.org/ucum.html)
+- [Gerador de dados em saúde de amplo propósito](https://github.com/synthetichealth/synthea)
 
 /\*Andoly
 
